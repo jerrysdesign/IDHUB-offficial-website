@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <title>IDHub Website</title>
+  <meta data-react-helmet="true" name="description" content="IDHub official website"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://raw.githubusercontent.com/donh/vsite/master/static/logo.png">
+  <meta property="og:site_name" content="IDHub Network">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+</head>
+<body>
+  <div id="main">
+    <div id="heading">
+      <ul class="navbar">
+        <li><a href="/">首页</a></li>
+        <li><a href="/product">产品</a></li>
+        <li><a href="/#team" target="_blank" rel="noopener noreferrer">团队</a></li>
+        <li><a href="https://github.com/idhubnetwork" target="_blank" rel="noopener noreferrer">论坛</a></li>
+        <li><a href="/#news">媒体报道</a></li>
+        <li><a href="/#contact">联系我们</a></li>
+      </ul>
+      <a href="/data/IDHub_whitepaper_v0.4.2_cn.pdf" download target="_blank">
+        <img class="centered" src="./img/heading.jpg" scale="0" align="middle">
+      </a>
+    </div>
+
+    <div id="product_component">
+      <div class="section_title">IDHub 平台将提供以下组件：</div>
+      <div class="product_component_block centered">
+        <div class="product_component_box">
+          <div class="product_component_image centered">
+            <img src="./img/component_identifier.png" alt="identifier" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="product_component_desc centered">
+            <div class="product_component_note">智能合约定义</div>
+            <div class="member_name">标识符</div>
+          </div>
+        </div>
+        <div class="product_component_box">
+          <div class="product_component_image centered">
+            <img src="./img/component_sdk.png" alt="SDK" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="product_component_desc centered">
+            <div class="product_component_note">连接现实身份与标识符的</div>
+            <div class="member_name">软件开发工具</div>
+          </div>
+        </div>
+        <div class="product_component_box">
+          <div class="product_component_image centered">
+            <img src="./img/component_wallet.png" alt="wallet" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="product_component_desc centered">
+            <div class="product_component_note">基于区块链的</div>
+            <div class="member_name">身份应用钱包</div>
+          </div>
+        </div>
+        <div class="product_component_box">
+          <div class="product_component_image centered">
+            <img src="./img/component_token.png" alt="token" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="product_component_desc centered">
+            <div class="product_component_note">稳定高效的</div>
+            <div class="member_name">原生代币系统</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="smart_contract">
+      <div class="section_title">智能合约定义标识符</div>
+      <div class="smart_contract_brief">
+        IDHub 支持区块链层面的价值转移与应用接口，它可以为区块链提供最基本的身份支持。基于智能合约，IDHub 为用户提供区块链身份的自主性和扩展功能。
+      </div>
+      <div class="smart_contract_block centered">
+        <div class="smart_contract_box">
+          <div class="product_component_image centered">
+            <img src="./img/smart_contract_proxy.png" alt="proxy contract" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="smart_contract_desc centered">
+            <div class="smart_contract_title">代理合约</div>
+            <div class="smart_contract_note">为用户分配一个区块链上的数字 ID，数字 ID 具有区块链所有的交易操作功能。</div>
+          </div>
+        </div>
+        <div class="smart_contract_box">
+          <div class="product_component_image centered">
+            <img src="./img/smart_contract_registry.png" alt="registry contract" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="smart_contract_desc centered">
+            <div class="smart_contract_title">控制合约</div>
+            <div class="smart_contract_note">保证用户对数字 ID 的完全自主性，实现复杂的区块链操作。</div>
+          </div>
+        </div>
+        <div class="smart_contract_box">
+          <div class="product_component_image centered">
+            <img src="./img/smart_contract_controller.png" alt="controller contract" scale="0" align="middle" class="symbol centered">
+          </div>
+          <div class="smart_contract_desc centered">
+            <div class="smart_contract_title">注册合约</div>
+            <div class="smart_contract_note">实现数字 ID 和身份属性的相关性，保障数字身份的价值及区块链所提供的公正性和安全性。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="product_flow" style="margin-top: 40px; margin-bottom: 40px; width: 1200px; height: 270px; background-color: #1d2089; display: block; margin: 0 auto;">
+      <img class="centered" src="./img/product_flow.jpg" scale="0" align="middle">
+    </div>
+
+    <div id="product_tech">
+      <div class="section_title">IDHub 关键技术</div>
+      <div class="product_tech_block centered">
+        <div class="product_tech_box centered">
+          <div class="product_tech_title">Solidity</div>
+          <div class="product_tech_desc">
+            Solidity 是面向智能合约、语法类似 JavaScript 的高级编程语言。基于智能合约的数字身份可以采取多种形式：个人、设备、实体或机构。用例广泛，如声明、动作或交易进行数字签名和验证。由于可与区块链互动，亦可控制数字资产如数字货币或代币化的资产。
+          </div>
+        </div>
+        <div class="product_tech_box centered">
+          <div class="product_tech_title">Merkle Tree</div>
+          <div class="product_tech_desc">
+            Merkle 树是一种每个叶节点都标有数据块，而每个非叶节点用其子节点标记的加密散列算法进行标记的树，通过提供适当的散列来实现最低限度的信息披露，从而只公开所需要的数据。这样可以帮助身份系统保持隐私，并减轻信息披露的潜在副作用。
+          </div>
+        </div>
+        <div class="product_tech_box centered">
+          <div class="product_tech_title">OpenPDS</div>
+          <div class="product_tech_desc">
+            MIT 长期致力于开发 OpenPDS，它可以让用户存储个人数据，而用户以外的所有应用或服务只能获取有限或所需的部分数据。OpenPDS 为用户隐私及使用体验提供了一个双赢的解决方案，并且能在数字身份丰富的应用场景中扮演 Oracle 的角色。Oracle 是区块链上自动取得数据的一个可信任节点。
+          </div>
+        </div>
+        <div class="product_tech_box centered">
+          <div class="product_tech_title">Kademlia</div>
+          <div class="product_tech_desc">
+            Kademlia 是一个点对点分布式哈希表，哈希表记录了不同哈希值进行异或运算的结果 (XOR) 。由于是基于异或运算的新型度量拓扑，Kademlia 具有可靠的稳定性及性能，且具有延迟最小化路由、无延迟故障恢复和对称单向拓扑等优势和特点。
+          </div>
+        </div>
+        <div class="product_tech_box centered">
+          <div class="product_tech_title">JSON Web Token</div>
+          <div class="product_tech_desc">
+            身份属性的有效性通过由 JSON Web Token (JWT) 实现的认证来保证。JWT 是一种开放标准 (RFC 7519)，定义了一种紧凑且独立的方式，以在各方之间以 JSON 对象的形式安全传递信息。该信息可以通过数字签名验证和授信，签名用于验证JWT的发行者，确保该消息在传输过程中保持完整。
+          </div>
+        </div>
+        <div class="product_tech_box centered">
+          <div class="product_tech_title">Identity Graph</div>
+          <div class="product_tech_desc">
+            身份图是身份之间行为的一种表示。在图中，节点就是身份，而边界就是行为。行为包括以好友身份添加、认可、评论和交易等。在区块链上，我们将这些行为转变为交易。IDHub系统中身份的声明和证明存储在 Merkle 树中，与其他身份的交互则以身份图的形式存储。
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div id="product_roadmap" style="width: 1200px; height: 650px; background-color: #f3f4f6; display: block; margin: 0 auto;">
+      <img class="centered" src="./img/product_roadmap.jpg" scale="0" align="middle">
+    </div>
+
+    <div id="contact">
+      <div class="section_title">联系我们</div>
+      <div class="contact_logos">
+        <a href="https://www.facebook.com/IdhubOfficial" target="_blank" rel="noopener noreferrer">
+          <img class="contact_logo" src="./img/contact_facebook.png" border="0" alt="IDHub Facebook">
+        </a>
+        <a href="https://twitter.com/IDHUBOFFICIAL" target="_blank" rel="noopener noreferrer">
+          <img class="contact_logo" src="./img/contact_twitter.png" border="0" alt="IDHub Twitter">
+        </a>
+        <a href="https://idhubnetwork.herokuapp.com" target="_blank" rel="noopener noreferrer">
+          <img class="contact_logo" src="./img/contact_slack.png" border="0" alt="IDHub Slack">
+        </a>
+        <a href="https://github.com/idhubnetwork" target="_blank" rel="noopener noreferrer">
+          <img class="contact_logo" src="./img/contact_github.png" border="0" alt="IDHub GitHub">
+        </a>
+        <a href="https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw" target="_blank" rel="noopener noreferrer">
+          <img class="contact_logo" src="./img/contact_telegram.png" border="0" alt="IDHub Telegram">
+        </a>
+        <img class="contact_logo" src="./img/contact_wechat.png">
+        <img class="contact_logo" src="./img/contact_qq.png">
+        <img class="contact_logo" src="./img/contact_reddit.png">
+      </div>
+    </div>
+  </div>
+  <script charset="UTF-8"></script>
+</body>
+</html>
