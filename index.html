@@ -10,299 +10,382 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://raw.githubusercontent.com/donh/vsite/master/static/logo.png">
   <meta property="og:site_name" content="IDHub Network">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-  <div id="main">
-    <div id="heading">
-      <ul class="navbar">
-        <li><a href="/">首页</a></li>
-        <li><a href="/product">产品</a></li>
-        <li><a href="/#team" target="_blank" rel="noopener noreferrer">团队</a></li>
-        <li><a href="https://github.com/idhubnetwork" target="_blank" rel="noopener noreferrer">论坛</a></li>
-        <li><a href="/#news">媒体报道</a></li>
-        <li><a href="/#contact">联系我们</a></li>
-      </ul>
-      <a href="/data/IDHub_whitepaper_v0.4.2_cn.pdf" download target="_blank">
-        <img class="centered" src="./img/heading.jpg" scale="0" align="middle">
-      </a>
-    </div>
-    <!-- <router-view></router-view> -->
-
-    <div id="vision">
-      <div class="section_title">项目愿景</div>
-      <div class="vision_block centered">
-        <div class="vision_box">
-          <div class="vision_image centered">
-            <img src="./img/vision_digital_service.png" alt="ID as a Service" scale="0" align="middle" class="avartar centered">
-          </div>
-          <div class="vision_desc centered">
-            取代传统账户体系，打造进入数字社会的标准身份接口。通过创建标准身份接口的形式对账户与应用进行分离，用户自主管理数字资产，可以便捷地变现数字资产或更换服务提供商。
-          </div>
-        </div>
-        <div class="vision_box">
-          <div class="vision_image centered">
-            <img src="./img/vision_digital_asset.png" alt="ID as a Digital Asset" scale="0" align="middle" class="avartar centered">
-          </div>
-          <div class="vision_desc centered">
-            搭建面向数字经济的可信生态体系。盘活权威机构已有数据为个人数据资产背书，打造快捷高效的信任体系，促进可信生态体系建设，实现数字经济繁荣。
-          </div>
-        </div>
-        <div class="vision_box">
-          <div class="vision_image centered">
-            <img src="./img/vision_digital_life.png" alt="ID as a Digital Life" scale="0" align="middle" class="avartar centered">
-          </div>
-          <div class="vision_desc centered">
-            为人工智能 (AI) 提供数据燃料，为数字化永生创造基础。将可信数据放置于用户的个人数据中心 (PDC) 中，为每个人创建数字版的对应体。
-          </div>
-        </div>
+  <nav class="navbar navbar-inverse">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand pull-left" href="#">Brand</a>
       </div>
-      <div class="vision_block centered">
-        <div class="vision_title centered">
-          ID as a Service
-        </div>
-        <div class="vision_title centered">
-          ID as a Digital Asset
-        </div>
-        <div class="vision_title centered">
-          ID as a Digital Life
-        </div>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav center-block">
+          <li class="active"><a href="/">首页 <span class="sr-only">(current)</span></a></li>
+          <li><a href="/product">产品</a></li>
+          <li><a href="/#team" target="_blank" rel="noopener noreferrer">团队</a></li>
+          <li><a href="https://github.com/idhubnetwork" target="_blank" rel="noopener noreferrer">论坛</a></li>
+          <li><a href="/#news">媒体报导</a></li>
+          <li><a href="/#contact">联系我们</a></li>
+        </ul>
       </div>
     </div>
-
-    <div id="video">
-      <img class="centered" src="./img/home_decoration.jpg" scale="0" align="middle">
+  </nav>
+  <div class="jumbotron heading__banner">
+    <div class="container">
     </div>
-
-    <div id="team">
-      <div class="section_title">核心团队</div>
-      <div id="team_lead" class="team_block centered">
-        <div id="team_lead_box" class="centered">
-          <div id="team_lead_image">
-            <img class="avartar" src="./img/team_qu.png" alt="Qu Ming">
-          </div>
-          <div id="team_lead_desc" class="member_desc">
-            <div class="member_name">曲明</div>
-            <div class="member_bio">
-              <p>IDHub 创始人</p>
-              <p>互联城市咨询委员会 (CCAB) 理事会成员</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id="team_members" class="team_block centered">
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_kenneth.png" alt="Kenneth Chen">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">陈振国</div>
-            <div class="member_bio">
-              <p>IDHub 技术总监</p>
-              <p>曾任亚太线上 CTO</p>
-              <p>威睿科技联合创始人 & CTO</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_mark.png" alt="Mark Su">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">苏育民</div>
-            <div class="member_bio">
-              <p>IDHub 研发总监</p>
-              <p>台湾大学创业创新 MBA</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_xiaoyu.png" alt="Xiaoyu Li">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">李骁宇</div>
-            <div class="member_bio">
-              <p>IDHub 核心工程师</p>
-              <p>北京交通大学硕士</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_don.png" alt="Don">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">謝承璋</div>
-            <div class="member_bio">
-              <p>IDHub 核心工程师</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_jamie.png" alt="Jamie Lin">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">林展民</div>
-            <div class="member_bio">
-              <p>IDHub 核心工程师</p>
-              <p>台湾政治大学理学硕士</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_zaakin.png" alt="Zaakin Yao">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">姚泽乾</div>
-            <div class="member_bio">
-              <p>IDHub 研发工程师</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_jiaqi.png" alt="Jiaqi Li">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">李嘉淇</div>
-            <div class="member_bio">
-              <p>IDHub 研发工程师</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_michael.png" alt="Michael Wang">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">王沛智</div>
-            <div class="member_bio">
-              <p>IDHub 商务拓展经理</p>
-              <p>伯明翰大学硕士</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_cecilia.png" alt="Cecilia Wu">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">吴茜</div>
-            <div class="member_bio">
-              <p>IDHub 市场总监</p>
-              <p>英国大众传播和媒体研究硕士</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_derek.png" alt="Derek Xue">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">薛玉成</div>
-            <div class="member_bio">
-              <p>IDHub 市场公关经理</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_tsao.png" alt="Tsao">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">曹磊</div>
-            <div class="member_bio">
-              <p>IDHub 市场经理</p>
-            </div>
-          </div>
-        </div>
-        <div class="team_member_box">
-          <div class="team_member_image centered">
-            <img src="./img/team_tasya.png" alt="Lekch Tasya">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">Lekch Tasya</div>
-            <div class="member_bio">
-              <p>IDHub 社区运营</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="investors">
-      <div class="section_title">战略投资人</div>
-      <div class="investor_block centered">
-        <div class="investor_box">
-          <div class="team_member_image centered">
-            <img src="./img/investor_josh.png" alt="Josh Chen" scale="0" align="middle" class="avartar centered">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">陈升</div>
-            <div class="member_bio">
-              <p>世纪互联</p>
-              <p>创始人兼董事长</p>
-            </div>
-          </div>
-        </div>
-        <div class="investor_box">
-          <div class="team_member_image centered">
-            <img src="./img/investor_ueno.png" alt="Yoshihisa Ueno" scale="0" align="middle" class="avartar centered">
-          </div>
-          <div class="member_desc centered">
-            <div class="member_name">上野嘉久</div>
-            <div class="member_bio">
-              <p>世纪互联董事兼牵头 VC 投资人</p>
-              <p>Synapse Holdings 创始人</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="news">
-      <div class="section_title">媒体报道</div>
-      <div class="news_logos">
-        <a href="https://www.coindesk.com/local-government-china-trials-blockchain-public-services/" target="_blank" rel="noopener noreferrer">
-          <img class="news_logo" src="./img/news_coindesk.png" border="0" alt="Link to Coindesk news">
-        </a>
-        <a href="http://chainb.com/?P=Cont&id=4910" target="_blank" rel="noopener noreferrer">
-          <img class="news_logo" src="./img/news_chainb.jpg" border="0" alt="Link to Coindesk news">
-        </a>
-      </div>
-    </div>
-
-    <div id="contact">
-      <div class="section_title">联系我们</div>
-      <div class="contact_logos">
-        <a href="https://www.facebook.com/IdhubOfficial" target="_blank" rel="noopener noreferrer">
-          <img class="contact_logo" src="./img/contact_facebook.png" border="0" alt="IDHub Facebook">
-        </a>
-        <a href="https://twitter.com/IDHUBOFFICIAL" target="_blank" rel="noopener noreferrer">
-          <img class="contact_logo" src="./img/contact_twitter.png" border="0" alt="IDHub Twitter">
-        </a>
-        <a href="https://idhubnetwork.herokuapp.com" target="_blank" rel="noopener noreferrer">
-          <img class="contact_logo" src="./img/contact_slack.png" border="0" alt="IDHub Slack">
-        </a>
-        <a href="https://github.com/idhubnetwork" target="_blank" rel="noopener noreferrer">
-          <img class="contact_logo" src="./img/contact_github.png" border="0" alt="IDHub GitHub">
-        </a>
-        <a href="https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw" target="_blank" rel="noopener noreferrer">
-          <img class="contact_logo" src="./img/contact_telegram.png" border="0" alt="IDHub Telegram">
-        </a>
-        <img class="contact_logo" src="./img/contact_wechat.png">
-        <img class="contact_logo" src="./img/contact_qq.png">
-        <img class="contact_logo" src="./img/contact_reddit.png">
+    <div class="container">
+      <div class="item center-block text-center">
+        <h2>基于开放原则的去中心化</h2>
+        <h1>数字身份管理和应用平台</h1>
+        <a href="/data/IDHub_whitepaper_v0.4.2_cn.pdf" download target="_blank" class="btn btn-default call_to_action">了解更多</a>
       </div>
     </div>
   </div>
+  <div class="Acarousel-caption-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="Acarousel-caption">
+          IDHub 是建立在开放原则之上，基于区块链技术的去中心化数字身份应用平台，具备良好的技术兼容性与功能拓展性。作为进入数字社会的入口，IDHub通过区块链技术，对个人身份的有效性、真实性、唯一性进行合理验证，力求将身份控制权由第三方信息服务机构重新收回到个人手中，为用户塑造完整、可信的自主身份，构建以用户为主导的数字身份管理和应用平台，以及安全、自主、可信的身份管理机制，最终实现以数字身份链接一切 (社会服务、数字资产、数字生活等) 的愿景。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="vision" class="section_block clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="section_title">项目愿景</div>
+        <div class="row">
+        <div class="col-sm-4">
+          <div class="vision_box">
+            <div class="vision_image text-center">
+              <img src="./img/vision_digital_service.png" alt="ID as a Service" scale="0" class="avartar">
+            </div>
+            <div class="vision_desc">
+              取代传统账户体系，打造进入数字社会的标准身份接口。通过创建标准身份接口的形式对账户与应用进行分离，用户自主管理数字资产，可以便捷地变现数字资产或更换服务提供商。
+            </div>
+          </div>
+          <div class="vision_title">
+            ID as a Service
+          </div>
+        </div>
+          <div class="col-sm-4">
+          <div class="vision_box">
+            <div class="vision_image text-center">
+              <img src="./img/vision_digital_asset.png" alt="ID as a Digital Asset" scale="0" class="avartar">
+            </div>
+            <div class="vision_desc">
+              搭建面向数字经济的可信生态体系。盘活权威机构已有数据为个人数据资产背书，打造快捷高效的信任体系，促进可信生态体系建设，实现数字经济繁荣。
+            </div>
+          </div>
+          <div class="vision_title">
+            ID as a Digital Asset
+          </div>
+        </div>
+          <div class="col-sm-4">
+          <div class="vision_box">
+            <div class="vision_image text-center">
+              <img src="./img/vision_digital_life.png" alt="ID as a Digital Life" scale="0" class="avartar">
+            </div>
+            <div class="vision_desc">
+              为人工智能 (AI) 提供数据燃料，为数字化永生创造基础。将可信数据放置于用户的个人数据中心 (PDC) 中，为每个人创建数字版的对应体。
+            </div>
+          </div>
+          <div class="vision_title">
+            ID as a Digital Life
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="video" class="section_block">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="text-center" src="./img/home_vedio.png" scale="0" align="middle">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="team" class="section_block">
+    <div class="container">
+      <div class="row">
+        <div class="section_title">核心团队</div>
+        <div id="team_lead" class="clearfix">
+          <div class="col-xs-12">
+            <div id="team_lead_box" class="team_member_box clearfix">
+              <div class="text-center center-block">
+                <div id="team_lead_image">
+                  <img src="./img/team_qu.png" alt="Qu Ming">
+                </div>
+                <div id="team_lead_desc" class="member_desc">
+                  <div class="member_name">曲明</div>
+                  <div class="member_bio">
+                    <p>IDHub 创始人</p>
+                    <p>互联城市咨询委员会 (CCAB) 理事会成员</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="team_members" class="row">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_kenneth.png" alt="Kenneth Chen">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">陈振国</div>
+                <div class="member_bio">
+                  <p>IDHub 技术总监</p>
+                  <p>曾任亚太线上 CTO</p>
+                  <p>威睿科技联合创始人 & CTO</p>
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_mark.png" alt="Mark Su">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">苏育民</div>
+                <div class="member_bio">
+                  <p>IDHub 研发总监</p>
+                  <p>台湾大学创业创新 MBA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_xiaoyu.png" alt="Xiaoyu Li">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">李骁宇</div>
+                <div class="member_bio">
+                  <p>IDHub 核心工程师</p>
+                  <p>北京交通大学硕士</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_don.png" alt="Don">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">謝承璋</div>
+                <div class="member_bio">
+                  <p>IDHub 核心工程师</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_jamie.png" alt="Jamie Lin">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">林展民</div>
+                <div class="member_bio">
+                  <p>IDHub 核心工程师</p>
+                  <p>台湾政治大学理学硕士</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_zaakin.png" alt="Zaakin Yao">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">姚泽乾</div>
+                <div class="member_bio">
+                  <p>IDHub 研发工程师</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_jiaqi.png" alt="Jiaqi Li">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">李嘉淇</div>
+                <div class="member_bio">
+                  <p>IDHub 研发工程师</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_michael.png" alt="Michael Wang">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">王沛智</div>
+                <div class="member_bio">
+                  <p>IDHub 商务拓展经理</p>
+                  <p>伯明翰大学硕士</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_cecilia.png" alt="Cecilia Wu">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">吴茜</div>
+                <div class="member_bio">
+                  <p>IDHub 市场总监</p>
+                  <p>英国大众传播和媒体研究硕士</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_derek.png" alt="Derek Xue">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">薛玉成</div>
+                <div class="member_bio">
+                  <p>IDHub 市场公关经理</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_tsao.png" alt="Tsao">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">曹磊</div>
+                <div class="member_bio">
+                  <p>IDHub 市场经理</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="team_member_box">
+              <div class="team_member_image text-center">
+                <img src="./img/team_tasya.png" alt="Lekch Tasya">
+              </div>
+              <div class="member_desc">
+                <div class="member_name">Lekch Tasya</div>
+                <div class="member_bio">
+                  <p>IDHub 社区运营</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="investors">
+    <div class="container">
+      <div class="row">
+        <div class="section_title">战略投资人</div>
+        <div class="investor_block">
+          <div class="col-sm-6">
+            <div class="team_member_image text-center">
+              <img src="./img/investor_josh.png" alt="Josh Chen" scale="0" align="middle" class="avartar">
+            </div>
+            <div class="member_desc">
+              <div class="member_name">陈升</div>
+              <div class="member_bio">
+                <p>世纪互联</p>
+                <p>创始人兼董事长</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="team_member_image text-center">
+              <img src="./img/investor_ueno.png" alt="Yoshihisa Ueno" scale="0" align="middle" class="avartar">
+            </div>
+            <div class="member_desc">
+              <div class="member_name">上野嘉久</div>
+              <div class="member_bio">
+                <p>世纪互联董事兼牵头 VC 投资人</p>
+                <p>Synapse Holdings 创始人</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="news" class="section_block">
+    <div class="container">
+      <div class="row">
+        <div class="section_title">媒体报道</div>
+        <div class="news_logos text-center">
+          <a href="https://www.coindesk.com/local-government-china-trials-blockchain-public-services/" target="_blank" rel="noopener noreferrer">
+            <img class="news_logo" src="./img/news_coindesk.png" border="0" alt="Link to Coindesk news">
+          </a>
+          <a href="http://chainb.com/?P=Cont&id=4910" target="_blank" rel="noopener noreferrer">
+            <img class="news_logo" src="./img/news_chainb.jpg" border="0" alt="Link to Coindesk news">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contact" class="section_block">
+    <div class="conatiner">
+      <div class="row">
+        <div class="section_title">联系我们</div>
+        <div class="contact_logos">
+          <a href="https://www.facebook.com/IdhubOfficial" target="_blank" rel="noopener noreferrer">
+            <img class="contact_logo" src="./img/contact_facebook.png" border="0" alt="IDHub Facebook">
+          </a>
+          <a href="https://twitter.com/IDHUBOFFICIAL" target="_blank" rel="noopener noreferrer">
+            <img class="contact_logo" src="./img/contact_twitter.png" border="0" alt="IDHub Twitter">
+          </a>
+          <a href="https://idhubnetwork.herokuapp.com" target="_blank" rel="noopener noreferrer">
+            <img class="contact_logo" src="./img/contact_slack.png" border="0" alt="IDHub Slack">
+          </a>
+          <a href="https://github.com/idhubnetwork" target="_blank" rel="noopener noreferrer">
+            <img class="contact_logo" src="./img/contact_github.png" border="0" alt="IDHub GitHub">
+          </a>
+          <a href="https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw" target="_blank" rel="noopener noreferrer">
+            <img class="contact_logo" src="./img/contact_telegram.png" border="0" alt="IDHub Telegram">
+          </a>
+          <img class="contact_logo" src="./img/contact_wechat.png">
+          <img class="contact_logo" src="./img/contact_qq.png">
+          <img class="contact_logo" src="./img/contact_reddit.png">
+        </div>
+      </div>
+    </div>
+  </div>
+
 <!--
   <script src="./lib/vue.js" charset="UTF-8"></script>
   <script src="./lib/vue-router.js" charset="UTF-8"></script>
   <script src="./js/app.js" charset="UTF-8"></script>
 -->
+  <script src="http://code.jquery.com/jquery-3.2.1.min.js" charset="UTF-8"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" charset="UTF-8"></script>
 </body>
 </html>
