@@ -8,3 +8,11 @@ sudo apt-get install -y nodejs
 npm install -g express pm2
 pm2 start server.js
 ```
+
+docker
+```bash
+cd ~/idhub-gitlab/docker/
+git fetch -a
+git checkout <version number>
+bash update.sh
+```

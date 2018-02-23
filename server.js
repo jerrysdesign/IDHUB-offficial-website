@@ -1,18 +1,74 @@
+const i18n = require('i18n');
+i18n.configure({
+  // setup some locales - other locales default to en silently
+  locales:['zh-CN', 'zh-TW', 'en-US'],
+  directory: __dirname + '/locales',
+  defaultLocale: 'en'
+});
+
 var express = require('express');
 var app = express();
+app.use(i18n.init);
 
-app.use(express.static('public'));
+app.set('view engine', 'pug');
+app.use(express.static('views'));
 
 app.get('/', function (req, res) {
-  res.sendFile( __dirname + "/" + "index.html" );
+  const locales = ['zh-TW', 'zh-CN'];
+  let locale = i18n.getLocale();
+  if (locale === 'en') {
+    if (req.locale) {
+      locale = req.locale;
+      if (!locales.includes(locale)) {
+        locale = null;
+      }
+    } else if (req.acceptsLanguages('zh-TW', 'zh-CN')) {
+      locale = req.acceptsLanguages('zh-TW', 'zh-CN');
+    }
+    if (!locale) {
+      locale = 'zh-CN';
+    }
+    i18n.setLocale(locale);
+  }
+  res.render('home', {
+    dict: i18n.__('dict'),
+    lang: locale.replace('zh-', '').toUpperCase(),
+    locale: locale
+  });
 })
 
 app.get('/product', function (req, res) {
-  res.sendFile( __dirname + "/" + "product.html" );
+  const locales = ['zh-TW', 'zh-CN'];
+  let locale = i18n.getLocale();
+  if (locale === 'en') {
+    if (req.locale) {
+      locale = req.locale;
+      if (!locales.includes(locale)) {
+        locale = null;
+      }
+    } else if (req.acceptsLanguages('zh-TW', 'zh-CN')) {
+      locale = req.acceptsLanguages('zh-TW', 'zh-CN');
+    }
+    if (!locale) {
+      locale = 'zh-CN';
+    }
+    i18n.setLocale(locale);
+  }
+  res.render('product', {
+    dict: i18n.__('dict'),
+    lang: locale.replace('zh-', '').toUpperCase(),
+    locale: locale
+  });
 })
 
-app.get('/support', function (req, res) {
-  res.sendFile( __dirname + "/" + "support.html" );
+// app.get('/support', function (req, res) {
+//   res.render('support');
+// })
+
+app.get('/api/v0/locales/:locale', function (req, res) {
+  const {locale} = req.params;
+  i18n.setLocale(locale);
+  res.send(locale);
 })
 
 app.get('/api/v0/address-validation/:hash', function (req, res) {
@@ -51,6 +107,7 @@ app.get('/api/v0/address-validation/:hash', function (req, res) {
   res.send(valid);
 })
 
+// var server = app.listen(3000, function () {
 var server = app.listen(80, function () {
   var host = server.address().address
   var port = server.address().port

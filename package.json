@@ -1,0 +1,20 @@
+{
+  "name": "idhub-official",
+  "description": "IDHub official website",
+  "author": "Don Hsieh <don@idhub.network> (http://github.com/donh)",
+  "license": "MIT",
+  "version": "0.0.6",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/donh/idhub-gitlab"
+  },
+  "homepage": "http://idhub.network",
+  "dependencies": {
+    "express": "^4.16.2",
+    "i18n": "^0.8.3",
+    "pug": "^2.0.0-rc.4"
+  },
+  "engines": {
+    "node": "8.0.0"
+  }
+}
