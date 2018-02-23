@@ -410,3 +410,21 @@ body {
     border-color: transparent;
   }
 }
+
+.dropdown-menu {
+  background-color: transparent;
+  border: 1px solid white;
+  min-width: 100%;
+}
+.dropdown .btn-default,
+.dropdown .btn-default:hover,
+.dropdown .btn-default:active,
+.dropdown .btn-default:focus {
+  color: white;
+  background-color: transparent;
+  border-color: white;
+}
+.dropdown li a {
+  font-size: 14px;
+  color: rgba(255, 255,255, .8);
+}

@@ -41,3 +41,6 @@ const app = new Vue({
 }).$mount('#app')
 
 // Now the app has started!
+
+console.log('hihi');
+console.log(i18n.__("Contact Information"));

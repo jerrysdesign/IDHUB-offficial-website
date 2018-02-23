@@ -11,6 +11,7 @@ fi
 
 cd $DIR_PATH/../
 git pull $NAME master
+npm install
 
 cd $DIR_PATH/
 docker-compose build idhubweb01
