@@ -1,12 +1,13 @@
 mixin locales
   .dropdown.pull-right
     button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
-      | #{lang}
+      | #{lang.toUpperCase()}
       =' '
       span.caret
       ul#locales.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenu1')
         //- li: a(title='en') EN
         li: a(title='zh-CN') CN
+        li: a(title='ko-KR') KR
         li: a(title='zh-TW') TW
       div(id='locale' class='hide') #{locale}
 
@@ -47,7 +48,7 @@ html
         div(class='item center-block text-center')
           h2 #{dict.nav.heading1}
           h1 #{dict.nav.heading2}
-          a(href='/data/IDHub_whitepaper_v0.4.2_cn.pdf' download target='_blank' class='btn btn-default call_to_action') #{dict.nav.learnMore}
+          a(href=`/data/IDHub_whitepaper_${version}_${lang}.pdf` download target='_blank' class='btn btn-default call_to_action') #{dict.nav.learnMore}
     div(class='Acarousel-caption-wrapper')
       div(class='container')
         div(class='row')
@@ -107,7 +108,7 @@ html
               div(class='smart_contract_title') #{dict.smartContract.registry.name}
               div(class='smart_contract_note center-block') #{dict.smartContract.registry.desc}
     div(id='product_flow' class='text-center')
-      img(src='./img/product_flow.jpg' scale='0')
+      img(src=`./img/product_flow_${lang}.png` scale='0')
     div(id='product_tech' class='section_block clearfix')
       div(class='container')
         div(class='row')
@@ -137,7 +138,7 @@ html
               div(class='product_tech_title') Identity Graph
               div(class='product_tech_desc') #{dict.tech.graph}
     div(id='product_roadmap' class='text-center')
-      img(src='./img/product_roadmap.jpg' scale='0')
+      img(src=`./img/product_roadmap_${lang}.png` scale='0')
     div(id='contact' class='section_block')
       div(class='conatiner')
         div(class='row')

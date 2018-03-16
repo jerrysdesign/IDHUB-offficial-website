@@ -14,7 +14,7 @@ COPY . $WORKDIR
 WORKDIR $WORKDIR
 # Install package
 RUN cd $WORKDIR \
-    && npm install -g express pm2 \
+    && npm install -g express pm2 semver \
     && npm install express
 
 COPY ./docker/src/idhub_web/docker-entrypoint.sh /entrypoint.sh

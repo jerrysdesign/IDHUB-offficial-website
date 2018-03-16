@@ -1,17 +1,22 @@
 #!/bin/bash
 
 set -e
+cd ~/idhub-gitlab/docker/
 DIR_PATH=$(dirname $(readlink -f $0))
-NAME=$1
-
-if [ -z $NAME ]; then
-    echo "bash update.sh {NAME}"
-    exit 1
-fi
+VERSION=$1
+echo "DIR_PATH = $DIR_PATH"
+echo "VERSION = $VERSION"
 
 cd $DIR_PATH/../
-git pull $NAME master
-npm install
+if [ -z $VERSION ]; then
+  echo "git pull origin master"
+  git pull origin master
+else
+  echo "git fetch -a"
+  echo "git checkout $VERSION"
+  git fetch -a
+  git checkout $VERSION
+fi
 
 cd $DIR_PATH/
 docker-compose build idhubweb01
