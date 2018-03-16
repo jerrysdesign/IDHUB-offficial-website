@@ -1,64 +1,59 @@
-const i18n = require('i18n');
-i18n.configure({
-  // setup some locales - other locales default to en silently
-  locales:['zh-CN', 'zh-TW', 'en-US'],
-  directory: __dirname + '/locales',
-  defaultLocale: 'en'
-});
-
-var express = require('express');
-var app = express();
-app.use(i18n.init);
-
-app.set('view engine', 'pug');
-app.use(express.static('views'));
-
-app.get('/', function (req, res) {
-  const locales = ['zh-TW', 'zh-CN'];
-  let locale = i18n.getLocale();
+'use strict'
+const getLocaleAndLang = (req) => {
+  const locales = ['ko-KR', 'zh-CN', 'zh-TW']
+  let locale = i18n.getLocale()
   if (locale === 'en') {
     if (req.locale) {
       locale = req.locale;
       if (!locales.includes(locale)) {
-        locale = null;
+        locale = null
       }
-    } else if (req.acceptsLanguages('zh-TW', 'zh-CN')) {
-      locale = req.acceptsLanguages('zh-TW', 'zh-CN');
+    } else if (req.acceptsLanguages('ko-KR', 'zh-CN', 'zh-TW')) {
+      locale = req.acceptsLanguages('ko-KR', 'zh-CN', 'zh-TW')
     }
     if (!locale) {
-      locale = 'zh-CN';
+      locale = 'zh-CN'
     }
-    i18n.setLocale(locale);
+    i18n.setLocale(locale)
   }
+  const lang = locale.replace('ko-', '').replace('zh-', '').toLowerCase()
+  const version = (lang === 'cn') ? 'v0.4.2' : 'v0.5.0'
+  return [lang, locale, version]
+}
+
+const i18n = require('i18n')
+i18n.configure({
+  // setup some locales - other locales default to en silently
+  locales:['ko-KR', 'zh-CN', 'zh-TW', 'en-US'],
+  directory: __dirname + '/locales',
+  defaultLocale: 'en'
+})
+
+const express = require('express')
+const app = express()
+app.use(i18n.init)
+
+app.set('view engine', 'pug')
+app.use(express.static('views'))
+
+app.get('/', function (req, res) {
+  const [lang, locale, version] = getLocaleAndLang(req)
   res.render('home', {
     dict: i18n.__('dict'),
-    lang: locale.replace('zh-', '').toUpperCase(),
-    locale: locale
-  });
+    lang: lang,
+    locale: locale,
+    version: version
+  })
 })
 
 app.get('/product', function (req, res) {
-  const locales = ['zh-TW', 'zh-CN'];
-  let locale = i18n.getLocale();
-  if (locale === 'en') {
-    if (req.locale) {
-      locale = req.locale;
-      if (!locales.includes(locale)) {
-        locale = null;
-      }
-    } else if (req.acceptsLanguages('zh-TW', 'zh-CN')) {
-      locale = req.acceptsLanguages('zh-TW', 'zh-CN');
-    }
-    if (!locale) {
-      locale = 'zh-CN';
-    }
-    i18n.setLocale(locale);
-  }
+  const [lang, locale, version] = getLocaleAndLang(req)
   res.render('product', {
     dict: i18n.__('dict'),
-    lang: locale.replace('zh-', '').toUpperCase(),
-    locale: locale
-  });
+    lang: lang,
+    locale: locale,
+    version: version
+  })
 })
 
 // app.get('/support', function (req, res) {
@@ -66,14 +61,14 @@ app.get('/product', function (req, res) {
 // })
 
 app.get('/api/v0/locales/:locale', function (req, res) {
-  const {locale} = req.params;
-  i18n.setLocale(locale);
-  res.send(locale);
+  const {locale} = req.params
+  i18n.setLocale(locale)
+  res.send(locale)
 })
 
 app.get('/api/v0/address-validation/:hash', function (req, res) {
-  let valid = false;
-  const {hash} = req.params;
+  let valid = false
+  const {hash} = req.params
   if (hash.length > 30 && hash.length < 50) {
     if (hash.startsWith('0x')) {
       const arrETH = ['0xC3a98F5C64F3E6BdfaA23A9eDEa438a63D48BDa9',
@@ -90,27 +85,25 @@ app.get('/api/v0/address-validation/:hash', function (req, res) {
         '0x70054cf7f75D0c330D83DE656E6E6706E913021F', '0x48bcEE5EDCCF13F8ea21452FEd24fD80d87ccddc',
         '0x45101D45f8E5f91C7f0F359fC6733dbe926751A5', '0x9D79710a0ac3a3d15571547f5E0092Ec1e308FfE',
         '0xA2CF25370Fcd485d8558187b81966B3520E96cF0', '0xbc0211AFb597da597079B16152dE50D1FcCeb59b',
-        '0xF9e6cfE4596D49D57c506Fc8F73534D1E8F0C648'];
+        '0xF9e6cfE4596D49D57c506Fc8F73534D1E8F0C648']
       if (arrETH.includes(hash)) {
-        valid = true;
+        valid = true
       }
     } else if (hash.startsWith('3')) {
       const arrBTC = ['3AXKMquAcFHg7S9frYNzLNT7r54hCdy9iY', '3FsZjMW7T4bkTZwTFJERHzeiztS9j6ARdu',
         '3J8rWhbXs2r4vKJwr4x5gAYWa2j5MJV3EC', '3G1p1CFgF52jsBcB6Cm2BPC12J4Ae3qm5z',
         '3AmqYaZji8pQWZNBArH7tVZ1w2EuDR2UdY', '3PfQFVA4RUPs2nFrp8erPmfoyhzJeZ8jUn',
-        '3AhyGf3LQpmfekZ8AFw4qmnXK42hsAMPXu'];
+        '3AhyGf3LQpmfekZ8AFw4qmnXK42hsAMPXu']
       if (arrBTC.includes(hash)) {
-        valid = true;
+        valid = true
       }
     }
   }
-  res.send(valid);
+  res.send(valid)
 })
 
-// var server = app.listen(3000, function () {
-var server = app.listen(80, function () {
-  var host = server.address().address
-  var port = server.address().port
-
+const server = app.listen(80, function () {
+  const host = server.address().address
+  const port = server.address().port
   console.log("Example app listening at http://%s:%s", host, port)
 })

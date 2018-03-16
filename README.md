@@ -11,8 +11,5 @@ pm2 start server.js
 
 docker
 ```bash
-cd ~/idhub-gitlab/docker/
-git fetch -a
-git checkout <version number>
-bash update.sh
+bash ~/idhub-gitlab/docker/update.sh <version number>
 ```
