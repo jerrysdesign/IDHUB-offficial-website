@@ -1,5 +1,5 @@
 mixin locales
-  .dropdown.pull-right
+  #dropdownMenuWrapper.dropdown.pull-right
     button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
       | #{lang.toUpperCase()}
       =' '
@@ -25,138 +25,140 @@ html
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='./css/main.css')
   body
-    nav(class='navbar navbar-inverse')
-      .container
-        .navbar-header
-          button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false')
-            span.sr-only Toggle navigation
-            - for (var x = 0; x < 3; x++)
-              span.icon-bar
+    .overhang IDHub token #{dict.info.issued}，ERC20 #{dict.info.address} 0x29F20242051AccDA50D52a7E272A5F23237e4696。#{dict.info.check}，#{dict.info.alerted}。
+    .wrapper-container
+      nav#heading(class='navbar navbar-inverse')
+        .container
+          .navbar-header
+            +locales
             a(class='navbar-brand pull-left' href='#') Brand
-        div(class='collapse navbar-collapse' id='navbar-collapse')
-          +locales
-          ul(class='nav navbar-nav center-block')
-            li: a(href='/') #{dict.nav.homepage} #[span(class='sr-only') (current)]
-            li(class='active') #[a(href='/product') #{dict.nav.product}]
-            li #[a(href='/#team' target='_blank' rel='noopener noreferrer') #{dict.nav.team}]
-            li #[a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer') #{dict.nav.forum}]
-            li #[a(href='/#news') #{dict.nav.news}]
-            li #[a(href='/#contact') #{dict.nav.contact}]
+            button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false')
+              span.sr-only Toggle navigation
+              - for (var x = 0; x < 3; x++)
+                span.icon-bar
+            div(class='collapse navbar-collapse' id='navbar-collapse')
+              ul(class='nav navbar-nav center-block')
+                li #[a(href='/') #{dict.nav.homepage}]
+                li(class='active') #[a(href='/product') #{dict.nav.product}]
+                li #[a(href='/#team' target='_blank' rel='noopener noreferrer') #{dict.nav.team}]
+                li #[a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer') #{dict.nav.forum}]
+                li #[a(href='/#news') #{dict.nav.news}]
+                li #[a(href='/#contact') #{dict.nav.contact}]
 
-    div(class='jumbotron heading__banner')
-      div(class='container')
-        div(class='item center-block text-center')
-          h2 #{dict.nav.heading1}
-          h1 #{dict.nav.heading2}
-          a(href=`/data/IDHub_whitepaper_${version}_${lang}.pdf` download target='_blank' class='btn btn-default call_to_action') #{dict.nav.learnMore}
-    div(class='Acarousel-caption-wrapper')
-      div(class='container')
-        div(class='row')
-          div(class='Acarousel-caption') #{dict.nav.desc}
+      div(class='jumbotron heading__banner')
+        div(class='container')
+          div(class='item center-block text-center')
+            h2 #{dict.nav.heading1}
+            h1 #{dict.nav.heading2}
+            a(href=`/data/IDHub_whitepaper_${version}_${lang}.pdf` download target='_blank' class='btn btn-default call_to_action') #{dict.nav.learnMore}
+      div(class='Acarousel-caption-wrapper')
+        div(class='container')
+          div(class='row')
+            div(class='Acarousel-caption') #{dict.nav.desc}
 
-    div(id='product_component' class='section_block clearfix')
-     div(class='container')
-       div(class='row')
-         div(class='section_title') #{dict.component.title}
-         div(class='row text-center')
-           div(class='col-sm-6 col-md-4 col-lg-3')
-             div(class='product_component_box')
-               div(class='product_component_image center-block')
-                 img(src='./img/component_identifier.png' alt='identifier' scale='0')
-               div(class='product_component_note') #{dict.component.smartContract.note}
-               div(class='member_name') #{dict.component.smartContract.name}
-           div(class='col-sm-6 col-md-4 col-lg-3')
-             div(class='product_component_box')
-               div(class='product_component_image center-block')
-                 img(src='./img/component_sdk.png' alt='SDK' scale='0')
-               div(class='product_component_note') #{dict.component.sdk.note}
-               div(class='member_name') #{dict.component.sdk.name}
-           div(class='col-sm-6 col-md-4 col-lg-3')
-             div(class='product_component_box')
-               div(class='product_component_image center-block')
-                 img(src='./img/component_wallet.png' alt='wallet' scale='0')
-               div(class='product_component_note') #{dict.component.wallet.note}
-               div(class='member_name') #{dict.component.wallet.name}
-           div(class='col-sm-6 col-md-4 col-lg-3')
-             div(class='product_component_box')
-               div(class='product_component_image center-block')
-                 img(src='./img/component_token.png' alt='token' scale='0')
-               div(class='product_component_note') #{dict.component.token.note}
-               div(class='member_name') #{dict.component.token.name}
-    div(id='smart_contract' class='section_block clearfix')
-      div(class='container')
-        div(class='row')
-          div(class='section_title') #{dict.smartContract.title}
-          div(class='smart_contract_brief') #{dict.smartContract.desc}
-        div(class='row')
-          div(class='col-sm-6 col-lg-4')
-            div(class='smart_contract_box')
-              div(class='smart_contract_image text-center')
-                img(src='./img/smart_contract_proxy.png' alt='proxy contract' scale='0')
-              div(class='smart_contract_title') #{dict.smartContract.proxy.name}
-              div(class='smart_contract_note center-block') #{dict.smartContract.proxy.desc}
-          div(class='col-sm-6 col-lg-4')
-            div(class='smart_contract_box')
-              div(class='smart_contract_image text-center')
-                img(src='./img/smart_contract_controller.png' alt='controller contract' scale='0')
-              div(class='smart_contract_title') #{dict.smartContract.controller.name}
-              div(class='smart_contract_note center-block') #{dict.smartContract.controller.desc}
-          div(class='col-sm-6 col-lg-4')
-            div(class='smart_contract_box')
-              div(class='smart_contract_image text-center')
-                img(src='./img/smart_contract_registry.png' alt='registry contract' scale='0')
-              div(class='smart_contract_title') #{dict.smartContract.registry.name}
-              div(class='smart_contract_note center-block') #{dict.smartContract.registry.desc}
-    div(id='product_flow' class='text-center')
-      img(src=`./img/product_flow_${lang}.png` scale='0')
-    div(id='product_tech' class='section_block clearfix')
-      div(class='container')
-        div(class='row')
-          div(class='section_title') #{dict.tech.title}
-          div(class='col-md-6 col-lg-4')
-            div(class='product_tech_box')
-              div(class='product_tech_title') Solidity
-              div(class='product_tech_desc') #{dict.tech.solidity}
-          div(class='col-md-6 col-lg-4')
-            div(class='product_tech_box')
-              div(class='product_tech_title') Merkle Tree
-              div(class='product_tech_desc') #{dict.tech.merkle}
-          div(class='col-md-6 col-lg-4')
-            div(class='product_tech_box')
-              div(class='product_tech_title') OpenPDS
-              div(class='product_tech_desc') #{dict.tech.openPDS}
-          div(class='col-md-6 col-lg-4')
-            div(class='product_tech_box')
-              div(class='product_tech_title') Kademlia
-              div(class='product_tech_desc') #{dict.tech.kademlia}
-          div(class='col-md-6 col-lg-4')
-            div(class='product_tech_box')
-              div(class='product_tech_title') JSON Web Token
-              div(class='product_tech_desc') #{dict.tech.jwt}
-          div(class='col-md-6 col-lg-4')
-            div(class='product_tech_box')
-              div(class='product_tech_title') Identity Graph
-              div(class='product_tech_desc') #{dict.tech.graph}
-    div(id='product_roadmap' class='text-center')
-      img(src=`./img/product_roadmap_${lang}.png` scale='0')
-    div(id='contact' class='section_block')
-      div(class='conatiner')
-        div(class='row')
-          div(class='section_title') #{dict.nav.contact}
-          div(class='contact_logos')
-            a(href='https://www.facebook.com/IdhubOfficial' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_facebook.png' border='0' alt='IDHub Facebook')
-            a(href='https://twitter.com/IDHUBOFFICIAL' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_twitter.png' border='0' alt='IDHub Twitter')
-            a(href='https://idhubnetwork.herokuapp.com' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_slack.png' border='0' alt='IDHub Slack')
-            a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_github.png' border='0' alt='IDHub GitHub')
-            a(href='https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_telegram.png' border='0' alt='IDHub Telegram')
-            img(class='contact_logo' src='./img/contact_wechat.png')
-            img(class='contact_logo' src='./img/contact_qq.png')
-            img(class='contact_logo' src='./img/contact_reddit.png')
+      div(id='product_component' class='section_block clearfix')
+       div(class='container')
+         div(class='row')
+           div(class='section_title') #{dict.component.title}
+           div(class='row text-center')
+             div(class='col-sm-6 col-md-4 col-lg-3')
+               div(class='product_component_box')
+                 div(class='product_component_image center-block')
+                   img(src='./img/component_identifier.png' alt='identifier' scale='0')
+                 div(class='product_component_note') #{dict.component.smartContract.note}
+                 div(class='member_name') #{dict.component.smartContract.name}
+             div(class='col-sm-6 col-md-4 col-lg-3')
+               div(class='product_component_box')
+                 div(class='product_component_image center-block')
+                   img(src='./img/component_sdk.png' alt='SDK' scale='0')
+                 div(class='product_component_note') #{dict.component.sdk.note}
+                 div(class='member_name') #{dict.component.sdk.name}
+             div(class='col-sm-6 col-md-4 col-lg-3')
+               div(class='product_component_box')
+                 div(class='product_component_image center-block')
+                   img(src='./img/component_wallet.png' alt='wallet' scale='0')
+                 div(class='product_component_note') #{dict.component.wallet.note}
+                 div(class='member_name') #{dict.component.wallet.name}
+             div(class='col-sm-6 col-md-4 col-lg-3')
+               div(class='product_component_box')
+                 div(class='product_component_image center-block')
+                   img(src='./img/component_token.png' alt='token' scale='0')
+                 div(class='product_component_note') #{dict.component.token.note}
+                 div(class='member_name') #{dict.component.token.name}
+      div(id='smart_contract' class='section_block clearfix')
+        div(class='container')
+          div(class='row')
+            div(class='section_title') #{dict.smartContract.title}
+            div(class='smart_contract_brief') #{dict.smartContract.desc}
+          div(class='row')
+            div(class='col-sm-6 col-lg-4')
+              div(class='smart_contract_box')
+                div(class='smart_contract_image text-center')
+                  img(src='./img/smart_contract_proxy.png' alt='proxy contract' scale='0')
+                div(class='smart_contract_title') #{dict.smartContract.proxy.name}
+                div(class='smart_contract_note center-block') #{dict.smartContract.proxy.desc}
+            div(class='col-sm-6 col-lg-4')
+              div(class='smart_contract_box')
+                div(class='smart_contract_image text-center')
+                  img(src='./img/smart_contract_controller.png' alt='controller contract' scale='0')
+                div(class='smart_contract_title') #{dict.smartContract.controller.name}
+                div(class='smart_contract_note center-block') #{dict.smartContract.controller.desc}
+            div(class='col-sm-6 col-lg-4')
+              div(class='smart_contract_box')
+                div(class='smart_contract_image text-center')
+                  img(src='./img/smart_contract_registry.png' alt='registry contract' scale='0')
+                div(class='smart_contract_title') #{dict.smartContract.registry.name}
+                div(class='smart_contract_note center-block') #{dict.smartContract.registry.desc}
+      div(id='product_flow' class='text-center')
+        img(src=`./img/product_flow_${lang}.png` scale='0')
+      div(id='product_tech' class='section_block clearfix')
+        div(class='container')
+          div(class='row')
+            div(class='section_title') #{dict.tech.title}
+            div(class='col-md-6 col-lg-4')
+              div(class='product_tech_box')
+                div(class='product_tech_title') Solidity
+                div(class='product_tech_desc') #{dict.tech.solidity}
+            div(class='col-md-6 col-lg-4')
+              div(class='product_tech_box')
+                div(class='product_tech_title') Merkle Tree
+                div(class='product_tech_desc') #{dict.tech.merkle}
+            div(class='col-md-6 col-lg-4')
+              div(class='product_tech_box')
+                div(class='product_tech_title') OpenPDS
+                div(class='product_tech_desc') #{dict.tech.openPDS}
+            div(class='col-md-6 col-lg-4')
+              div(class='product_tech_box')
+                div(class='product_tech_title') Kademlia
+                div(class='product_tech_desc') #{dict.tech.kademlia}
+            div(class='col-md-6 col-lg-4')
+              div(class='product_tech_box')
+                div(class='product_tech_title') JSON Web Token
+                div(class='product_tech_desc') #{dict.tech.jwt}
+            div(class='col-md-6 col-lg-4')
+              div(class='product_tech_box')
+                div(class='product_tech_title') Identity Graph
+                div(class='product_tech_desc') #{dict.tech.graph}
+      div(id='product_roadmap' class='text-center')
+        img(src=`./img/product_roadmap_${lang}.png` scale='0')
+      div(id='contact' class='section_block')
+        div(class='conatiner')
+          div(class='row')
+            div(class='section_title') #{dict.nav.contact}
+            div(class='contact_logos')
+              a(href='https://www.facebook.com/IdhubOfficial' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_facebook.png' border='0' alt='IDHub Facebook')
+              a(href='https://twitter.com/IDHUBOFFICIAL' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_twitter.png' border='0' alt='IDHub Twitter')
+              a(href='https://idhubnetwork.herokuapp.com' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_slack.png' border='0' alt='IDHub Slack')
+              a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_github.png' border='0' alt='IDHub GitHub')
+              a(href='https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_telegram.png' border='0' alt='IDHub Telegram')
+              img(class='contact_logo' src='./img/contact_wechat.png')
+              img(class='contact_logo' src='./img/contact_qq.png')
+              img(class='contact_logo' src='./img/contact_reddit.png')
     script(src='http://code.jquery.com/jquery-3.2.1.min.js' charset='UTF-8')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")

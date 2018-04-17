@@ -1,5 +1,11 @@
 {
 	"dict": {
+		"info": {
+			"issued": "已發行",
+			"address": "合約地址為",
+			"check": "請核對合約地址",
+			"alerted": "避免受騙"
+		},
 		"nav": {
 			"homepage": "Home",
 			"product": "Product",

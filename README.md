@@ -11,5 +11,17 @@ pm2 start server.js
 
 docker
 ```bash
+bash ~/idhub-gitlab/docker/update.sh
+```
+
+or
+
+```bash
+bash ~/idhub-gitlab/docker/update.sh latest
+```
+
+or
+
+```bash
 bash ~/idhub-gitlab/docker/update.sh <version number>
 ```
