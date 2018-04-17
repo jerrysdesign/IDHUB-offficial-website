@@ -1,5 +1,11 @@
 {
 	"dict": {
+		"info": {
+			"issued": "已发行",
+			"address": "合约地址为",
+			"check": "请核对合约地址",
+			"alerted": "避免受骗"
+		},
 		"nav": {
 			"homepage": "초기 화면",
 			"product": "제품",

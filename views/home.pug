@@ -1,5 +1,5 @@
 mixin locales
-  .dropdown.pull-right
+  #dropdownMenuWrapper.dropdown.pull-right
     button#dropdownMenu1.btn.btn-default.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='true')
       | #{lang.toUpperCase()}
       =' '
@@ -25,219 +25,223 @@ html
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='./css/main.css')
   body
-    nav(class='navbar navbar-inverse')
-      .container
-        .navbar-header
-          button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false')
-            span.sr-only Toggle navigation
-            - for (var x = 0; x < 3; x++)
-              span.icon-bar
+    .overhang IDHub token #{dict.info.issued}，ERC20 #{dict.info.address} 0x29F20242051AccDA50D52a7E272A5F23237e4696。#{dict.info.check}，#{dict.info.alerted}。
+    .wrapper-container
+      nav#heading(class='navbar navbar-inverse')
+        .container
+          .navbar-header
+            +locales
             a(class='navbar-brand pull-left' href='#') Brand
-        div(class='collapse navbar-collapse' id='navbar-collapse')
-          +locales
-          ul(class='nav navbar-nav center-block')
-            li(class='active')
-              a(href='/') #{dict.nav.homepage} #[span(class='sr-only') (current)]
-            li #[a(href='/product') #{dict.nav.product}]
-            li #[a(href='/#team' target='_blank' rel='noopener noreferrer') #{dict.nav.team}]
-            li #[a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer') #{dict.nav.forum}]
-            li #[a(href='/#news') #{dict.nav.news}]
-            li #[a(href='/#contact') #{dict.nav.contact}]
+            button(type='button' class='navbar-toggle collapsed' data-toggle='collapse' data-target='#navbar-collapse' aria-expanded='false')
+              span.sr-only Toggle navigation
+              - for (var x = 0; x < 3; x++)
+                span.icon-bar
+            div(class='collapse navbar-collapse' id='navbar-collapse')
+              ul(class='nav navbar-nav center-block')
+                li(class='active')
+                  a(href='/') #{dict.nav.homepage} #[span(class='sr-only') (current)]
+                li #[a(href='/product') #{dict.nav.product}]
+                li #[a(href='/#team' target='_blank' rel='noopener noreferrer') #{dict.nav.team}]
+                li #[a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer') #{dict.nav.forum}]
+                li #[a(href='/#news') #{dict.nav.news}]
+                li #[a(href='/#contact') #{dict.nav.contact}]
 
-    div(class='jumbotron heading__banner')
-      div(class='container')
-        div(class='item center-block text-center')
-          h2 #{dict.nav.heading1}
-          h1 #{dict.nav.heading2}
-          a(href=`/data/IDHub_whitepaper_${version}_${lang}.pdf` download target='_blank' class='btn btn-default call_to_action') #{dict.nav.learnMore}
-    div(class='Acarousel-caption-wrapper')
-      div(class='container')
-        div(class='row')
-          div(class='Acarousel-caption') #{dict.nav.desc}
+      div(class='jumbotron heading__banner')
+        div(class='container')
+          div(class='item center-block text-center')
+            h2 #{dict.nav.heading1}
+            h1 #{dict.nav.heading2}
+            a(href=`/data/IDHub_whitepaper_${version}_${lang}.pdf` download target='_blank' class='btn btn-default call_to_action') #{dict.nav.learnMore}
+      div(class='Acarousel-caption-wrapper')
+        div(class='container')
+          div(class='row')
+            div(class='Acarousel-caption') #{dict.nav.desc}
 
-    div(id='vision' class='section_block clearfix')
-      div(class='container')
-        div(class='row')
-          div(class='section_title') #{dict.vision.vision}
-        div(class='row')
-          div(class='col-sm-4')
-            div(class='vision_box')
-              div(class='vision_image text-center')
-                img(src='./img/vision_digital_service.png' alt='ID as a Service' scale='0' class='avartar')
-              div(class='vision_desc') #{dict.vision.service}
-            div(class='vision_title') ID as a Service
-          div(class='col-sm-4')
-            div(class='vision_box')
-              div(class='vision_image text-center')
-                img(src='./img/vision_digital_asset.png' alt='ID as a Digital Asset' scale='0' class='avartar')
-              div(class='vision_desc') #{dict.vision.asset}
-            div(class='vision_title') ID as a Digital Asset
-          div(class='col-sm-4')
-            div(class='vision_box')
-              div(class='vision_image text-center')
-                img(src='./img/vision_digital_life.png' alt='ID as a Digital Life' scale='0' class='avartar')
-              div(class='vision_desc') #{dict.vision.life}
-            div(class='vision_title') ID as a Digital Life
-    div(id='team' class='section_block')
-      div(class='container')
-        div(class='row')
-          div(class='section_title') #{dict.team.team}
-            div(id='team_lead' class='clearfix')
-              div(class='col-xs-12')
-                div(id='team_lead_box' class='team_member_box clearfix')
-                  div(class='text-center center-block')
-                    div(id='team_lead_image')
-                      img(src='./img/team_qu.png' alt='Doer Qu')
-                    div(id='team_lead_desc' class='member_desc')
-                      div(class='member_name') #{dict.team.qu.name}
+      div(id='vision' class='section_block clearfix')
+        div(class='container')
+          div(class='row')
+            div(class='section_title') #{dict.vision.vision}
+          div(class='row')
+            div(class='col-sm-4')
+              div(class='vision_box')
+                div(class='vision_image text-center')
+                  img(src='./img/vision_digital_service.png' alt='ID as a Service' scale='0' class='avartar')
+                div(class='vision_desc') #{dict.vision.service}
+              div(class='vision_title') ID as a Service
+            div(class='col-sm-4')
+              div(class='vision_box')
+                div(class='vision_image text-center')
+                  img(src='./img/vision_digital_asset.png' alt='ID as a Digital Asset' scale='0' class='avartar')
+                div(class='vision_desc') #{dict.vision.asset}
+              div(class='vision_title') ID as a Digital Asset
+            div(class='col-sm-4')
+              div(class='vision_box')
+                div(class='vision_image text-center')
+                  img(src='./img/vision_digital_life.png' alt='ID as a Digital Life' scale='0' class='avartar')
+                div(class='vision_desc') #{dict.vision.life}
+              div(class='vision_title') ID as a Digital Life
+      div(id='team' class='section_block')
+        div(class='container')
+          div(class='row')
+            div(class='section_title') #{dict.team.team}
+              div(id='team_lead' class='clearfix')
+                div(class='col-xs-12')
+                  div(id='team_lead_box' class='team_member_box clearfix')
+                    div(class='text-center center-block')
+                      div(id='team_lead_image')
+                        img(src='./img/team_qu.png' alt='Doer Qu')
+                      div(id='team_lead_desc' class='member_desc')
+                        div(class='member_name') #{dict.team.qu.name}
+                        div(class='member_bio')
+                          p #{dict.team.qu.desc}
+                          p #{dict.team.qu.desc2}
+              div(id='team_members' class='row')
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_kenneth.png' alt='Kenneth Chen')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.kenneth.name}
                       div(class='member_bio')
-                        p #{dict.team.qu.desc}
-                        p #{dict.team.qu.desc2}
-            div(id='team_members' class='row')
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_kenneth.png' alt='Kenneth Chen')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.kenneth.name}
-                    div(class='member_bio')
-                      p #{dict.team.kenneth.desc}
-                      p #{dict.team.kenneth.desc2}
-                      p #{dict.team.kenneth.desc3}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_xiaoyu.png' alt='Xiaoyu Li')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.xiaoyu.name}
-                    div(class='member_bio')
-                      p #{dict.team.xiaoyu.desc}
-                      p #{dict.team.xiaoyu.desc2}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_don.png' alt='Don')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.don.name}
-                    div(class='member_bio')
-                      p #{dict.team.don.desc}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_jamie.png' alt='Jamie Lin')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.jamie.name}
-                    div(class='member_bio')
-                      p #{dict.team.jamie.desc}
-                      p #{dict.team.jamie.desc2}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_zaakin.png' alt='Zaakin Yao')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.zaakin.name}
-                    div(class='member_bio')
-                      p #{dict.team.zaakin.desc}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_jiaqi.png' alt='Jiaqi Li')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.jiaqi.name}
-                    div(class='member_bio')
-                      p #{dict.team.jiaqi.desc}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_michael.png' alt='Michael Wang')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.michael.name}
-                    div(class='member_bio')
-                      p #{dict.team.michael.desc}
-                      p #{dict.team.michael.desc2}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_cecilia.png' alt='Cecilia Wu')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.cecilia.name}
-                    div(class='member_bio')
-                      p #{dict.team.cecilia.desc}
-                      p #{dict.team.cecilia.desc2}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_derek.png' alt='Derek Xue')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.derek.name}
-                    div(class='member_bio')
-                      p #{dict.team.derek.desc}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_leo.png' alt='Leo Cao')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.leo.name}
-                    div(class='member_bio')
-                      p #{dict.team.leo.desc}
-              div(class='col-sm-6 col-md-4 col-lg-3')
-                div(class='team_member_box')
-                  div(class='team_member_image text-center')
-                    img(src='./img/team_tasya.png' alt='Lekch Tasya')
-                  div(class='member_desc')
-                    div(class='member_name') #{dict.team.tasya.name}
-                    div(class='member_bio')
-                      p #{dict.team.tasya.desc}
-    div(id='investors')
-      div(class='container')
-        div(class='row')
-          div(class='section_title') #{dict.advisor.advisor}
-          div(class='investor_block')
-            div(class='col-sm-6')
-              div(class='team_member_image text-center')
-                img(src='./img/investor_josh.png' alt='Josh Chen' scale='0' align='middle' class='avartar')
-              div(class='member_desc')
-                div(class='member_name') #{dict.advisor.josh.name}
-                div(class='member_bio')
-                  p #{dict.advisor.josh.desc}
-                  p #{dict.advisor.josh.desc2}
-            div(class='col-sm-6')
-              div(class='team_member_image text-center')
-                img(src='./img/investor_ueno.png' alt='Yoshihisa Ueno' scale='0' align='middle' class='avartar')
-              div(class='member_desc')
-                div(class='member_name') #{dict.advisor.ueno.name}
-                div(class='member_bio')
-                  p #{dict.advisor.ueno.desc}
-                  p #{dict.advisor.ueno.desc2}
-    div(id='news' class='section_block')
-      div(class='container')
-        div(class='row')
-          div(class='section_title') #{dict.nav.news}
-          div(class='news_logos text-center')
-            a(href='https://www.coindesk.com/local-government-china-trials-blockchain-public-services/' target='_blank' rel='noopener noreferrer')
-              img(class='news_logo' src='./img/news_coindesk.png' border='0' alt='Link to Coindesk news')
-            a(href='http://chainb.com/?P=Cont&id=4910' target='_blank' rel='noopener noreferrer')
-              img(class='news_logo' src='./img/news_chainb.png' border='0' alt='Link to Coindesk news')
-            a(href='https://medium.com/@leocao/an-exclusive-interview-with-mr-quming-the-founder-of-idhub-project-dcb242b70b26' target='_blank' rel='noopener noreferrer')
-              img(class='news_logo' src='./img/news_medium.png' border='0' alt='Link to Medium news')
-    div(id='contact' class='section_block')
-      div(class='conatiner')
-        div(class='row')
-          div(class='section_title') #{dict.nav.contact}
-          div(class='contact_logos')
-            a(href='https://www.facebook.com/IdhubOfficial' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_facebook.png' border='0' alt='IDHub Facebook')
-            a(href='https://twitter.com/IDHUBOFFICIAL' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_twitter.png' border='0' alt='IDHub Twitter')
-            a(href='https://idhubnetwork.herokuapp.com' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_slack.png' border='0' alt='IDHub Slack')
-            a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_github.png' border='0' alt='IDHub GitHub')
-            a(href='https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw' target='_blank' rel='noopener noreferrer')
-              img(class='contact_logo' src='./img/contact_telegram.png' border='0' alt='IDHub Telegram')
-            img(class='contact_logo' src='./img/contact_wechat.png')
-            img(class='contact_logo' src='./img/contact_qq.png')
-            img(class='contact_logo' src='./img/contact_reddit.png')
+                        p #{dict.team.kenneth.desc}
+                        p #{dict.team.kenneth.desc2}
+                        p #{dict.team.kenneth.desc3}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_xiaoyu.png' alt='Xiaoyu Li')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.xiaoyu.name}
+                      div(class='member_bio')
+                        p #{dict.team.xiaoyu.desc}
+                        p #{dict.team.xiaoyu.desc2}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_don.png' alt='Don')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.don.name}
+                      div(class='member_bio')
+                        p #{dict.team.don.desc}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_jamie.png' alt='Jamie Lin')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.jamie.name}
+                      div(class='member_bio')
+                        p #{dict.team.jamie.desc}
+                        p #{dict.team.jamie.desc2}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_zaakin.png' alt='Zaakin Yao')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.zaakin.name}
+                      div(class='member_bio')
+                        p #{dict.team.zaakin.desc}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_jiaqi.png' alt='Jiaqi Li')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.jiaqi.name}
+                      div(class='member_bio')
+                        p #{dict.team.jiaqi.desc}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_michael.png' alt='Michael Wang')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.michael.name}
+                      div(class='member_bio')
+                        p #{dict.team.michael.desc}
+                        p #{dict.team.michael.desc2}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_cecilia.png' alt='Cecilia Wu')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.cecilia.name}
+                      div(class='member_bio')
+                        p #{dict.team.cecilia.desc}
+                        p #{dict.team.cecilia.desc2}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_derek.png' alt='Derek Xue')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.derek.name}
+                      div(class='member_bio')
+                        p #{dict.team.derek.desc}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_leo.png' alt='Leo Cao')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.leo.name}
+                      div(class='member_bio')
+                        p #{dict.team.leo.desc}
+                div(class='col-sm-6 col-md-4 col-lg-3')
+                  div(class='team_member_box')
+                    div(class='team_member_image text-center')
+                      img(src='./img/team_tasya.png' alt='Lekch Tasya')
+                    div(class='member_desc')
+                      div(class='member_name') #{dict.team.tasya.name}
+                      div(class='member_bio')
+                        p #{dict.team.tasya.desc}
+      div(id='investors')
+        div(class='container')
+          div(class='row')
+            div(class='section_title') #{dict.advisor.advisor}
+            div(class='investor_block')
+              div(class='col-sm-6')
+                div(class='team_member_image text-center')
+                  img(src='./img/investor_josh.png' alt='Josh Chen' scale='0' align='middle' class='avartar')
+                div(class='member_desc')
+                  div(class='member_name') #{dict.advisor.josh.name}
+                  div(class='member_bio')
+                    p #{dict.advisor.josh.desc}
+                    p #{dict.advisor.josh.desc2}
+              div(class='col-sm-6')
+                div(class='team_member_image text-center')
+                  img(src='./img/investor_ueno.png' alt='Yoshihisa Ueno' scale='0' align='middle' class='avartar')
+                div(class='member_desc')
+                  div(class='member_name') #{dict.advisor.ueno.name}
+                  div(class='member_bio')
+                    p #{dict.advisor.ueno.desc}
+                    p #{dict.advisor.ueno.desc2}
+      div(id='news' class='section_block')
+        div(class='container')
+          div(class='row')
+            div(class='section_title') #{dict.nav.news}
+            div(class='news_logos text-center')
+              a(href='https://www.coindesk.com/local-government-china-trials-blockchain-public-services/' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_coindesk.png' border='0' alt='Link to Coindesk news')
+              a(href='http://chainb.com/?P=Cont&id=4910' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_chainb.png' border='0' alt='Link to Coindesk news')
+              a(href='https://medium.com/@leocao/an-exclusive-interview-with-mr-quming-the-founder-of-idhub-project-dcb242b70b26' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_medium.png' border='0' alt='Link to Medium news')
+              a(href='http://blockcast.it/2018/03/27/blcokchain-based-digital-identity-idhub/' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_blockcast.png' border='0' alt='Link to Medium news')
+      div(id='contact' class='section_block')
+        div(class='conatiner')
+          div(class='row')
+            div(class='section_title') #{dict.nav.contact}
+            div(class='contact_logos')
+              a(href='https://www.facebook.com/IdhubOfficial' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_facebook.png' border='0' alt='IDHub Facebook')
+              a(href='https://twitter.com/IDHUBOFFICIAL' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_twitter.png' border='0' alt='IDHub Twitter')
+              a(href='https://idhubnetwork.herokuapp.com' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_slack.png' border='0' alt='IDHub Slack')
+              a(href='https://github.com/idhubnetwork' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_github.png' border='0' alt='IDHub GitHub')
+              a(href='https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw' target='_blank' rel='noopener noreferrer')
+                img(class='contact_logo' src='./img/contact_telegram.png' border='0' alt='IDHub Telegram')
+              img(class='contact_logo' src='./img/contact_wechat.png')
+              img(class='contact_logo' src='./img/contact_qq.png')
+              img(class='contact_logo' src='./img/contact_reddit.png')
     script(src='http://code.jquery.com/jquery-3.2.1.min.js' charset='UTF-8')
     script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js", integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q", crossorigin="anonymous")
     script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl", crossorigin="anonymous")
