@@ -1,0 +1,93 @@
+//margins
+$container_side_margin: 15px;
+
+//heights
+$button_height: 42px;
+
+//colors
+$color-primary-light : #709BE7;
+$color-primary       : #4CA6FF;
+$color-primary-dark  : #0F358E;
+
+$color-blue-light    : #4DE1FF;
+$color-blue          : #4CA6FF;
+$color-blue-dark     : #4D6AFF;
+$color-blue-darker   : #17317B;
+$color-robin-blue    : #00D4BE;
+$color-green         : #16D987;
+$color-yellow        : #FFC725;
+$color-orange        : #FF8870;
+$color-red           : #FF566D;
+$color-purple        : #CE6EE8;
+
+$color-gray-darkest  : #2E3247;
+$color-gray-darker   : #50566E;
+$color-gray-dark     : #747B91;
+$color-gray          : #9EA5B8;
+$color-gray-light    : #C5CBD9;
+$color-gray-lighter  : #E1E5ED;
+$color-gray-ligtest  : #F2F4F7;
+$black               : #000526;
+$white               : #FFFFFF;
+
+$sky                 : #1b8bf9;
+$steel               : #414870;
+$concrete            : #747474;
+$cloud               : #bcc6d0;
+$rain                : #e7e7e7;
+$stone               : #f6f6f6;
+$mars                : #f84b29;
+$grass               : #21d593;
+
+// shadow
+$shadow1: 0 2px 4px rgba( $color-blue-darker, 0.2);
+$shadow2: 0 4px 8px rgba( $color-blue-darker, 0.2);
+$shadow3: 0 6px 12px rgba( $color-blue-darker, 0.2);
+$shadow4: 0 8px 24px rgba( $color-blue-darker, 0.2);
+$shadow5: 0 12px 32px rgba( $color-blue-darker, 0.2);
+$shadow1-hover: 0 2px 8px rgba( $color-blue-darker, 0.4);
+$shadow2-hover: 0 4px 16px rgba( $color-blue-darker, 0.4);
+$shadow3-hover: 0 6px 24px rgba( $color-blue-darker, 0.4);
+$shadow4-hover: 0 8px 48px rgba( $color-blue-darker, 0.4);
+$shadow5-hover: 0 12px 96px rgba( $color-blue-darker, 0.4);
+
+// gradient
+$gradient1: (start: #FA2B56, end: #F91C3D);
+$gradient2: (start: #123075, end: #092056);
+$gradient3: (start: #061843, end: #05112E);
+
+//media queries (notice: there are some local media queries starting with the underscore char: $_scaling_range)
+  //aspect ratios:
+$rect_aspect_ratio: 'min-aspect-ratio: 6/10';
+$square_aspect_ratio: 'min-aspect-ratio: 3/4';
+  // for retina and other HDPI
+$HDPI: 'only screen and (-webkit-min-device-pixel-ratio: 1.3),
+only screen and (-o-min-device-pixel-ratio: 13/10),
+only screen and (min-resolution: 120dpi)';
+
+$max_phone: 'max-width: 480px';
+$min_phone: 'min-width: 481px';
+
+$max_tablet: 'max-width: 992px';
+$min_tablet: 'min-width: 993px';
+
+$max_tablet--landscape: 'max-width: 1024px';
+$min_tablet--landscape: 'min-width: 1025px';
+
+$max_laptop: 'max-width: 1200px';
+$min_laptop: 'min-width: 1201px';
+
+$max_desktop: 'max-width: 1600px';
+$min_desktop: 'min-width: 1601px';
+
+$_charts_smaller: 'max-width: 700px';
+
+//other
+$icons_path: '../img/icons/';
+$other_pics_path: '../img/etc/';
+$background_path: '../img/bg/';
+$img_path: '../img/';
+
+//font families
+$playfair: 'Playfair Display';
+$montserrat: 'Montserrat';

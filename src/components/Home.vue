@@ -1,6 +1,6 @@
 <template lang="pug">
   .container
-    | susy 2
+    | .container
 </template>
 
 <script>
