@@ -1,28 +1,23 @@
-@import '_abstracts/_variables';
-@import '_abstracts/_mixin';
-@import '_abstracts/_grid';
-
-@import '_base/_base';
-
-@import "_components/_social";
-@import "_layout/_footer/_footer";
-
 * {
   box-sizing: border-box;
-  font-weight: 100;
+
+  font-weight: 400;
 }
 html {
   height: 100%;
 }
 body {
   height: 100%;
-  color: $steel;
+  font-family: 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+  font-weight: 100;
+  color: $color-gray-dark;
+  background-color: $color-gray-ligtest;
   &.state-fixed{
     overflow: hidden;
   }
 }
 a {
-  &, &:hover, &:focus{
+  &, &:hover, &:focus {
     color: inherit;
   }
 }

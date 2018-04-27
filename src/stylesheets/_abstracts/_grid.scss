@@ -39,10 +39,10 @@ $susy: (
   container: $desktop,
   global-box-sizing: border-box,
   gutter-position: split,
-  debug: (
-    image: show-columns,
-    color: rgba(#D7DDED, .5),
-  ),
+  // debug: (
+  //   image: show-columns,
+  //   color: rgba(#D7DDED, .5),
+  // ),
   use-custom: (
     clearfix: true,
   )

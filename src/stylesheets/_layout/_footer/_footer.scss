@@ -1,0 +1,128 @@
+//
+.footer {
+  &__ {
+    &container {
+      position: relative;
+    }
+    &main_box {
+      padding: 35px 0;
+      border-bottom: 1px solid rgba($cloud, .12);
+      background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+      @media (#{$max_tablet}) {
+        text-align: center;
+      }
+      @media (#{$min_tablet}) {
+        padding: 50px 0;
+      }
+      @media (#{$min_laptop}) {
+        padding: 80px 0;
+      }
+      @media (#{$min_desktop}) {
+        padding: 100px 0;
+      }
+    }
+    &left_box {
+      margin-right: 10%;
+      @media (#{$min_tablet}) {
+        float: left;
+      }
+      @media (#{$max_tablet}) {
+        margin-bottom: 50px;
+      }
+    }
+    &right_box {
+      @media (#{$min_tablet}) {
+        float: right;
+      }
+    }
+    &logo_box {
+      @include clear_link;
+      display: block;
+      height: 60px;
+      line-height: 60px;
+      margin-bottom: 20px;
+      img {
+        height: 100%;
+      }
+    }
+    &logo {
+      margin-right: 10px;
+    }
+    &social_box {
+      margin-top: 16px;
+    }
+    &nav__item {
+      display: inline-block;
+    }
+    &nav__link {
+      @include clear_link;
+    }
+    &logo_text {
+      @include font_loader($montserrat, 4, 'n');
+      position: relative;
+      top: 2px;
+      font-size: 48px;
+      color: rgba(white, .3);
+      letter-spacing: .05em;
+    }
+    &description {
+      @include font_loader($montserrat, 1, 'n');
+      color: white;
+      font-size: 11px;
+      line-height: 1.6;
+      letter-spacing: .05em;
+      display: inline-block;
+      max-width: 260px;
+    }
+    &copyright {
+      @include font_loader($montserrat, 1, 'n');
+      color: rgba(white, .3);
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    &menu {
+      @include clear_list;
+      @media (#{$min_tablet}) {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 65px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+    &menu__item {
+      margin-bottom: 15px;
+      @media (#{$min_tablet}) {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      @media (#{$max_tablet}) {
+        float: left;
+        margin-right: 20px;
+      }
+    }
+    &menu__title {
+      @include font_loader($montserrat, 4, 'n');
+      color: white;
+      font-size: 14px;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      @media (#{$min_tablet}) {
+        font-size: 18px;
+      }
+    }
+    &menu__link {
+      @include font_loader($montserrat, 4, 'n');
+      color: $color-primary-light;
+      font-size: 14px;
+      letter-spacing: .05em;
+      &:hover, &:focus, &:active, &:visited {
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+}

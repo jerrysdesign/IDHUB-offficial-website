@@ -1,6 +1,7 @@
 <template lang="pug">
-  #app
-    router-view
+#app
+  router-view
+  Footer
 </template>
 
 <script>
@@ -13,6 +14,8 @@ Vue.use(BootstrapVue);
 
 export default {
   name: 'App',
+  components: {
+    Footer
   }
 }
 </script>

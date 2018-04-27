@@ -1,6 +1,6 @@
 <template lang="pug">
-  .container
-    | .container
+.container
+  | .container
 </template>
 
 <script>
