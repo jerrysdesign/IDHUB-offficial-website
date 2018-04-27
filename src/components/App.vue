@@ -1,14 +1,14 @@
 <template lang="pug">
-.page.page-home
+.page.page-app
     h1 {{ pageName }}
 </template>
 
 <script>
 export default {
-  name: 'home',
+  name: 'app',
   data: () => {
     return {
-      pageName: 'Home'
+      pageName: 'App'
     }
   }
 }
