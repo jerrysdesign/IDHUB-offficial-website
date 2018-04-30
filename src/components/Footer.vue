@@ -1,8 +1,4 @@
 <template lang="pug">
-mixin footer__menu__link(text, url)
-  li.footer__menu__item
-    router-link.footer__menu__link(to= url)
-      | #{text}
 footer.footer
   .footer__main_box
     .container.footer__container
@@ -14,51 +10,68 @@ footer.footer
         span.footer__copyright
           | &copy; IDHUB. All Rights Reserved.
         ul.social.footer__social.footer__social_box
-          li.social__item
-            a.social__link.social__link--rounded.social__link--facebook(target='_blank', href='https://www.facebook.com/IdhubOfficial', title='Say hello in Facebook!')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--twitter(target='_blank', href='https://twitter.com/IDHUBOFFICIAL', title='Say hello in Twitter!')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--slack(target='_blank', href='https://idhubnetwork.herokuapp.com', title='Say hello in Slack')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--github(target='_blank', href='https://github.com/idhubnetwork', title='Say hello in Github!')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--telegram(target='_blank', href='https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw', title='Say hello in Telegram!')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--wechat(target='_blank', href='javascript:;', title='Say hello in Wechat!')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--qq(target='_blank', href='javascript:;', title='Say hello in QQ!')
-          li.social__item
-            a.social__link.social__link--rounded.social__link--reddit(target='_blank', href='javascript:;', title='Say hello in Reddit!')
+          li.social__item(v-for='social__item in social__items')
+            a.social__link.social__link--rounded(target='_blank', :href='social__item.href', :title='social__item.title', :class='social__item.class')
       .footer__right_box
         ul.footer__menu.footer__menu
           li.footer__menu__item.footer__menu__title 产品
-          +footer__menu__link('技术','tech')
-          +footer__menu__link('App','app')
-          +footer__menu__link('合作夥伴','cooperate')
+          li.footer__menu__item(v-for='linksProduct in linksProducts')
+            router-link.footer__menu__link(:to= 'linksProduct.to')
+              | {{ linksProduct.text }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item
-            span.footer__menu__title 消息
-          +footer__menu__link('新闻','news')
-          +footer__menu__link('活动','news')
-          +footer__menu__link('报导','news')
+          li.footer__menu__item.footer__menu__title 消息
+          li.footer__menu__item(v-for='linksNew in linksNews')
+            router-link.footer__menu__link(:to= 'linksNew.to')
+              | {{ linksNew.text }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item
-            span.footer__menu__title 关于我们
-          +footer__menu__link('团队','team')
-          +footer__menu__link('招聘','careers')
+          li.footer__menu__item.footer__menu__title 关于我们
+          li.footer__menu__item(v-for='linksAbout in linksAbouts')
+            router-link.footer__menu__link(:to= 'linksAbout.to')
+              | {{ linksAbout.text }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item
-            span.footer__menu__title 保持联系
-          +footer__menu__link('idhub.network','contact')
-          +footer__menu__link('hello@idhub.network','contact')
-          +footer__menu__link('+86 123 456 789','contact')
+          li.footer__menu__item.footer__menu__title 保持联系
+          li.footer__menu__item(v-for='linksContact in linksContacts')
+            router-link.footer__menu__link(:to= 'linksContact.to')
+              | {{ linksContact.text }}
 </template>
 
 
 <script>
 export default {
-  name: 'foot'
+  name: 'footbar',
+  data: () => {
+    return {
+      close: 'close',
+      social__items: [
+      { href: 'https://www.facebook.com/IdhubOfficial', title: 'Say hello in Facebook!', class: 'social__link--facebook' },
+      { href: 'https://twitter.com/IDHUBOFFICIAL', title: 'Say hello in Twitter!', class: 'social__link--twitter' },
+      { href: 'https://idhubnetwork.herokuapp.com', title: 'Say hello in Slack!', class: 'social__link--slack' },
+      { href: 'https://github.com/idhubnetwork', title: 'Say hello in Github!', class: 'social__link--github' },
+      { href: 'https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw', title: 'Say hello in Telegram!', class: 'social__link--telegram' },
+      { href: 'javascript:;', title: 'Say hello in Wechat!', class: 'social__link--wechat' },
+      { href: 'javascript:;', title: 'Say hello in QQ!', class: 'social__link--qq' },
+      { href: 'javascript:;', title: 'Say hello in Reddit!', class: 'social__link--reddit' }
+      ],
+      linksProducts: [
+        { to: 'tech', text: '技术' },
+        { to: 'app', text: '应用程序' }
+      ],
+      linksNews: [
+        { to: 'news', text: '新闻' },
+        { to: 'news', text: '活动' },
+        { to: 'news', text: '合作夥伴' }
+      ],
+      linksAbouts: [
+        { to: 'team', text: '团队' },
+        { to: 'careers', text: '招聘' }
+      ],
+      linksContacts: [
+        { to: 'contact', text: 'idhub.network' },
+        { to: 'contact', text: 'hello@idhub.network' },
+        { to: 'contact', text: '+86 123 456 789' }
+      ],
+    }
+  }
 }
 </script>
 
@@ -70,129 +83,127 @@ export default {
 @import '../stylesheets/_abstracts/_grid';
 
 .footer {
-  &__ {
-    &container {
-      position: relative;
+  &__container {
+    position: relative;
+  }
+  &__main_box {
+    padding: 35px 0;
+    border-bottom: 1px solid rgba($cloud, .12);
+    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+    @media (#{$max_tablet}) {
+      text-align: center;
     }
-    &main_box {
-      padding: 35px 0;
-      border-bottom: 1px solid rgba($cloud, .12);
-      background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
-      @media (#{$max_tablet}) {
-        text-align: center;
-      }
-      @media (#{$min_tablet}) {
-        padding: 50px 0;
-      }
-      @media (#{$min_laptop}) {
-        padding: 80px 0;
-      }
-      @media (#{$min_desktop}) {
-        padding: 100px 0;
-      }
+    @media (#{$min_tablet}) {
+      padding: 50px 0;
     }
-    &left_box {
-      margin-right: 10%;
-      @media (#{$min_tablet}) {
-        float: left;
-      }
-      @media (#{$max_tablet}) {
-        margin-bottom: 50px;
-      }
+    @media (#{$min_laptop}) {
+      padding: 80px 0;
     }
-    &right_box {
-      @media (#{$min_tablet}) {
-        float: right;
-      }
+    @media (#{$min_desktop}) {
+      padding: 100px 0;
     }
-    &logo_box {
-      @include clear_link;
-      display: block;
-      height: 60px;
-      line-height: 60px;
-      margin-bottom: 20px;
-      img {
-        height: 100%;
-      }
+  }
+  &__left_box {
+    margin-right: 10%;
+    @media (#{$min_tablet}) {
+      float: left;
     }
-    &logo {
-      margin-right: 10px;
+    @media (#{$max_tablet}) {
+      margin-bottom: 50px;
     }
-    &social_box {
-      margin-top: 16px;
+  }
+  &__right_box {
+    @media (#{$min_tablet}) {
+      float: right;
     }
-    &nav__item {
+  }
+  &__logo_box {
+    @include clear_link;
+    display: block;
+    height: 60px;
+    line-height: 60px;
+    margin-bottom: 20px;
+    img {
+      height: 100%;
+    }
+  }
+  &__logo {
+    margin-right: 10px;
+  }
+  &__social_box {
+    margin-top: 16px;
+  }
+  &__nav__item {
+    display: inline-block;
+  }
+  &__nav__link {
+    @include clear_link;
+  }
+  &__logo_text {
+    @include font_loader($montserrat, 4, 'n');
+    position: relative;
+    top: 2px;
+    font-size: 48px;
+    color: rgba(white, .3);
+    letter-spacing: .05em;
+  }
+  &__description {
+    @include font_loader($montserrat, 1, 'n');
+    color: white;
+    font-size: 11px;
+    line-height: 1.6;
+    letter-spacing: .05em;
+    display: inline-block;
+    max-width: 260px;
+  }
+  &__copyright {
+    @include font_loader($montserrat, 1, 'n');
+    color: rgba(white, .3);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+  }
+  &__menu {
+    @include clear_list;
+    @media (#{$min_tablet}) {
       display: inline-block;
+      vertical-align: top;
+      margin-right: 65px;
+      &:last-child {
+        margin-right: 0;
+      }
     }
-    &nav__link {
-      @include clear_link;
+  }
+  &__menu__item {
+    margin-bottom: 15px;
+    @media (#{$min_tablet}) {
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
-    &logo_text {
-      @include font_loader($montserrat, 4, 'n');
-      position: relative;
-      top: 2px;
-      font-size: 48px;
-      color: rgba(white, .3);
-      letter-spacing: .05em;
+    @media (#{$max_tablet}) {
+      float: left;
+      margin-right: 20px;
     }
-    &description {
-      @include font_loader($montserrat, 1, 'n');
+  }
+  &__menu__title {
+    @include font_loader($montserrat, 4, 'n');
+    color: white;
+    font-size: 14px;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    @media (#{$min_tablet}) {
+      font-size: 18px;
+    }
+  }
+  &__menu__link {
+    @include font_loader($montserrat, 4, 'n');
+    color: $color-primary-light;
+    font-size: 14px;
+    letter-spacing: .05em;
+    &:hover, &:focus {
       color: white;
-      font-size: 11px;
-      line-height: 1.6;
-      letter-spacing: .05em;
-      display: inline-block;
-      max-width: 260px;
-    }
-    &copyright {
-      @include font_loader($montserrat, 1, 'n');
-      color: rgba(white, .3);
-      font-size: 16px;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-    }
-    &menu {
-      @include clear_list;
-      @media (#{$min_tablet}) {
-        display: inline-block;
-        vertical-align: top;
-        margin-right: 65px;
-        &:last-child {
-          margin-right: 0;
-        }
-      }
-    }
-    &menu__item {
-      margin-bottom: 15px;
-      @media (#{$min_tablet}) {
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-      @media (#{$max_tablet}) {
-        float: left;
-        margin-right: 20px;
-      }
-    }
-    &menu__title {
-      @include font_loader($montserrat, 4, 'n');
-      color: white;
-      font-size: 14px;
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      @media (#{$min_tablet}) {
-        font-size: 18px;
-      }
-    }
-    &menu__link {
-      @include font_loader($montserrat, 4, 'n');
-      color: $color-primary-light;
-      font-size: 14px;
-      letter-spacing: .05em;
-      &:hover, &:focus {
-        color: white;
-        text-decoration: none;
-      }
+      text-decoration: none;
     }
   }
 }

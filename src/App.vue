@@ -1,13 +1,14 @@
 <template lang="pug">
 #app
-  router-view
-  Foot
+  main.page_wrapper
+    router-view
+    Footbar
 </template>
 
 <script>
 import Vue from 'vue'
 import BootstrapVue from 'bootstrap-vue'
-import Foot from '@/components/Footer'
+import Footbar from '@/components/Footer'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue);
@@ -15,7 +16,7 @@ Vue.use(BootstrapVue);
 export default {
   name: 'App',
   components: {
-    Foot
+    Footbar,
   }
 }
 </script>
