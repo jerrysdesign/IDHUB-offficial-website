@@ -12,7 +12,7 @@
             router-link.header__menu_link.header__menu_link--white(:to='link.to')
               | {{ link.text }}
       .header__right_box
-        button.header__burger_button.js-open-menu.header__item--mobile(type='button')
+        button.header__burger_button.js-open-menu.header__item--mobile(type='button', @click='openMenu')
 </template>
 
 
@@ -20,7 +20,10 @@
 const overlay = document.querySelector('.js-overlay');
 const menu = document.querySelector('.js-menu');
 const body = document.querySelector('body');
-import Sitemenu from '@/components/Menu'
+import Sitemenu from '@/components/Menu';
+import { store } from '@/store/header';
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'headbar',
   data: () => {
@@ -37,6 +40,10 @@ export default {
   },
   components: {
     Sitemenu
+  },
+  store,
+  methods: {
+    ...mapActions(['openMenu'])
   }
 }
 </script>
