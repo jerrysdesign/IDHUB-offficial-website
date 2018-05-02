@@ -1,7 +1,7 @@
 <template lang="pug">
-  nav.menu.js-menu.state-closed
+  nav(:class='menuClass')
     .menu__container
-      button.menu__closer.js-close-menu(type='button')
+      button.menu__closer.js-close-menu(type='button', @click='closeMenu')
         | close
       .menu__box
         //- h3.menu__title
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
+
 export default {
   name: 'side-menu',
   data: () => {
@@ -25,9 +27,25 @@ export default {
         { to: 'news', text: '最新活动' },
         { to: 'team', text: '团队' },
         { to: 'contact', text: '联络我们' }
-      ]
+      ],
+      menuClass: 'menu js-menu state-closed',
     }
-  }
+  },
+  computed: {
+    ...mapState(['menuStatus']),
+  },
+  methods: {
+    ...mapActions(['closeMenu'])
+  },
+  watch: {
+    menuStatus: function(val) {
+      if (val) {
+        this.menuClass = 'menu js-menu state-opened';
+      } else {
+        this.menuClass = 'menu js-menu state-closed';
+      }
+    }
+  },
 }
 </script>
 

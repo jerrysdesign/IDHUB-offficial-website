@@ -1,6 +1,6 @@
 {
   "name": "idhub-official-website",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "IDHub official website",
   "author": "JJ <jerry7722@hotmail.com>",
   "private": true,
@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "ajv": "^6.4.0",
