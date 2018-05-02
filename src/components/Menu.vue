@@ -1,7 +1,7 @@
 <template lang="pug">
-  nav(:class='menuClass')
+  nav.menu(:class='menuState')
     .menu__container
-      button.menu__closer.js-close-menu(type='button', @click='closeMenu')
+      button.menu__closer(type='button', @click='closeMenu')
         | close
       .menu__box
         //- h3.menu__title
@@ -28,7 +28,7 @@ export default {
         { to: 'team', text: 'team' },
         { to: 'contact', text: 'contact' }
       ],
-      menuClass: 'menu js-menu state-closed',
+      menuState: 'state-closed',
     }
   },
   computed: {
@@ -40,9 +40,9 @@ export default {
   watch: {
     menuStatus: function(val) {
       if (val) {
-        this.menuClass = 'menu js-menu state-opened';
+        this.menuState = 'state-opened';
       } else {
-        this.menuClass = 'menu js-menu state-closed';
+        this.menuState = 'state-closed';
       }
     }
   },
@@ -70,7 +70,7 @@ $_menu_left_margin: 50px;
   &.state-opened{
     right: 0;
   }
-  @media (#{$max_phone}){
+  @media (#{$max_phone}) {
     transition-duration: .4s;
   }
   &__box{
@@ -88,7 +88,7 @@ $_menu_left_margin: 50px;
       transform: translateY(-50%);
     }
   }
-  &__closer{
+  &__closer {
     @include font_loader($montserrat, 4, 'n');
     position: absolute;
     z-index: 1;
@@ -97,7 +97,8 @@ $_menu_left_margin: 50px;
     padding-left: 30px;
     color: white;
     font-size: 14px;
-    &:before{
+    cursor: pointer;
+    &:before {
       content: "";
       position: absolute;
       left: 0;
@@ -113,7 +114,7 @@ $_menu_left_margin: 50px;
       top: 40px;
     }
   }
-  &__title{
+  &__title {
     @include font_loader($montserrat, 4, 'n');
     margin: 0 0 20px;
     color: white;
@@ -121,7 +122,7 @@ $_menu_left_margin: 50px;
     text-transform: uppercase;
     font-size: 10px;
   }
-  &__list{
+  &__list {
     @include clearfix;
     @include clear_list;
     display: inline-block;
@@ -133,11 +134,11 @@ $_menu_left_margin: 50px;
       display: block;
     }
   }
-  &__item{
+  &__item {
     margin-bottom: 20px;
   }
   &__link,
-  &__phone_link{
+  &__phone_link {
     @include font_loader($montserrat, 4, 'n');
     font-size: 20px;
     letter-spacing: .05em;
@@ -146,7 +147,7 @@ $_menu_left_margin: 50px;
       text-decoration: none;
     }
   }
-  &__phone_link{
+  &__phone_link {
     display: block;
     margin: 0 0 50px 0;
     padding-left: 30px;
@@ -161,7 +162,7 @@ $_menu_left_margin: 50px;
       // background: url(#{$icons_path}i--phone-call.svg) no-repeat center / 100% auto;
     }
   }
-  &__about_text{
+  &__about_text {
     @include font_loader($montserrat, 4, 'n');
     font-size: 13px;
     color: rgba(white, .65);

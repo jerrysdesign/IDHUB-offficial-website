@@ -17,18 +17,16 @@
             router-link.header__menu_link.header__menu_link--white(:to='link.to')
               | {{ $t(link.text) }}
       .header__right_box
-        button.header__burger_button.js-open-menu.header__item--mobile(type='button', @click='openMenu')
+        button.header__burger_button.header__item--mobile(type='button', @click='openMenu')
 </template>
 
 
 <script>
-const overlay = document.querySelector('.js-overlay');
-const menu = document.querySelector('.js-menu');
-const body = document.querySelector('body');
-import Sitemenu from '@/components/Menu';
-import { store } from '@/store/header';
-import Vue from 'vue';
-import { mapState, mapActions } from 'vuex';
+const body = document.querySelector('body')
+import Sitemenu from '@/components/Menu'
+import { store } from '@/store/header'
+import Vue from 'vue'
+import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'headbar',
