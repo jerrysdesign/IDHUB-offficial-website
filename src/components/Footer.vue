@@ -14,22 +14,26 @@ footer.footer
             a.social__link.social__link--rounded(target='_blank', :href='social__item.href', :title='social__item.title', :class='social__item.class')
       .footer__right_box
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 产品
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('product') }}
           li.footer__menu__item(v-for='linksProduct in linksProducts')
             router-link.footer__menu__link(:to= 'linksProduct.to')
-              | {{ linksProduct.text }}
+              | {{ $t(linksProduct.text) }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 消息
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('information') }}
           li.footer__menu__item(v-for='linksNew in linksNews')
             router-link.footer__menu__link(:to= 'linksNew.to')
-              | {{ linksNew.text }}
+              | {{ $t(linksNew.text) }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 关于我们
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('abount_us') }}
           li.footer__menu__item(v-for='linksAbout in linksAbouts')
             router-link.footer__menu__link(:to= 'linksAbout.to')
-              | {{ linksAbout.text }}
+              | {{ $t(linksAbout.text) }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 保持联系
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('contact') }}
           li.footer__menu__item(v-for='linksContact in linksContacts')
             router-link.footer__menu__link(:to= 'linksContact.to')
               | {{ linksContact.text }}
@@ -53,17 +57,17 @@ export default {
       { href: 'javascript:;', title: 'Say hello in Reddit!', class: 'social__link--reddit' }
       ],
       linksProducts: [
-        { to: 'tech', text: '技术' },
-        { to: 'app', text: '应用程序' }
+        { to: 'tech', text: 'tech' },
+        { to: 'app', text: 'app' }
       ],
       linksNews: [
-        { to: 'news', text: '新闻' },
-        { to: 'news', text: '活动' },
-        { to: 'news', text: '合作夥伴' }
+        { to: 'news', text: 'news' },
+        { to: 'news', text: 'activities' },
+        { to: 'contact', text: 'contact' }
       ],
       linksAbouts: [
-        { to: 'team', text: '团队' },
-        { to: 'careers', text: '招聘' }
+        { to: 'team', text: 'team' },
+        { to: 'careers', text: 'careers' }
       ],
       linksContacts: [
         { to: 'contact', text: 'idhub.network' },

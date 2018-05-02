@@ -9,7 +9,7 @@
         ul.menu__list
           li.menu__item(v-for='link in links')
             router-link.menu__link(:to='link.to')
-              | {{ link.text }}
+              | {{ $t(link.text) }}
 </template>
 
 <script>
@@ -21,12 +21,12 @@ export default {
     return {
       close: 'close',
       links: [
-        { to: 'home', text: 'Home' },
-        { to: 'tech', text: '技术' },
-        { to: 'news', text: '媒体报导' },
-        { to: 'news', text: '最新活动' },
-        { to: 'team', text: '团队' },
-        { to: 'contact', text: '联络我们' }
+        { to: 'home', text: 'home' },
+        { to: 'tech', text: 'tech' },
+        { to: 'news', text: 'news' },
+        { to: 'news', text: 'activities' },
+        { to: 'team', text: 'team' },
+        { to: 'contact', text: 'contact' }
       ],
       menuClass: 'menu js-menu state-closed',
     }
