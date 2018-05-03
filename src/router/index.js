@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Tech from '@/components/Tech'
-import App from '@/components/App'
-import Team from '@/components/Team'
-import News from '@/components/News'
-import Careers from '@/components/Careers'
-import Cooperate from '@/components/Cooperate'
-import Contact from '@/components/Contact'
+import Home from '@/pages/Home'
+import Tech from '@/pages/Tech'
+import App from '@/pages/App'
+import Team from '@/pages/Team'
+import News from '@/pages/News'
+import Careers from '@/pages/Careers'
+import Cooperate from '@/pages/Cooperate'
+import Contact from '@/pages/Contact'
 
 Vue.use(Router)
 
