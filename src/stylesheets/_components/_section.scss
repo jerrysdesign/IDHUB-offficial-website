@@ -1,0 +1,15 @@
+[class^='section-'] {
+  position: relative;
+  margin: auto;
+  padding: 70px 0;
+  text-align: center;
+  @media (#{$min_tablet}){
+    padding: 100px 0;
+  }
+  @media (#{$min_laptop}){
+    padding: 120px 0;
+  }
+  @media (#{$min_desktop}){
+    padding: 150px 0;
+  }
+}

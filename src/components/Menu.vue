@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav.menu(:class='menuState')
+  nav.menu(v-bind:class='menuState')
     .menu__container
       button.menu__closer(type='button', @click='closeMenu')
         | close

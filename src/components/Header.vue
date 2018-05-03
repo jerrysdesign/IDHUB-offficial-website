@@ -1,6 +1,5 @@
 <template lang="pug">
 #header
-  Sitemenu
   nav.header
     .container.header__container
       .header__left_box
@@ -23,7 +22,6 @@
 
 <script>
 const body = document.querySelector('body')
-import Sitemenu from '@/components/Menu'
 import { store } from '@/store/header'
 import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
@@ -44,7 +42,6 @@ export default {
     }
   },
   components: {
-    Sitemenu
   },
   store,
   methods: {
@@ -54,7 +51,6 @@ export default {
       const locale = target.target.textContent
       Vue.config.lang = locale
       this.$i18n.locale = locale
-      // this.$store.dispatch('setLang', setLang)
     },
   }
 }
