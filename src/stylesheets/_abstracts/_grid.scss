@@ -15,8 +15,8 @@ $desktop: 1440px;
 // Responsive Grids
 // ----------------
 $phone-layout             : layout(4 1/4);
-$tablet-layout            : layout(8 1/4);
-$tablet--lnadscape-layout : layout(10 1/4);
+$tablet-layout            : layout(6 1/4);
+$tablet--lnadscape-layout : layout(12 1/4);
 $laptop-layout            : layout(12 1/4);
 $desktop-layout           : layout(12 1/4);
 
@@ -34,15 +34,17 @@ $susy-breakpoint: (
 // Susy Setup
 // ----------
 $susy: (
-  columns: 2,
-  gutters: 1/4,
+  columns: 12,
+  gutters: 1/3,
   container: $desktop,
   global-box-sizing: border-box,
   gutter-position: split,
-  // debug: (
-  //   image: show-columns,
-  //   color: rgba(#D7DDED, .5),
-  // ),
+  debug: (
+    image: show,
+    output: background,
+    color: rgba(#66f, .25),
+    toggle: top right
+  ),
   use-custom: (
     clearfix: true,
   )
