@@ -3,8 +3,6 @@ div(v-bind:class='pageName')
   .cover
     Headbar
     .container.cover__container
-      .cover__pic_box
-        img.cover__img(src='@/assets/page-home__cover-img.svg')
       .cover__text_box
         h3.cover__sub-title
           span.cover__sub-title_text
@@ -15,10 +13,10 @@ div(v-bind:class='pageName')
         .cover__description_box
           span.cover__description_text
             | {{ $t('home-cover-content') }}
-        a.button.button--border-white.button--icon-downliad(href='javascript:;')
-          | {{$t('whitepaper')}}{{$t('download')}}
         a.cover__link(href='javascript:;')
-          | {{$t('seemore')}}
+          | {{$t('whitepaper')}}{{$t('download')}}
+      .cover__pic_box
+        img.cover__img(src='@/assets/page-home__cover-img.svg')
     .cover__footer
       .cover__footer_left_box
         h3.cover__footer_title
@@ -106,61 +104,43 @@ export default {
   background-repeat: no-repeat;
   @media (#{$max_phone}){
     height: auto;
-    // padding-top: 80px;
-    padding-bottom: 60px;
     text-align: center;
   }
   &__container {
-    z-index: 1;
-    position: relative;
+    display:flex;
+    align-items: center;
     height: 100%;
   }
-  &__pic_box {
-    position: absolute;
-    right: -100px;
-    top: 40%;
-    transform: translateY(-50%);
-    @media (#{$max_tablet}){
-      top: 50%;
-      height: 500px;
-      right: 0;
+  .center-v {
+    @include clearfix;
+    transform: translateY(-100px);
+  }
+  &__text_box {
+    @include span(12);
+    @media (#{$min_laptop}){
+      @include span(6);
     }
-    @media (#{$max_phone}){
-      transform: none;
-      position: static;
-      height: 240px;
-      margin-bottom: 40px;
+  }
+  &__pic_box {
+    @include span(12);
+    @media (#{$min_laptop}){
+      @include span(6 end);
     }
   }
   &__img {
-    height: 100%;
-  }
-  &__text_box {
-    position: absolute;
-    left: $container_side_margin;
-    top: 43%;
-    transform: translateY(-50%);
-    @include span(6 of 12);
-    @media (#{$max_tablet}){
-      @include span(8 of 12);
-      top: 50%;
-    }
-    @media (#{$max_phone}){
-      @include span(12 of 12);
-      position: static;
-      transform: none;
-      padding-bottom: 50px;
-    }
+    width: 120%;
   }
   &__link {
     @include font_loader($montserrat, 7, 'n');
-    margin-left: 40px;
-    color: white;
-    font-size: 10px;
     text-transform: uppercase;
+    padding: 15px 100px;
+    border-radius: 5px;
+    background: linear-gradient(225deg, #FA2B56 0%, #F91C3D 100%);
+    box-shadow: 10px 10px 30px 0 rgba($color-gray-darkest,0.3);
+    color: white;
     &:hover{
-      color: white;
       text-decoration: none;
+      box-shadow: 10px 10px 40px 0 rgba($color-gray-darkest,.5);
     }
   }
   &__title {
