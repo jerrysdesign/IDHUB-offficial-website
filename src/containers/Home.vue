@@ -8,30 +8,71 @@ div(v-bind:class='pageName')
       .cover__text_box
         h3.cover__sub-title
           span.cover__sub-title_text
-            | 基于开放原则的去中心化
+            | {{ $t('home-cover-subtitle') }}
         h2.cover__title
           span.cover__title_text
-            | 安全数字身份生态系统
+            | {{ $t('home-cover-title') }}
         .cover__description_box
           span.cover__description_text
-            | IDHub 是建立在开放原则之上，基于区块链技术的去中心化数字身份应用平台，具备良好的技术兼容性与功能拓展性。以安全、自主、可信的身份管理机制，最终实现以数字身份链接一切 (社会服务、数字资产、数字生活等) 的愿景。
+            | {{ $t('home-cover-content') }}
         a.button.button--border-white.button--icon-downliad(href='javascript:;')
-          | 白皮書下載
+          | {{$t('whitepaper')}}{{$t('download')}}
         a.cover__link(href='javascript:;')
-          | 更多
+          | {{$t('seemore')}}
     .cover__footer.cover__footer
       .cover__footer_left_box
         a.cover__footer_button.button.button--blue.button--blue-shadow.button--extra-small
-          | new
+          | {{$t('home-cover-footer')}}
         span.cover__footer_text
-          | IDHub token 已发行，ERC20 合约地址为 0x29F20242051AccDA50D52a7E272A5F23237e4696。请核对合约地址，避免受骗。
+          | {{$t('home-cover-footer-content')}}
   .section-version
+    .container
+      h3 {{ $t('home-version-title') }}
+      h4 {{ $t('home-version-subtitle') }}
+      div
+        .btn {{$t('seemore')}}
+      ul
+        li
+          h5 {{$t('home-version-list-1-title')}}
+          p {{$t('home-version-list-1-text')}}
+        li
+          h5 {{$t('home-version-list-2-title')}}
+          p {{$t('home-version-list-2-text')}}
+        li
+          h5 {{$t('home-version-list-3-title')}}
+          p {{$t('home-version-list-3-text')}}
   .section-case
+    .container
+      h3 {{ $t('home-case-title') }}
   .section-roadmap
+    .container
+      h3 {{ $t('home-roadmap-title') }}
   .section-advisors
+    .container
+      h3 {{ $t('home-advisors-title') }}
+      p
+        | {{ $t('home-advisors-text') }}
+      div
+        button(type="button", class="btn btn-danger")
+          |{{$t('buttn-seemore')}}
   .section-download
+    .container
+      h3 {{ $t('home-download-title') }}
+      p
+        | {{ $t('home-download-text') }}
+      div
+        button(type="button", class="btn btn-danger")
+          |{{$t('download')}}
   .section-social
+    .container
+      h3 {{ $t('home-social-title') }}
+      p
+        | {{ $t('home-social-text') }}
   .section-media
+    .container
+      h3 {{ $t('home-media-title') }}
+      p
+        | {{ $t('home-media-text') }}
 </template>
 
 <script>
@@ -39,9 +80,7 @@ import Headbar from '@/components/Header'
 export default {
   name: 'home',
   data: () => {
-    return {
-      pageName: 'page-home'
-    }
+    return {}
   },
   components: {
     Headbar
@@ -200,5 +239,14 @@ export default {
 }
 .section-media {
   background-color: $color-gray-ligtest;
+}
+.h1.title {
+  color: #1F2D51;
+}
+
+.btn {
+  background: #FA274F;
+  padding-left: 4em;
+  padding-right: 4em;
 }
 </style>

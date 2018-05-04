@@ -103,7 +103,7 @@ export default {
       background-image: linear-gradient(-180deg, #1B47AD 0%, #0D2F80 100%);
       box-shadow: 30px 30px 60px 0 rgba($color-gray-darkest, .3);
     }
-    @media (#{$max_phone}){
+    @media (#{$max_phone}) {
       padding: 20px 15px 20px;
     }
   }
