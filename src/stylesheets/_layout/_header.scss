@@ -155,7 +155,9 @@
     }
   }
 
-
+  .page-home & {
+    background: none;
+  }
 
   &__item--desktop{
     @media (#{$max_tablet}){

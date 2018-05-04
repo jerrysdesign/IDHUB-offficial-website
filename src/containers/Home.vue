@@ -4,7 +4,7 @@ div(v-bind:class='pageName')
     Headbar
     .container.cover__container
       .cover__pic_box
-        img.cover__img(src='img/')
+        img.cover__img(src='@/assets/page-home__cover-img.svg')
       .cover__text_box
         h3.cover__sub-title
           span.cover__sub-title_text
@@ -19,9 +19,9 @@ div(v-bind:class='pageName')
           | {{$t('whitepaper')}}{{$t('download')}}
         a.cover__link(href='javascript:;')
           | {{$t('seemore')}}
-    .cover__footer.cover__footer
+    .cover__footer
       .cover__footer_left_box
-        a.cover__footer_button.button.button--blue.button--blue-shadow.button--extra-small
+        h3.cover__footer_title
           | {{$t('home-cover-footer')}}
         span.cover__footer_text
           | {{$t('home-cover-footer-content')}}
@@ -100,7 +100,10 @@ export default {
 @import '../stylesheets/_abstracts/_grid';
 .cover {
   overflow: hidden;
+  background-image: url(../assets/home-cover-bg.svg);
+  background-position: 50% 120%;
   background-color: white;
+  background-repeat: no-repeat;
   @media (#{$max_phone}){
     height: auto;
     // padding-top: 80px;
@@ -114,9 +117,8 @@ export default {
   }
   &__pic_box {
     position: absolute;
-    height: 80%;
-    right: $container_side_margin;
-    top: 58%;
+    right: -100px;
+    top: 40%;
     transform: translateY(-50%);
     @media (#{$max_tablet}){
       top: 50%;
@@ -136,7 +138,7 @@ export default {
   &__text_box {
     position: absolute;
     left: $container_side_margin;
-    top: 53%;
+    top: 43%;
     transform: translateY(-50%);
     @include span(6 of 12);
     @media (#{$max_tablet}){
@@ -207,20 +209,36 @@ export default {
   &__footer_left_box {
     @extend .container;
   }
-  &__footer_button {
-    position: relative;
-    z-index: 1;
-    top: -2px;//to make it visually look centered
-  }
-  &__footer_text {
-    @include font_loader($playfair, 7, 'i');
-    margin-left: 30px;
-    font-size: 13px;
-    font-style: italic;
+  // &__footer_button {
+  //   position: relative;
+  //   z-index: 1;
+  //   top: -2px;//to make it visually look centered
+  // }
+  &__footer_title {
+    @include font_loader($montserrat, 4, 'n');
+    display: inline-block;
+    color: white;
     @media (#{$max_phone}){
       margin-left: 10px;
       font-size: 11px;
     }
+  }
+  &__footer_text {
+    @include font_loader($playfair, 4, 'i');
+    margin-left: 30px;
+    font-size: 13px;
+    font-style: italic;
+    color: white;
+    @media (#{$max_phone}){
+      margin-left: 10px;
+      font-size: 11px;
+    }
+  }
+}
+
+.page-home {
+  .header {
+    background: none;
   }
 }
 // section

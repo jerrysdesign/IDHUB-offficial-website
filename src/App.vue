@@ -9,15 +9,13 @@
 <script>
 import Vue from 'vue'
 import Sitemenu from '@/components/Menu'
-import BootstrapVue from 'bootstrap-vue'
 import Footbar from '@/components/Footer'
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
-import VueI18n from 'vue-i18n';
-import i18n from '@/i18n';
+import BootstrapVue from 'bootstrap-vue'
+import VueI18n from 'vue-i18n'
+import i18n from '@/i18n'
 import { store } from '@/store/header'
-Vue.use(BootstrapVue);
-Vue.use(VueI18n);
+Vue.use(BootstrapVue)
+Vue.use(VueI18n)
 Vue.config.productionTip = false
 
 export default {
@@ -31,5 +29,7 @@ export default {
 }
 </script>
 <style lang="scss">
+  @import 'bootstrap-vue/dist/bootstrap-vue.css';
+  @import 'bootstrap/dist/css/bootstrap.css';
   @import './stylesheets/main';
 </style>
