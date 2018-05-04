@@ -6,16 +6,16 @@ div(v-bind:class='pageName')
       .section-team(v-for='content in contents')
         .team__title-box
           h2.team__title
-            | {{ content.title }}
+            | {{ $t(content.title) }}
           h3.team__desction
-            | {{ content.subtitle }}
+            | {{ $t(content.subtitle) }}
         ul.team__box
           li.team__item-wrapper(v-for='member in content.members')
             .ratio-1-1
               .team__item
-                div {{ member.name }}
-                div {{ member.job }}
-                div {{ member.experience }}
+                div {{ $t(member.name) }}
+                div {{ $t(member.job) }}
+                div {{ $t(member.experience) }}
 </template>
 
 
@@ -24,41 +24,33 @@ import Headbar from '@/components/Header'
 export default {
   name: 'team',
   data: () => {
+    let numberOfAdvisor = 2
+    let numberOfPerson = 11
+    let advisor = []
+    let person = []
+    for(let i = 1; i <= numberOfAdvisor; i++){
+      advisor.push({
+        name: `advisor.name-${i}`,
+        job: `advisor.job-${i}`,
+        experience: `advisor.experience-${i}`
+      })
+    }
+    for(let i = 1; i <= numberOfPerson; i++){
+      person.push({
+        name: `person.name-${i}`,
+        job: `person.job-${i}`,
+        experience: `person.experience-${i}`
+      })
+    }
     return {
       pageName: 'page-team',
       contents: [{
-        title: '顧問團隊',
-        subtitle: '我們的顧問群',
-        members: [
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' }
-        ]}, {
-        title: '顧問團隊',
-        subtitle: '我們的顧問群',
-        members: [
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' },
-          { name: 'name', job: 'job', experience: 'experience' }
-        ]}
+        title: 'team_page.title-1',
+        subtitle: 'team_page.subtitle-1',
+        members: advisor}, {
+        title: 'team_page.title-2',
+        subtitle: 'team_page.subtitle-2',
+        members: person}
       ]
     }
   },
