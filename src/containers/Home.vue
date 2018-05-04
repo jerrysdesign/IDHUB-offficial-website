@@ -80,7 +80,9 @@ import Headbar from '@/components/Header'
 export default {
   name: 'home',
   data: () => {
-    return {}
+    return {
+      pageName: 'page-home'
+    }
   },
   components: {
     Headbar
