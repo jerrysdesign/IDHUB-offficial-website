@@ -25,7 +25,7 @@ export default {
   name: 'team',
   data: () => {
     return {
-      pageName: 'Team',
+      pageName: 'page-team',
       contents: [{
         title: '顧問團隊',
         subtitle: '我們的顧問群',
