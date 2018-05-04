@@ -249,6 +249,28 @@ export default {
 }
 .section-case {
   background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+  position: relative;
+  overflow: hidden;
+  color: $color-gray-ligtest;
+  &:before, &:after {
+    background:  #1A47B0;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100px;
+    content: '';
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    opacity: .15;
+  }
+  &:before {
+    left: 35%;
+    top: -20%;
+  }
+  &:after {
+    left: -5%;
+    bottom: 10%;
+  }
 }
 .section-roadmap {
   background-color: white;
