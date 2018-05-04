@@ -43,18 +43,21 @@ div(v-bind:class='pageName')
           p {{$t('home-version-list-3-text')}}
   .section-case
     .container
-      h3 {{ $t('home-case-title') }}
+      .section__header
+        h3 {{ $t('home-case-title') }}
   .section-roadmap
     .container
-      h3 {{ $t('home-roadmap-title') }}
+      .section__header
+        h3 {{ $t('home-roadmap-title') }}
   .section-advisors
     .container
+      .section__header
       h3 {{ $t('home-advisors-title') }}
       p
         | {{ $t('home-advisors-text') }}
       div
         button(type="button", class="btn btn-danger")
-          |{{$t('buttn-seemore')}}
+          |{{$t('seemore')}}
   .section-download
     .container
       h3 {{ $t('home-download-title') }}
