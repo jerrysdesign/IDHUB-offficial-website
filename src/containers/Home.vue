@@ -227,25 +227,22 @@ export default {
   position: relative;
   overflow: hidden;
   &:before, &:after {
-    position: absolute;
+    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+    border-radius: 100px;
     content: '';
     display: block;
     width: 1000px;
     height: 1000px;
+    position: absolute;
+    transform: rotate(45deg);
   }
   &:before {
     opacity: 0.05;
-    transform: rotate(45deg);
-    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
-    border-radius: 100px;
     left: 45%;
     top: -100%;
   }
   &:after {
     opacity: 0.03;
-    transform: rotate(45deg);
-    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
-    border-radius: 100px;
     left: 40%;
     bottom: -100%;
   }
