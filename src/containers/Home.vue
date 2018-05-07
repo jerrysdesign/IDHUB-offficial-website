@@ -44,9 +44,13 @@ div(v-bind:class='pageName')
       .section__header
         h3 {{ $t('home-case-title') }}
   .section-roadmap
-    .container
-      .section__header
-        h3 {{ $t('home-roadmap-title') }}
+    .section__header
+      h3 {{ $t('home-roadmap-title') }}
+    .timeline-box
+      .container
+        .timeline-graph
+          img(src='static/img/tlimeline-graph.png')
+    .timeline-line
   .section-advisors
     .container
       .section__header
@@ -315,6 +319,27 @@ export default {
 }
 .section-roadmap {
   background-color: white;
+  .section__header {
+    margin-bottom: 80px;
+  }
+  .timeline-box {
+    position: relative;
+    height: auto;
+    height: 365px;
+    overflow-x: scroll;
+    .timeline-graph {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      text-align: center;
+    }
+  }
+  .timeline-line {
+    margin-top: -16px;
+    width: 100%;
+    border-top: 4px solid #0F358E;
+    height: 8px;
+  }
 }
 .section-advisors {
   background-color: $color-gray-ligtest;
