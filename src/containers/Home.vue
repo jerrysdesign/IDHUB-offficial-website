@@ -66,9 +66,19 @@ div(v-bind:class='pageName')
           |{{$t('download')}}
   .section-social
     .container
-      h3 {{ $t('home-social-title') }}
-      p
-        | {{ $t('home-social-text') }}
+      .left-box
+        h3 {{ $t('home-social-title') }}
+        p
+          | {{ $t('home-social-text') }}
+      .right-box
+        ul.social__list
+          li.social__list-item(v-for='social in socials')
+            .social__list-item-wrapper(:style="'background-color: '+ social.background ")
+              .social__list-item__logo
+                img(:src='social.img' )
+              .social__list-item__name
+                | {{ social.name }}
+              a.btn(:href='social.socialLink')
   .section-media
     .container
       h3 {{ $t('home-media-title') }}
@@ -78,7 +88,7 @@ div(v-bind:class='pageName')
         ul.media__list
           li.media__list-item(v-for='media in medias')
             .img
-              img(:src='media.img' )
+              img(:src='media.img')
             .media__list-item__text-box
               .media__list-item__date
                 | {{ media.mediaDate }}
@@ -94,10 +104,18 @@ export default {
   data: () => {
     return {
       pageName: 'page-home',
+      socials:[
+        { img:'static/img/logo--social--facebook.svg', name: 'facebook', socialLink: 'http://google.com', background: '#34579A' },
+        { img:'static/img/logo--social--twitter.svg', name: 'twitter', socialLink: 'javascript:;', background: '#009FF4' },
+        { img:'static/img/logo--social--github.svg', name: 'github', socialLink: 'javascript:;', background: '#303030' },
+        { img:'static/img/logo--social--slack.svg', name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
+        { img:'static/img/logo--social--medium.svg', name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
+        { img:'static/img/logo--social--telegram.svg', name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
+      ],
       medias:[
-        { img:'static/img/logo-coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services' },
-        { img:'static/img/logo-medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project' },
-        { img:'static/img/logo-chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事从“一门式”到“零跑腿”' }
+        { img:'static/img/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services' },
+        { img:'static/img/logo--media--medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project' },
+        { img:'static/img/logo--media--chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事从“一门式”到“零跑腿”' }
       ]
     }
   },
@@ -319,6 +337,50 @@ export default {
 }
 .section-social {
   background-color: white;
+  .left-box {
+    @include span(6 of 12);
+  }
+  .right-box {
+    @include span(6 of 12);
+  }
+  .social__list {
+    @include clear_list;
+    &-item {
+      @include span(4 of 12);
+      margin-bottom: gutter();
+      &-wrapper {
+        padding: 25px 15px;
+        border-radius: 5px;
+        box-shadow: 0 30px 70px 0 rgba($color-gray-darkest, .1);
+        &:hover {
+          box-shadow: 0 10px 70px 0 rgba($color-gray-darkest, .5);
+        }
+      }
+      &__name {
+        color: $color-gray-ligtest;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+      .btn {
+        line-height: 42px;
+        height: 42px;
+        border-radius: 21px;
+        border: 2px solid $color-gray-ligtest;
+        background-color: transparent;
+        background-image: url(../assets/icon--social-item-go.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        &:hover {
+          $btn-color: #FA2B56;
+          border: 2px solid $btn-color;
+          background-color: $btn-color;
+        }
+      }
+    }
+  }
 }
 .section-media {
   background-color: $color-gray-ligtest;
@@ -336,6 +398,9 @@ export default {
       padding: 15px;
       @include gallery(6);
       margin-bottom: gutter();
+      &:hover {
+        box-shadow: 20px 20px 60px 0 rgba($color-gray-darkest,.3);
+      }
       @media (#{$min_tablet}) {
         @include gallery(4);
       }
@@ -343,13 +408,15 @@ export default {
         width: 100%;
         height: 300px;
         background-image: linear-gradient(-225deg, #FA2B56 0%, #F91C3D 100%);
-        box-shadow: 10px 10px 30px 0 rgba(0,0,0,0.3);
         border-radius: 5px;
         overflow: hidden;
         position: relative;
         display: flex;
         justify-content: center;
         align-items: center;
+        &:hover {
+          box-shadow: 10px 10px 30px 0 rgba($color-gray-darkest,.3);
+        }
       }
       &__text-box {
         margin-top: 30px;
