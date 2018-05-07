@@ -74,6 +74,17 @@ div(v-bind:class='pageName')
       h3 {{ $t('home-media-title') }}
       p
         | {{ $t('home-media-text') }}
+      .row
+        ul.media__list
+          li.media__list-item(v-for='media in medias')
+            .img
+              img(src='')
+            .media__list-item__text-box
+              .media__list-item__date
+                | {{ media.mediaDate }}
+              .media__list-item__text
+                | {{ media.mediaText }}
+
 </template>
 
 <script>
@@ -82,7 +93,12 @@ export default {
   name: 'home',
   data: () => {
     return {
-      pageName: 'page-home'
+      pageName: 'page-home',
+      medias:[
+        { mediaDate: 'dd mm yyy', mediaText: 'lorem lorem lorem lorem lorem lorem' },
+        { mediaDate: 'dd mm yyy', mediaText: 'lorem lorem lorem lorem lorem lorem' },
+        { mediaDate: 'dd mm yyy', mediaText: 'lorem lorem lorem lorem lorem lorem' }
+      ]
     }
   },
   components: {
@@ -286,6 +302,45 @@ export default {
 }
 .section-media {
   background-color: $color-gray-ligtest;
+}
+.media {
+  &__list {
+    @include container;
+    @include clear_list;
+    margin-top: 100px;
+    width: 100%;
+    &-item {
+      background: white;
+      box-shadow: 20px 20px 60px 0 rgba($color-gray-darkest,.1);
+      border-radius: 5px;
+      padding: 15px;
+      @include gallery(6);
+      margin-bottom: gutter();
+      @media (#{$min_tablet}) {
+        @include gallery(4);
+      }
+      .img {
+        width: 100%;
+        height: 300px;
+        background-image: linear-gradient(-225deg, #FA2B56 0%, #F91C3D 100%);
+        box-shadow: 10px 10px 30px 0 rgba(0,0,0,0.3);
+        border-radius: 5px;
+      }
+      &__text-box {
+        margin-top: 30px;
+        margin-bottom: 5px;
+        text-align: left;
+      }
+      &__date {
+        font-size: 12px;
+        color: $color-gray-dark;
+      }
+      &__text {
+        font-size: 18px;
+        color: $color-gray-darker;
+      }
+    }
+  }
 }
 .h1.title {
   color: #1F2D51;
