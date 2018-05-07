@@ -78,7 +78,7 @@ div(v-bind:class='pageName')
         ul.media__list
           li.media__list-item(v-for='media in medias')
             .img
-              img(src='')
+              img(:src='media.img' )
             .media__list-item__text-box
               .media__list-item__date
                 | {{ media.mediaDate }}
@@ -95,9 +95,9 @@ export default {
     return {
       pageName: 'page-home',
       medias:[
-        { mediaDate: 'dd mm yyy', mediaText: 'lorem lorem lorem lorem lorem lorem' },
-        { mediaDate: 'dd mm yyy', mediaText: 'lorem lorem lorem lorem lorem lorem' },
-        { mediaDate: 'dd mm yyy', mediaText: 'lorem lorem lorem lorem lorem lorem' }
+        { img:'static/img/logo-coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services' },
+        { img:'static/img/logo-medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project' },
+        { img:'static/img/logo-chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事从“一门式”到“零跑腿”' }
       ]
     }
   },
@@ -238,6 +238,23 @@ export default {
   }
 }
 // section
+%section-background--primary {
+  background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+  position: relative;
+  overflow: hidden;
+  color: $color-gray-ligtest;
+  &:before, &:after {
+    background:  #1A47B0;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 100px;
+    content: '';
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+    opacity: .15;
+  }
+}
 .section-version {
   background-color: $color-gray-ligtest;
   position: relative;
@@ -264,20 +281,10 @@ export default {
   }
 }
 .section-case {
-  background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
-  position: relative;
-  overflow: hidden;
-  color: $color-gray-ligtest;
-  &:before, &:after {
-    background:  #1A47B0;
-    width: 1000px;
-    height: 1000px;
-    border-radius: 100px;
-    content: '';
-    display: block;
-    position: absolute;
-    transform: rotate(45deg);
-    opacity: .15;
+  @extend %section-background--primary;
+  .container {
+    z-index: 1;
+    position: inherit;
   }
   &:before {
     left: 35%;
@@ -295,7 +302,20 @@ export default {
   background-color: $color-gray-ligtest;
 }
 .section-download {
-  background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+  @extend %section-background--primary;
+  .container {
+    z-index: 1;
+    position: inherit;
+  }
+  &:before {
+    left: 50%;
+    top: -10%;
+  }
+  &:after {
+    left: 55%;
+    bottom: 10%;
+  }
+
 }
 .section-social {
   background-color: white;
@@ -325,6 +345,11 @@ export default {
         background-image: linear-gradient(-225deg, #FA2B56 0%, #F91C3D 100%);
         box-shadow: 10px 10px 30px 0 rgba(0,0,0,0.3);
         border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       &__text-box {
         margin-top: 30px;
