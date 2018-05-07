@@ -338,16 +338,28 @@ export default {
 .section-social {
   background-color: white;
   .left-box {
-    @include span(6 of 12);
+    @include span(12 of 12);
+    @media (#{$min_tablet}) {
+      @include span(6 of 12);
+    }
   }
   .right-box {
-    @include span(6 of 12);
+    @include span(12 of 12);
+    @media (#{$min_tablet}) {
+      @include span(6 of 12);
+    }
   }
   .social__list {
     @include clear_list;
     &-item {
-      @include span(4 of 12);
+      @include span(12 of 12);
       margin-bottom: gutter();
+      @media (#{$min_phone}) {
+        @include span(6 of 12);
+      }
+      @media (#{$min_tablet}) {
+        @include span(4 of 12);
+      }
       &-wrapper {
         padding: 25px 15px;
         border-radius: 5px;
@@ -396,10 +408,13 @@ export default {
       box-shadow: 20px 20px 60px 0 rgba($color-gray-darkest,.1);
       border-radius: 5px;
       padding: 15px;
-      @include gallery(6);
+      @include gallery(12);
       margin-bottom: gutter();
       &:hover {
         box-shadow: 20px 20px 60px 0 rgba($color-gray-darkest,.3);
+      }
+      @media (#{$min_phone}) {
+        @include gallery(6);
       }
       @media (#{$min_tablet}) {
         @include gallery(4);
