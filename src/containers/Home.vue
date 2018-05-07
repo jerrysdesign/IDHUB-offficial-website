@@ -25,24 +25,31 @@ div(v-bind:class='pageName')
           | {{$t('home-cover-footer-content')}}
   .section-version
     .container
-      h3 {{ $t('home-version-title') }}
-      h4 {{ $t('home-version-subtitle') }}
+      .section__header
+        h3 {{ $t('home-version-title') }}
+        h4 {{ $t('home-version-subtitle') }}
       div
         .btn {{$t('seemore')}}
-      ul
-        li
-          h5 {{$t('home-version-list-1-title')}}
-          p {{$t('home-version-list-1-text')}}
-        li
-          h5 {{$t('home-version-list-2-title')}}
-          p {{$t('home-version-list-2-text')}}
-        li
-          h5 {{$t('home-version-list-3-title')}}
-          p {{$t('home-version-list-3-text')}}
+      ul.version__list
+        li.version__list-item
+          img.version__list-item__icon(src='static/img/icon--version-service.svg')
+          h5.version__list-item__title {{$t('home-version-list-1-title')}}
+          p.version__list-item__text {{$t('home-version-list-1-text')}}
+        li.version__list-item
+          img.version__list-item__icon(src='static/img/icon--version-digiasset.svg')
+          h5.version__list-item__title {{$t('home-version-list-2-title')}}
+          p.version__list-item__text {{$t('home-version-list-2-text')}}
+        li.version__list-item
+          img.version__list-item__icon(src='static/img/icon--version-digilife.svg')
+          h5.version__list-item__title {{$t('home-version-list-3-title')}}
+          p.version__list-item__text {{$t('home-version-list-3-text')}}
   .section-case
     .container
       .section__header
         h3 {{ $t('home-case-title') }}
+      .case-box
+        .world-map
+          img(src='@/assets/world-map.svg')
   .section-roadmap
     .section__header
       h3 {{ $t('home-roadmap-title') }}
@@ -301,6 +308,43 @@ export default {
     left: 40%;
     bottom: -100%;
   }
+  .section__header {
+    margin-bottom: 50px;
+    h3 {
+      font-size: 48px;
+      line-height: 60px;
+    }
+    h4 {
+      font-size: 20px;
+      line-height: 32px;
+    }
+  }
+  .version {
+    &__list {
+      @include clear_list;
+      margin-top: 80px;
+      &-item {
+        @include span(12 of 12);
+        margin-bottom: gutter();
+        @media (#{$min_tablet}) {
+          @include span(1 of 3);
+        }
+        &__icon {
+          margin-bottom: 24px;
+        }
+        &__title {
+          font-size: 18px;
+          color: $color-primary-dark;
+          margin-bottom: 12px;
+        }
+        &__text {
+          font-size: 14px;
+          line-height: 21px;
+          color: $color-gray-darker;
+        }
+      }
+    }
+  }
 }
 .section-case {
   @extend %section-background--primary;
@@ -316,6 +360,9 @@ export default {
     left: -5%;
     bottom: 10%;
   }
+  .case-box {
+    margin-top: 80px;
+  }
 }
 .section-roadmap {
   background-color: white;
@@ -330,6 +377,7 @@ export default {
     .timeline-graph {
       position: absolute;
       width: 100%;
+      left: 0;
       bottom: 0;
       text-align: center;
     }
