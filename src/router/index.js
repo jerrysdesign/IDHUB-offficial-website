@@ -8,6 +8,7 @@ import News from '@/containers/News'
 import Careers from '@/containers/Careers'
 import Cooperate from '@/containers/Cooperate'
 import Contact from '@/containers/Contact'
+import Activities from '@/containers/Activities'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/activities',
+      name: 'Activities',
+      component: Activities
     }
   ]
 })

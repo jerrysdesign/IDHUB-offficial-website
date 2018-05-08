@@ -35,7 +35,7 @@ export default {
         { to: 'home', text: 'home' },
         { to: 'tech', text: 'tech' },
         { to: 'news', text: 'news' },
-        { to: 'news', text: 'activities' },
+        { to: 'activities', text: 'activities' },
         { to: 'team', text: 'team' },
         { to: 'contact', text: 'contact' }
       ]
