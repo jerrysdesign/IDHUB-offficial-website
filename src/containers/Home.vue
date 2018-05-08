@@ -26,8 +26,8 @@ div(v-bind:class='pageName')
   .section-version
     .container
       .section__header
-        h3 {{ $t('home-version-title') }}
-        h4 {{ $t('home-version-subtitle') }}
+        h2 {{ $t('home-version-title') }}
+        h3 {{ $t('home-version-subtitle') }}
       div
         .btn {{$t('seemore')}}
       ul.version__list
@@ -46,13 +46,13 @@ div(v-bind:class='pageName')
   .section-case
     .container
       .section__header
-        h3 {{ $t('home-case-title') }}
+        h2 {{ $t('home-case-title') }}
       .case-box
         .world-map
           img(src='@/assets/world-map.svg')
   .section-roadmap
     .section__header
-      h3 {{ $t('home-roadmap-title') }}
+      h2 {{ $t('home-roadmap-title') }}
     .timeline-box
       .container
         .timeline-graph
@@ -61,26 +61,24 @@ div(v-bind:class='pageName')
   .section-advisors
     .container
       .section__header
-      h3 {{ $t('home-advisors-title') }}
-      p
-        | {{ $t('home-advisors-text') }}
+        h2 {{ $t('home-advisors-title') }}
+        h4 {{ $t('home-advisors-text') }}
       div
         button(type="button", class="btn btn-danger")
           |{{$t('seemore')}}
   .section-download
     .container
-      h3 {{ $t('home-download-title') }}
-      p
-        | {{ $t('home-download-text') }}
+      .section__header
+        h2 {{ $t('home-download-title') }}
+        h3 {{ $t('home-download-text') }}
       div
         button(type="button", class="btn btn-danger")
           |{{$t('download')}}
   .section-social
     .container
-      .left-box
-        h3 {{ $t('home-social-title') }}
-        p
-          | {{ $t('home-social-text') }}
+      .section__header.left-box
+        h2 {{ $t('home-social-title') }}
+        h4 {{ $t('home-social-text') }}
       .right-box
         ul.social__list
           li.social__list-item(v-for='social in socials')
@@ -92,19 +90,18 @@ div(v-bind:class='pageName')
               a.btn(:href='social.socialLink')
   .section-media
     .container
-      h3 {{ $t('home-media-title') }}
-      p
-        | {{ $t('home-media-text') }}
-      .row
-        ul.media__list
-          li.media__list-item(v-for='media in medias')
-            .img
-              img(:src='media.img')
-            .media__list-item__text-box
-              .media__list-item__date
-                | {{ media.mediaDate }}
-              .media__list-item__text
-                | {{ media.mediaText }}
+      .section__header
+        h2 {{ $t('home-media-title') }}
+        h3 {{ $t('home-media-text') }}
+      ul.media__list
+        li.media__list-item(v-for='media in medias')
+          .img
+            img(:src='media.img')
+          .media__list-item__text-box
+            .media__list-item__date
+              | {{ media.mediaDate }}
+            .media__list-item__text
+              | {{ media.mediaText }}
 
 </template>
 
@@ -195,10 +192,10 @@ export default {
     @include font_loader($montserrat, 1, 'n');
     color: $color-gray-dark;
     font-size: 42px;
-    @media (#{$min_tablet}){
+    @include tablet {
       font-size: 60px;
     }
-    @media (#{$min_desktop}){
+    @include desktop {
       font-size: 72px;
     }
   }
@@ -209,10 +206,10 @@ export default {
     @include font_loader($montserrat, 1, 'n');
     color: $color-gray-dark;
     font-size: 24px;
-    @media (#{$min_tablet}){
+    @include tablet {
       font-size: 36px;
     }
-    @media (#{$min_desktop}){
+    @include desktop {
       font-size: 48px;
     }
   }
@@ -262,6 +259,9 @@ export default {
 }
 
 .page-home {
+  @include desktop {
+    color: #000;
+  }
   .header {
     background: none;
   }
@@ -288,6 +288,7 @@ export default {
   background-color: $color-gray-ligtest;
   position: relative;
   overflow: hidden;
+
   &:before, &:after {
     background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
     border-radius: 100px;
@@ -300,33 +301,26 @@ export default {
   }
   &:before {
     opacity: 0.05;
-    left: 45%;
-    top: -100%;
+    left: 40%;
+    top: -30%;
   }
   &:after {
     opacity: 0.03;
     left: 40%;
-    bottom: -100%;
+    bottom: -60%;
   }
   .section__header {
     margin-bottom: 50px;
-    h3 {
-      font-size: 48px;
-      line-height: 60px;
-    }
-    h4 {
-      font-size: 20px;
-      line-height: 32px;
-    }
   }
   .version {
+    .section__header {}
     &__list {
       @include clear_list;
       margin-top: 80px;
       &-item {
         @include span(12 of 12);
         margin-bottom: gutter();
-        @media (#{$min_tablet}) {
+        @include tablet  {
           @include span(1 of 3);
         }
         &__icon {
@@ -348,6 +342,7 @@ export default {
 }
 .section-case {
   @extend %section-background--primary;
+  .section__header {}
   .container {
     z-index: 1;
     position: inherit;
@@ -391,9 +386,11 @@ export default {
 }
 .section-advisors {
   background-color: $color-gray-ligtest;
+  .section__header {}
 }
 .section-download {
   @extend %section-background--primary;
+  .section__header {}
   .container {
     z-index: 1;
     position: inherit;
@@ -410,28 +407,35 @@ export default {
 }
 .section-social {
   background-color: white;
+  .section__header {}
   .left-box {
     @include span(12 of 12);
-    @media (#{$min_tablet}) {
+    @include tablet  {
       @include span(6 of 12);
     }
   }
   .right-box {
     @include span(12 of 12);
-    @media (#{$min_tablet}) {
+    @include tablet  {
       @include span(6 of 12);
     }
   }
   .social__list {
     @include clear_list;
     &-item {
-      @include span(12 of 12);
+      @include span(1 of 1);
       margin-bottom: gutter();
-      @media (#{$min_phone}) {
-        @include span(6 of 12);
+      @include phone {
+        @include span(1 of 2);
+        margin-bottom: gutter();
       }
-      @media (#{$min_tablet}) {
+      @include tablet  {
+        @include span(4 of 8);
+        margin-bottom: gutter();
+      }
+      @include desktop  {
         @include span(4 of 12);
+        margin-bottom: gutter();
       }
       &-wrapper {
         padding: 25px 15px;
@@ -469,6 +473,7 @@ export default {
 }
 .section-media {
   background-color: $color-gray-ligtest;
+  .section__header {}
 }
 .media {
   &__list {
@@ -481,16 +486,22 @@ export default {
       box-shadow: 20px 20px 60px 0 rgba($color-gray-darkest,.1);
       border-radius: 5px;
       padding: 15px;
-      @include gallery(12);
-      margin-bottom: gutter();
       &:hover {
         box-shadow: 20px 20px 60px 0 rgba($color-gray-darkest,.3);
       }
-      @media (#{$min_phone}) {
-        @include gallery(6);
+      @include span(1 of 1);
+      margin-bottom: gutter();
+      @include tablet  {
+        @include span(2 of 4);
+        margin-bottom: gutter();
       }
-      @media (#{$min_tablet}) {
-        @include gallery(4);
+      @include laptop  {
+        @include span(2 of 6);
+        margin-bottom: gutter();
+      }
+      @include desktop  {
+        @include span(4 of 12);
+        margin-bottom: gutter();
       }
       .img {
         width: 100%;

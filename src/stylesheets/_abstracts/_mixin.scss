@@ -36,3 +36,34 @@
     color: inherit;
   }
 }
+
+@mixin pt($value) {
+  padding-top: #{$value}px;
+}
+@mixin pb($value) {
+  padding-bottom: #{$value}px;
+}
+@mixin pt150 {
+  @include pt(150);
+}
+@mixin pt120 {
+  @include pt(120);
+}
+@mixin pt100 {
+  @include pt(100);
+}
+@mixin pt80 {
+  @include pt(80);
+}
+@mixin pb150 {
+  @include pb(150);
+}
+@mixin pb120 {
+  @include pb(120);
+}
+@mixin pb100 {
+  @include pb(100);
+}
+@mixin pb80 {
+  @include pb(80);
+}

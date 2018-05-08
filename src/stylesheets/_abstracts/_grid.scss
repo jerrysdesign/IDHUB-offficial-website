@@ -6,28 +6,25 @@
 // Device Size
 // ----------------
 
-$phone: 480px;
-$tablet: 992px;
-$tablet--landscape: 1024px;
-$laptop: 1200px;
-$desktop: 1440px;
+$phone: 425px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1200px;
 
 // Responsive Grids
 // ----------------
-$phone-layout             : layout(4 1/4);
-$tablet-layout            : layout(6 1/4);
-$tablet--lnadscape-layout : layout(12 1/4);
-$laptop-layout            : layout(12 1/4);
-$desktop-layout           : layout(12 1/4);
+$phone-layout   : layout(4 1/4);
+$tablet-layout  : layout(6 1/4);
+$laptop-layout  : layout(12 1/4);
+$desktop-layout : layout(12 1/4);
 
 // Breakpoints
 // -----------
 $susy-breakpoint: (
-  phone             : 480px,
-  tablet            : 992px,
-  tablet--lnadscape : 1024px,
-  laptop            : 1200px,
-  desktop           : 1440px
+  phone   : 425px,
+  tablet  : 768px,
+  laptop  : 1024px,
+  desktop : 1200px
 );
 
 
@@ -77,11 +74,6 @@ $glober: 'Glober', $fallback;
     @content;
   }
 }
-@mixin tablet--lnadscape {
-  @include susy-breakpoint(map-get($susy-breakpoint, tablet--lnadscape), $tablet--lnadscape-layout) {
-    @content;
-  }
-}
 @mixin laptop {
   @include susy-breakpoint(map-get($susy-breakpoint, laptop), $laptop-layout) {
     @content;
@@ -97,14 +89,10 @@ $glober: 'Glober', $fallback;
   padding: 0 gutter();
   @include container();
   @include clearfix;
-
   @include phone {
     @include show-grid();
   }
   @include tablet {
-    @include show-grid();
-  }
-  @include tablet--lnadscape {
     @include show-grid();
   }
   @include laptop {

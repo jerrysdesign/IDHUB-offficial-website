@@ -28,13 +28,13 @@
       top: 0;
     }
     &--rounded {
-      height: 20px;
-      width: 20px;
-      line-height: 20px;
-      @media (#{$max_phone}) {
-        height: 36px;
-        width: 36px;
-        line-height: 36px;
+      height: 36px;
+      width: 36px;
+      line-height: 36px;
+      @include phone {
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
       }
       border: white 1px solid;
       border-radius: 50%;
