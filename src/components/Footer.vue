@@ -94,6 +94,22 @@ export default {
     padding: 35px 0;
     border-bottom: 1px solid rgba($cloud, .12);
     background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+    position: relative;
+    overflow: hidden;
+    color: $color-gray-ligtest;
+    &:before {
+      background:  #1A47B0;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 100px;
+      content: '';
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      opacity: .15;
+      left: -200px;
+      top: -300px;
+    }
     @media (#{$max_tablet}) {
       text-align: center;
     }
