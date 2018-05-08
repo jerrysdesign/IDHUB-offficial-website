@@ -121,9 +121,9 @@ export default {
         { img:'static/img/logo--social--telegram.svg', name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
       ],
       medias:[
-        { img:'static/img/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services' },
-        { img:'static/img/logo--media--medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project' },
-        { img:'static/img/logo--media--chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事从“一门式”到“零跑腿”' }
+        { img:'static/img/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
+        { img:'static/img/logo--media--medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
+        { img:'static/img/logo--media--chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
       ]
     }
   },
@@ -335,6 +335,7 @@ export default {
           font-size: 14px;
           line-height: 21px;
           color: $color-gray-darker;
+          @include font_loader($notosans, 4, 'n');
         }
       }
     }
@@ -529,6 +530,7 @@ export default {
       &__text {
         font-size: 18px;
         color: $color-gray-darker;
+        @include font_loader($notosans, 4, 'n');
       }
     }
   }

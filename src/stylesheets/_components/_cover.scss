@@ -29,15 +29,15 @@
 .cover__features_box {
 }
 .cover__feature_title {
-  @include font_loader($montserrat, 7, 'n');
   margin: 0 0 10px;
   font-size: 13px;
   color: $steel;
   text-transform: uppercase;
   letter-spacing: 0.085em;
+  @include font_loader($notosans, 1, 'n');
 }
 .cover__feature_text {
-  @include font_loader($montserrat, 3, 'n');
+  @include font_loader($notosans, 1, 'n');
   display: inline-block;
   max-width: 250px;
   //padding-right: 20px;
@@ -46,7 +46,6 @@
   line-height: 1.6;
 }
 .cover__title_text__accent_word {
-  @include font_loader($playfair, 7, 'i');
   font-style: italic;
 }
 
