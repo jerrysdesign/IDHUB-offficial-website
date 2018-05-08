@@ -4,7 +4,6 @@ footer.footer
     .container.footer__container
       .footer__left_box
         a.footer__logo_box(href='javascript:;')
-          img.footer__logo(src='img/etc/logo--circle--white.svg')
           span.footer__logo_text
             | IDHub
         span.footer__copyright
@@ -146,9 +145,6 @@ export default {
     img {
       height: 100%;
     }
-  }
-  &__logo {
-    margin-right: 10px;
   }
   &__social_box {
     margin-top: 16px;
