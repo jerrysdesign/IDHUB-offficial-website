@@ -62,7 +62,7 @@ app.get('/api/v1/blogs/:type', function(req, res) {
 // api for get categories keys
 app.get('/fake_api/v1/blogs/:type', function(req, res) {
   res.json({
-    ...jsdata,
+    data: jsdata.data,
   })
 })
 
