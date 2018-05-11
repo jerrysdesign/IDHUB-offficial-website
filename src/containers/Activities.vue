@@ -6,16 +6,16 @@ div(v-bind:class='pageName')
       .section__header
         h2 {{ $t('home-media-title') }}
         h3 {{ $t('home-media-text') }}
-    .news
-      .container
-        .section-team
-          ul.news__box
-            li.news__item(v-for='content in contents')
-              .item_img
-                img(:src='content.image.url')
-              .item_date
-                | {{content.publishedDate}}
-              .item_short_content(v-html="content.content.brief")
+  .news
+    .container
+      .section-team
+        ul.news__box
+          li.news__item(v-for='content in contents')
+            .item_img
+              img(:src='content.image.url')
+            .item_date
+              | {{content.publishedDate}}
+            .item_short_content(v-html="content.content.brief")
 </template>
 
 <script>
@@ -62,16 +62,30 @@ export default {
 @import '../stylesheets/_abstracts/_variables';
 @import '../stylesheets/_abstracts/_mixin';
 @import '../stylesheets/_abstracts/_grid';
+
 .page-activities {
   .cover {
-    // todo
-    // background: ;
-    height: inherit;
+    height: auto;
+    background-image: url(../assets/page-cover-bg.svg);
+    background-position: 0 center;
+    background-color: $color-primary-dark;
+    background-repeat: no-repeat;
+    .header {
+      background: none;
+    }
     .section__header {
       color: white;
       text-align: center;
-      padding-top: 150px;
-      padding-bottom: 150px;
+      padding-top: 80px;
+      padding-bottom: 80px;
+      @include tablet {
+        padding-top: 120px;
+        padding-bottom: 120px;
+      }
+      @include laptop  {
+        padding-top: 150px;
+        padding-bottom: 150px;
+      }
     }
   }
 }

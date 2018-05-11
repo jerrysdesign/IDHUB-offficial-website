@@ -58,10 +58,17 @@ export default {
 
 
 <style lang='scss' scoped>
+@import '../stylesheets/_abstracts/_variables';
 .header__left_box {
   button {
     color: white;
   }
 }
-
+.page-activities {
+  .cover {
+    .header {
+      background: none;
+    }
+  }
+}
 </style>
