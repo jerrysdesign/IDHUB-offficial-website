@@ -1,16 +1,21 @@
 <template lang="pug">
 div(v-bind:class='pageName')
-  Headbar
-  .news
+  .cover
+    Headbar
     .container
-      .section-team
-        ul.news__box
-          li.news__item(v-for='content in contents')
-            .item_img
-              img(:src='content.image.url')
-            .item_date
-              | {{content.publishedDate}}
-            .item_short_content(v-html="content.content.brief")
+      .section__header
+        h2 {{ $t('home-media-title') }}
+        h3 {{ $t('home-media-text') }}
+    .news
+      .container
+        .section-team
+          ul.news__box
+            li.news__item(v-for='content in contents')
+              .item_img
+                img(:src='content.image.url')
+              .item_date
+                | {{content.publishedDate}}
+              .item_short_content(v-html="content.content.brief")
 </template>
 
 <script>
@@ -20,7 +25,7 @@ export default {
   name: 'news',
   data: () => {
     return {
-      pageName: 'Activities',
+      pageName: 'page-activities',
       contents: []
     }
   },
@@ -57,10 +62,25 @@ export default {
 @import '../stylesheets/_abstracts/_variables';
 @import '../stylesheets/_abstracts/_mixin';
 @import '../stylesheets/_abstracts/_grid';
+.page-activities {
+  .cover {
+    // todo
+    // background: ;
+    height: inherit;
+    .section__header {
+      color: white;
+      text-align: center;
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+  }
+}
+
 .section-team + .section-team {
   padding-top: 0;
 }
 .news {
+  position: relative;
   &__box {
     margin: 0;
     padding:  0;
