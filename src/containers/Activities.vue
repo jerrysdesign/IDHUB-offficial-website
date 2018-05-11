@@ -74,7 +74,9 @@ export default {
       background: none;
     }
     .section__header {
-      color: white;
+      h2, h3 {
+        color: $color-gray-ligtest;
+      }
       text-align: center;
       padding-top: 80px;
       padding-bottom: 80px;
