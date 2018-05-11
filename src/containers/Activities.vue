@@ -59,9 +59,6 @@ export default {
 @import '../stylesheets/_abstracts/_variables';
 @import '../stylesheets/_abstracts/_mixin';
 @import '../stylesheets/_abstracts/_grid';
-@import '../stylesheets/_abstracts/_variables';
-@import '../stylesheets/_abstracts/_mixin';
-@import '../stylesheets/_abstracts/_grid';
 
 .page-activities {
   .cover {
