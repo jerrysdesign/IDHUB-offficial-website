@@ -16,11 +16,13 @@ div(v-bind:class='pageName')
                 div {{ $t(member.name) }}
                 div {{ $t(member.job) }}
                 div {{ $t(member.experience) }}
+  Joinus
 </template>
 
 
 <script>
 import Headbar from '@/components/Header'
+import Joinus from '@/components/Joinus'
 export default {
   name: 'team',
   data: () => {
@@ -55,7 +57,8 @@ export default {
     }
   },
   components: {
-    Headbar
+    Headbar,
+    Joinus
   }
 }
 </script>
