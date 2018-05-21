@@ -13,9 +13,7 @@
 
 <script>
 export default {
-  name: 'section-joinus',
-  data: () => {
-  }
+  name: 'section-joinus'
 }
 </script>
 
