@@ -4,7 +4,7 @@
     .row
       .text-box
         h4 加入我们,
-        h5 更多文字 歐ㄡ更多文字
+        h5 发展区块链数位身份 IDHub 让你于社群与商业展现个人价值
       .btn-box
         .btn
           | 职务清单
@@ -40,7 +40,7 @@ export default {
       font-weight: 700;
     }
     h5 {
-      font-size: 36px;
+      font-size: 18px;
       font-weight: 100;
     }
   }
