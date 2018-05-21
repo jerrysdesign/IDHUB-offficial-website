@@ -31,18 +31,28 @@
       height: 36px;
       width: 36px;
       line-height: 36px;
+      background-size: cover;
       @include phone {
-        height: 20px;
-        width: 20px;
-        line-height: 20px;
+        height: 24px;
+        width: 24px;
+        line-height: 24px;
       }
-      border: white 1px solid;
       border-radius: 50%;
       transition: opacity .4s ease;
-      opacity: 0.7;
+      opacity: .7;
       &:hover{
         opacity: 1;
       }
     }
   }
+}
+.social__link {
+  &--facebook {background-image: url(assets/icon-contact--facebook.png);}
+  &--twitter {background-image: url(assets/icon-contact--twitter.png);}
+  &--slack {background-image: url(assets/icon-contact--slack.png);}
+  &--github {background-image: url(assets/icon-contact--github.png);}
+  &--telegram {background-image: url(assets/icon-contact--telegram.png);}
+  &--wechat {background-image: url(assets/icon-contact--wechat.png);}
+  &--qq {background-image: url(assets/icon-contact--qq.png);}
+  &--reddit {background-image: url(assets/icon-contact--reddit.png);}
 }
