@@ -6,14 +6,14 @@ div(v-bind:class='pageName')
       .section-team
         ul.team__box
           li.team__item-wrapper(v-for='content in contents')
-            .ratio-1-1
-              .team__item
-                .item_title {{content.title}}
-                .item_img
-                  img(:src='content.image.url')
-                .item_date
-                  | {{content.publishedDate}}
-                .item_short_content(v-html="content.content.brief")
+            //- .ratio-1-1
+            .team__item
+              .item_title {{content.title}}
+              .item_img
+                img(:src='content.image.url')
+              .item_date
+                | {{content.publishedDate}}
+              .item_short_content(v-html="content.content.brief")
 </template>
 
 <script>

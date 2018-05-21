@@ -7,6 +7,13 @@ div(v-bind:class='pageName')
         h2 {{ $t('careers_page.title') }}
         h3 {{ $t('careers_page.subtitle') }}
   .careers
+    .container.careers-container
+      h3 fghjk
+      ul
+        li
+          | WERTYUIOP
+        li fghjkl
+
 </template>
 
 <script>
@@ -56,6 +63,16 @@ export default {
         padding-bottom: 150px;
       }
     }
+  }
+}
+.careers {
+  /* background: */
+  background-image: linear-gradient(-180deg, #061843 0%, #05112E 100%);
+  @include clearfix;
+  padding: 150px 0 0;
+  &-container {
+    @include span(8 of 12);
+    @include push(2);
   }
 }
 </style>

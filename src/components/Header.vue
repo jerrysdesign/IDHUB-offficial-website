@@ -64,7 +64,7 @@ export default {
     color: white;
   }
 }
-.page-activities, .page-careers {
+.page-tech, .page-activities, .page-careers {
   .cover {
     .header {
       background: none;
