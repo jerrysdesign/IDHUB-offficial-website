@@ -1,3 +1,5 @@
+$icon-size-md: 36px;
+$icon-size-sm: 24px;
 .social {
   @include clear_list;
   &__item {
@@ -28,14 +30,14 @@
       top: 0;
     }
     &--rounded {
-      height: 36px;
-      width: 36px;
-      line-height: 36px;
+      height: $icon-size-md;
+      width: $icon-size-md;
+      line-height: $icon-size-md;
       background-size: cover;
       @include phone {
-        height: 24px;
-        width: 24px;
-        line-height: 24px;
+        height: $icon-size-sm;
+        width: $icon-size-sm;
+        line-height: $icon-size-sm;
       }
       border-radius: 50%;
       transition: opacity .4s ease;
