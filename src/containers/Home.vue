@@ -32,15 +32,15 @@ div(v-bind:class='pageName')
         .btn {{$t('seemore')}}
       ul.version__list
         li.version__list-item
-          img.version__list-item__icon(src='static/img/icon--version-service.svg')
+          img.version__list-item__icon(src='@/assets/icon--version-service.svg')
           h5.version__list-item__title {{$t('home-version-list-1-title')}}
           p.version__list-item__text {{$t('home-version-list-1-text')}}
         li.version__list-item
-          img.version__list-item__icon(src='static/img/icon--version-digiasset.svg')
+          img.version__list-item__icon(src='@/assets/icon--version-digiasset.svg')
           h5.version__list-item__title {{$t('home-version-list-2-title')}}
           p.version__list-item__text {{$t('home-version-list-2-text')}}
         li.version__list-item
-          img.version__list-item__icon(src='static/img/icon--version-digilife.svg')
+          img.version__list-item__icon(src='@/assets/icon--version-digilife.svg')
           h5.version__list-item__title {{$t('home-version-list-3-title')}}
           p.version__list-item__text {{$t('home-version-list-3-text')}}
   .section-case
@@ -56,7 +56,7 @@ div(v-bind:class='pageName')
     .timeline-box
       .container
         .timeline-graph
-          img(src='static/img/tlimeline-graph.png')
+          img(src='@/assets/tlimeline-graph.png')
     .timeline-line
   .section-advisors
     .container
@@ -113,17 +113,17 @@ export default {
     return {
       pageName: 'page-home',
       socials:[
-        { img:'static/img/logo--social--facebook.svg', name: 'facebook', socialLink: 'http://google.com', background: '#34579A' },
-        { img:'static/img/logo--social--twitter.svg', name: 'twitter', socialLink: 'javascript:;', background: '#009FF4' },
-        { img:'static/img/logo--social--github.svg', name: 'github', socialLink: 'javascript:;', background: '#303030' },
-        { img:'static/img/logo--social--slack.svg', name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
-        { img:'static/img/logo--social--medium.svg', name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
-        { img:'static/img/logo--social--telegram.svg', name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
+        { img:'@/assets/logo--social--facebook.svg', name: 'facebook', socialLink: 'http://google.com', background: '#34579A' },
+        { img:'@/assets/logo--social--twitter.svg', name: 'twitter', socialLink: 'javascript:;', background: '#009FF4' },
+        { img:'@/assets/logo--social--github.svg', name: 'github', socialLink: 'javascript:;', background: '#303030' },
+        { img:'@/assets/logo--social--slack.svg', name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
+        { img:'@/assets/logo--social--medium.svg', name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
+        { img:'@/assets/logo--social--telegram.svg', name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
       ],
       medias:[
-        { img:'static/img/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
-        { img:'static/img/logo--media--medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
-        { img:'static/img/logo--media--chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
+        { img:'@/assets/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
+        { img:'@/assets/logo--media--medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
+        { img:'@/assets/logo--media--chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
       ]
     }
   },
