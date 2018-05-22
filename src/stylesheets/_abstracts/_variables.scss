@@ -66,20 +66,17 @@ $HDPI: 'only screen and (-webkit-min-device-pixel-ratio: 1.3),
 only screen and (-o-min-device-pixel-ratio: 13/10),
 only screen and (min-resolution: 120dpi)';
 
-$max_phone: 'max-width: 480px';
-$min_phone: 'min-width: 481px';
+$max_phone: 'max-width: 575px';
+$min_phone: 'min-width: 576px';
 
-$max_tablet: 'max-width: 992px';
-$min_tablet: 'min-width: 993px';
+$max_tablet: 'max-width: 767px';
+$min_tablet: 'min-width: 768px';
 
-$max_tablet--landscape: 'max-width: 1024px';
-$min_tablet--landscape: 'min-width: 1025px';
+$max_laptop: 'max-width: 991px';
+$min_laptop: 'min-width: 992px';
 
-$max_laptop: 'max-width: 1200px';
-$min_laptop: 'min-width: 1201px';
-
-$max_desktop: 'max-width: 1600px';
-$min_desktop: 'min-width: 1601px';
+$max_desktop: 'max-width: 1119px';
+$min_desktop: 'min-width: 1200px';
 
 $_charts_smaller: 'max-width: 700px';
 

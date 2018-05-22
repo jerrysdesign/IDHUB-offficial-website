@@ -140,40 +140,62 @@ export default {
 @import '../stylesheets/_abstracts/_grid';
 .cover {
   overflow: hidden;
-  background-image: url(../assets/home-cover-bg.svg);
-  background-position: 50% 120%;
-  background-color: white;
-  background-repeat: no-repeat;
-  @media (#{$max_phone}){
-    height: auto;
-    text-align: center;
-  }
+  height: auto;
+  text-align: center;
+  @include tablet {
+    text-align: left;
+    background-color: white;
+    background-position: 50% 120%;
+    background-image: url(../assets/home-cover-bg.svg);
+    background-repeat: no-repeat;
+    height: 100vh;
+  };
   &__container {
     display:flex;
     align-items: center;
-    height: 100%;
+    flex-direction: column;
+    padding: 0 15px;
+    @include tablet {
+      flex-direction: row;
+      margin-top: -50px;
+      padding: 0;
+    }
+    @include laptop {
+    }
   }
   .center-v {
     @include clearfix;
     transform: translateY(-100px);
   }
   &__text_box {
-    @include span(12);
-    @media (#{$min_laptop}){
-      @include span(6);
+    order: 2;
+    color: $color-gray-lighter;
+    padding: 30px 0;
+    @include tablet {
+      @include span(6 of 6);
+      order: 1;
+      color: $color-gray-dark;
     }
   }
   &__pic_box {
-    @include span(12);
-    @media (#{$min_laptop}){
-      @include span(6 end);
+    order: 1;
+    @include tablet {
+      @include span(6 of 6 end);
+      order: 2;
     }
   }
   &__img {
-    width: 120%;
+    width: 90%;
+    @include tablet {
+      width: 120%;
+    }
+    // @include laptop {
+    //   width: 120%;
+    // }
   }
   &__link {
     @include font_loader($montserrat, 7, 'n');
+    display: inline-block;
     text-transform: uppercase;
     padding: 15px 100px;
     border-radius: 5px;
@@ -190,7 +212,6 @@ export default {
   }
   &__title_text {
     @include font_loader($montserrat, 1, 'n');
-    color: $color-gray-dark;
     font-size: 42px;
     @include tablet {
       font-size: 60px;
@@ -204,7 +225,6 @@ export default {
   }
   &__sub-title_text {
     @include font_loader($montserrat, 1, 'n');
-    color: $color-gray-dark;
     font-size: 24px;
     @include tablet {
       font-size: 36px;
@@ -220,13 +240,18 @@ export default {
     @include font_loader($playfair, 1, 'i');
     display: inline-block;
     font-style: italic;
-    color: $color-gray-dark;
     font-size: 18px;
   }
   &__footer {
-    height: 60px;
-    line-height: 60px;
+    line-height: 20px;
+    padding: 20px 0;
     background-image: linear-gradient(-180deg, #FA2B56 0%, #F91C3D 100%);
+    @include tablet {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
   &__footer_left_box {
     @extend .container;

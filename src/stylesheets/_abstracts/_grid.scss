@@ -6,24 +6,24 @@
 // Device Size
 // ----------------
 
-$phone: 425px;
+$phone: 576px;
 $tablet: 768px;
-$laptop: 1024px;
+$laptop: 992px;
 $desktop: 1200px;
 
 // Responsive Grids
 // ----------------
 $phone-layout   : layout(4 1/4);
-$tablet-layout  : layout(6 1/4);
+$tablet-layout  : layout(8 1/4);
 $laptop-layout  : layout(12 1/4);
 $desktop-layout : layout(12 1/4);
 
 // Breakpoints
 // -----------
 $susy-breakpoint: (
-  phone   : 425px,
+  phone   : 576px,
   tablet  : 768px,
-  laptop  : 1024px,
+  laptop  : 992px,
   desktop : 1200px
 );
 
@@ -64,6 +64,7 @@ $simplifica: 'Simplifica', $fallback;
 $glober: 'Glober', $fallback;
 // Breakpoints
 // -----------
+// at-breakpoint(<$media-layout> [, <$font-size>]) { <@content> }
 @mixin phone {
   @include susy-breakpoint(map-get($susy-breakpoint, phone), $phone-layout) {
     @content;
