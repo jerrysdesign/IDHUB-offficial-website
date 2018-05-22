@@ -3,13 +3,13 @@
   nav.header
     .container.header__container
       .header__left_box
-        ul.header__menu_list.header__item--desktop
-          li.header__menu_item
-            a.header__logo_box(href='#', title='Home')
-            //- img.header__logo_img(src='img/etc/logo--circle--white.svg', alt='logo')
-          li.header__menu_item(v-for="lan in lang")
-            button(@click='changeLang')
-              | {{lan}}
+        a.header__logo_box(href='#', title='Home')
+          .header__logo_img
+          .header__logo_text
+            | IDHub
+          //- li.header__menu_item(v-for="lan in lang")
+          //-   button(@click='changeLang')
+          //-     | {{lan}}
       .header__right_box
         ul.header__menu_list.header__item--desktop
           li.header__menu_item(v-for='link in links')
