@@ -120,22 +120,13 @@ export default {
       background: none;
     }
     .section__header {
-      text-align: center;
       h2, h3 {
         color: $color-gray-ligtest;
       }
       text-align: center;
-      padding-top: 80px;
-      padding-bottom: 80px;
-      @include span(6);
-      @include push(3);
       @include tablet {
-        padding-top: 120px;
-        padding-bottom: 120px;
       }
       @include laptop  {
-        padding-top: 150px;
-        padding-bottom: 150px;
       }
     }
   }
@@ -145,25 +136,37 @@ export default {
     margin-top: -50px;
     margin-bottom: 150px;
     &-item {
-      @include span(6);
+      @include span(1 of 1);
       margin-bottom: 30px;
       border: 2px solid #D7DDED;
       box-shadow: 40px 40px 80px 0 rgba(2,8,22,0.30);
       border-radius: 5px;
       color: $color-gray-light;
-      padding: 30px 90px 30px;
-      [class^='icon-component'] {
-        margin-right: 24px;
-      }
+      padding: 30px;
       display: flex;
+      flex-direction: column;
       align-items:center;
+      text-align: center;
+      [class^='icon-component'] + .text{
+        margin-top: 20px;
+      }
       h5 { font-size: 24px; }
       h6 { font-size: 16px; }
+      @include tablet {
+        @include span(6 of 12);
+        flex-direction: row;
+        text-align: left;
+        [class^='icon-component'] {
+          margin-right: 24px;
+        }
+      }
+      @include laptop {
+         padding: 30px 90px 30px;
+      }
     }
   }
   .section__header {
     margin: 0 auto;
-    margin-bottom: 60px;
   }
   .optration-flow {
     background-color: white;
@@ -189,10 +192,8 @@ export default {
     @include clear_list;
     &-item {
       display: flex;
-      &:nth-child(even) {.icon-box{order:1;}.text-box{order:2;}}
-      &:nth-child(odd) {.icon-box{order:2;}.text-box{order:1;}}
+      flex-direction: column;
       .icon-box {
-        width: 50%;
         padding: 56px 0;
         background-image: linear-gradient(-225deg, #FA2B56 0%, #F91C3D 100%);
         display: flex;
@@ -204,13 +205,24 @@ export default {
         h6{font-size: 18px;}
       }
       .text-box {
-        width: 50%;
         background-color: white;
         vertical-align: middle;
         display: flex;
         align-items: center;
         justify-content: center;
         padding: 5%;
+      }
+      @include phone {
+        flex-direction: row;
+        &:nth-child(even) {.icon-box{order:1;}.text-box{order:2;}}
+        &:nth-child(odd) {.icon-box{order:2;}.text-box{order:1;}}
+        .icon-box {
+          width: 50%;
+          padding: 56px 0;
+        }
+        .text-box {
+          width: 50%;
+        }
       }
     }
   }

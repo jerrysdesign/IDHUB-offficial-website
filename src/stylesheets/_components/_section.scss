@@ -25,12 +25,25 @@
   margin-bottom: 50px;
   padding-left: 15px;
   padding-right: 15px;
+  @include pt80;
+  @include pb80;
+  @include tablet {
+    @include pt100;
+    @include pb100;
+  }
+  @include laptop {
+    @include pt120;
+    @include pb120;
+  }
+  @include desktop {
+    @include pt150;
+    @include pb150;
+  }
   @include clearfix;
   h2 {font-size: 36px; line-height: 48px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n'); margin-bottom: 16px;}
   h3 {font-size: 18px; line-height: 30px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n'); margin-bottom: 32px;}
   h4 {font-size: 16px; line-height: 28px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n'); margin-bottom: 24px;}
   @include tablet {
-    padding: 0;
     @include span(6);
     @include push(1);
     h2 {font-size: 42px; line-height: 54px; margin-bottom: 20px;}
