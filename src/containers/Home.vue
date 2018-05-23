@@ -24,11 +24,10 @@ div(v-bind:class='pageName')
         span.cover__footer_text
           | {{$t('home-cover-footer-content')}}
   .section-version
-    .container
+    .container.section-version__container
       .section__header
         h2 {{ $t('home-version-title') }}
         h3 {{ $t('home-version-subtitle') }}
-      div
         .btn {{$t('seemore')}}
       ul.version__list
         li.version__list-item
@@ -63,7 +62,6 @@ div(v-bind:class='pageName')
       .section__header
         h2 {{ $t('home-advisors-title') }}
         h4 {{ $t('home-advisors-text') }}
-      div
         button(type="button", class="btn btn-danger")
           |{{$t('seemore')}}
   .section-download
@@ -71,7 +69,6 @@ div(v-bind:class='pageName')
       .section__header
         h2 {{ $t('home-download-title') }}
         h3 {{ $t('home-download-text') }}
-      div
         button(type="button", class="btn btn-danger")
           |{{$t('download')}}
   .section-social
@@ -142,6 +139,9 @@ export default {
   overflow: hidden;
   height: auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
   @include tablet {
     text-align: left;
     background-color: white;
@@ -155,6 +155,7 @@ export default {
     align-items: center;
     flex-direction: column;
     padding: 0 15px;
+    min-height: 640px;
     @include tablet {
       flex-direction: row;
       margin-top: -50px;
@@ -170,7 +171,7 @@ export default {
   &__text_box {
     order: 2;
     color: $color-gray-lighter;
-    padding: 30px 0;
+    padding-bottom: 30px;
     @include tablet {
       @include span(6 of 6);
       order: 1;
@@ -221,7 +222,13 @@ export default {
     }
   }
   &__sub-title {
-    margin-bottom: 35px;
+    margin-bottom: 15px;
+    @include tablet {
+      margin-bottom: 20px;
+    }
+    @include desktop {
+      margin-bottom: 35px;
+    }
   }
   &__sub-title_text {
     @include font_loader($montserrat, 1, 'n');
@@ -246,12 +253,6 @@ export default {
     line-height: 20px;
     padding: 20px 0;
     background-image: linear-gradient(-180deg, #FA2B56 0%, #F91C3D 100%);
-    @include tablet {
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
   }
   &__footer_left_box {
     @extend .container;
@@ -313,7 +314,6 @@ export default {
   background-color: $color-gray-ligtest;
   position: relative;
   overflow: hidden;
-
   &:before, &:after {
     background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
     border-radius: 100px;
@@ -323,6 +323,7 @@ export default {
     height: 1000px;
     position: absolute;
     transform: rotate(45deg);
+    z-index: 0;
   }
   &:before {
     opacity: 0.05;
@@ -334,18 +335,18 @@ export default {
     left: 40%;
     bottom: -60%;
   }
-  .section__header {
-    margin-bottom: 50px;
+  &__container {
+    position: relative;
   }
   .version {
-    .section__header {}
     &__list {
       @include clear_list;
       margin-top: 80px;
       &-item {
-        @include span(12 of 12);
+        padding: 0 30px;
         margin-bottom: gutter();
         @include tablet  {
+          padding: 0;
           @include span(1 of 3);
         }
         &__icon {
@@ -383,12 +384,18 @@ export default {
   }
   .case-box {
     margin-top: 80px;
+    .world-map {
+      img {
+        max-width: 100%;
+      }
+    }
   }
 }
 .section-roadmap {
   background-color: white;
   .section__header {
     margin-bottom: 80px;
+    float: none;
   }
   .timeline-box {
     position: relative;
@@ -565,6 +572,7 @@ export default {
 }
 
 .btn {
+  color: white;
   background: #FA274F;
   padding-left: 4em;
   padding-right: 4em;

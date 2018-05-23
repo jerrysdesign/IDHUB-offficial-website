@@ -22,15 +22,24 @@
 .section__header {
   %title-color-gray { color: $color-gray-dark;}
   %title-color-white { color: $color-gray-ligtest;}
-  h2 {font-size: 36px; line-height: 48px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n');}
-  h3 {font-size: 18px; line-height: 30px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n');}
-  h4 {font-size: 16px; line-height: 28px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n');}
+  margin-bottom: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+  @include clearfix;
+  h2 {font-size: 36px; line-height: 48px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n'); margin-bottom: 16px;}
+  h3 {font-size: 18px; line-height: 30px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n'); margin-bottom: 32px;}
+  h4 {font-size: 16px; line-height: 28px; @extend %title-color-gray; @include font_loader($notosans, 1, 'n'); margin-bottom: 24px;}
   @include tablet {
-    h2 {font-size: 42px; line-height: 54px;}
-    h3 {font-size: 18px; line-height: 30px;}
-    h4 {font-size: 16px; line-height: 28px;}
+    padding: 0;
+    @include span(6);
+    @include push(1);
+    h2 {font-size: 42px; line-height: 54px; margin-bottom: 20px;}
+    h3 {font-size: 18px; line-height: 30px; margin-bottom: 40px;}
+    h4 {font-size: 16px; line-height: 28px; margin-bottom: 30px;}
   }
   @include laptop {
+    @include span(6);
+    @include push(3);
     h2 {font-size: 48px; line-height: 60px;}
     h3 {font-size: 20px; line-height: 32px;}
     h4 {font-size: 16px; line-height: 28px;}

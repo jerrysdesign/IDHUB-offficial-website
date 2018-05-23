@@ -87,6 +87,7 @@ $glober: 'Glober', $fallback;
 }
 
 .container {
+  z-index: 1;
   padding: 0 gutter();
   @include container();
   @include clearfix;
