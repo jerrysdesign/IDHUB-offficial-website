@@ -66,7 +66,7 @@ $_menu_left_margin: 50px;
   min-width: 320px;
   padding-bottom: 30px;
   background-color: $color-primary;
-  transition: right .7s ease;
+  transition: right .2s ease;
   &.state-opened{
     right: 0;
   }
