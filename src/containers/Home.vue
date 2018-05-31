@@ -69,9 +69,9 @@ div(v-bind:class='pageName')
           li.advisors__list-item(v-for='advisor in advisors')
             img(:src='advisor.img')
             .advisors__list-item__text-box
-              .advisor__list-item__date
+              .advisors__list-item__name
                 | {{ advisor.advisorsName }}
-              .advisors__list-item__text
+              .advisors__list-item__title
                 | {{ advisor.advisorsTitle }}
   .section-download
     .container
@@ -119,21 +119,21 @@ export default {
     return {
       pageName: 'page-home',
       socials:[
-        { img:'@/assets/logo--social--facebook.svg', name: 'facebook', socialLink: 'http://google.com', background: '#34579A' },
-        { img:'@/assets/logo--social--twitter.svg', name: 'twitter', socialLink: 'javascript:;', background: '#009FF4' },
-        { img:'@/assets/logo--social--github.svg', name: 'github', socialLink: 'javascript:;', background: '#303030' },
-        { img:'@/assets/logo--social--slack.svg', name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
-        { img:'@/assets/logo--social--medium.svg', name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
-        { img:'@/assets/logo--social--telegram.svg', name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
+        { img:require('@/assets/logo--social--facebook.svg'), name: 'facebook', socialLink: 'http://google.com', background: '#34579A' },
+        { img:require('@/assets/logo--social--twitter.svg'), name: 'twitter', socialLink: 'javascript:;', background: '#009FF4' },
+        { img:require('@/assets/logo--social--github.svg'), name: 'github', socialLink: 'javascript:;', background: '#303030' },
+        { img:require('@/assets/logo--social--slack.svg'), name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
+        { img:require('@/assets/logo--social--medium.svg'), name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
+        { img:require('@/assets/logo--social--telegram.svg'), name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
       ],
       advisors:[
-        { img:'@/assets/logo--media--coindesk.svg', advisorsName: '元道', advisorsTitle: '中观村区块练联盟理事长' },
-        { img:'@/assets/logo--media--chainb.png', advisorsName: '上野嘉久', advisorsTitle: 'Synapse Holdings 创始人' }
+        { img:require('@/assets/logo--media--coindesk.svg'), advisorsName: '元道', advisorsTitle: '中观村区块练联盟理事长' },
+        { img:require('@/assets/logo--media--chainb.png'), advisorsName: '上野嘉久', advisorsTitle: 'Synapse Holdings 创始人' }
       ],
       medias:[
-        { img:'@/assets/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
-        { img:'@/assets/logo--media--medium.svg', mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
-        { img:'@/assets/logo--media--chainb.png', mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
+        { img:require('@/assets/logo--media--coindesk.svg'), mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
+        { img:require('@/assets/logo--media--medium.svg'), mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
+        { img:require('@/assets/logo--media--chainb.png'), mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
       ]
     }
   },
@@ -358,7 +358,7 @@ export default {
       &-item {
         padding: 0 30px;
         margin-bottom: gutter();
-        @include tablet  {
+        @include tablet {
           padding: 0;
           @include span(1 of 3);
         }
@@ -460,32 +460,28 @@ export default {
         margin-bottom: gutter();
       }
       @include tablet  {
-        @include span(4 of 8);
+        @include span(2 of 4);
         margin-bottom: gutter();
       }
       @include desktop  {
-        @include span(6 of 12);
         margin-bottom: gutter();
       }
       &:hover {
         background: #1A47B0;
         box-shadow: 0 10px 30px 0 rgba(23,33,51,0.20);
       }
-      &-wrapper {
-        padding: 25px 15px;
-        border-radius: 5px;
-        box-shadow: 0 30px 70px 0 rgba($color-gray-darkest, .1);
-        &:hover {
-          box-shadow: 0 10px 70px 0 rgba($color-gray-darkest, .5);
-        }
-      }
       &__name {
-        color: $color-gray-ligtest;
-        margin-top: 8px;
-        margin-bottom: 8px;
-        font-size: 16px;
-        line-height: 28px;
-        font-weight: 400;
+        color: $color-primary;
+      }
+      &__title {
+        color: $color-gray-dark;
+      }
+      img {
+        width: 203px;
+        height: 203px;
+        background: #D7DDED;
+        border-radius: 200px;
+        margin-bottom: 28px;
       }
       .btn {
         line-height: 42px;
@@ -552,7 +548,7 @@ export default {
         margin-bottom: gutter();
       }
       @include desktop  {
-        @include span(4 of 12);
+        @include span(2 of 6);
         margin-bottom: gutter();
       }
       &-wrapper {
