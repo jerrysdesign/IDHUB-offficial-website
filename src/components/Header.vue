@@ -165,8 +165,8 @@ export default {
     text-transform: uppercase;
     font-size: 16px;
     line-height: 20px;
-    padding: 40px 15px;
     display: block;
+    padding: 30px 15px;
     @include desktop {
       padding: 40px 20px;
     }
