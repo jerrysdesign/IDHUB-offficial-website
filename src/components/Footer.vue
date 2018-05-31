@@ -96,6 +96,11 @@ export default {
     position: relative;
     overflow: hidden;
     color: $color-gray-ligtest;
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
     &:before {
       background:  #1A47B0;
       width: 1000px;
@@ -108,9 +113,6 @@ export default {
       opacity: .15;
       left: -200px;
       top: -300px;
-    }
-    @media (#{$max_tablet}) {
-      text-align: center;
     }
     @media (#{$min_tablet}) {
       padding: 50px 0;
