@@ -136,7 +136,7 @@ export default {
         margin-bottom: 0;
       }
     }
-    @include desktop {
+    @include laptop {
       @include gallery(3);
       &:nth-last-child(-n+4) {
         margin-bottom: 0;
