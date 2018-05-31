@@ -3,7 +3,7 @@ footer.footer
   .footer__main_box
     .container.footer__container
       .footer__left_box
-        a.footer__logo_box(href='javascript:;')
+        router-link.footer__logo_box(to='/')
           span.footer__logo_text
             | IDHub
         span.footer__copyright
