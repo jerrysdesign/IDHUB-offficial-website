@@ -59,11 +59,20 @@ div(v-bind:class='pageName')
     .timeline-line
   .section-advisors
     .container
-      .section__header
+      .section__header.left-box
         h2 {{ $t('home-advisors-title') }}
         h4 {{ $t('home-advisors-text') }}
         button(type="button", class="btn btn-danger")
           |{{$t('seemore')}}
+      .right-box
+        ul.advisors__list
+          li.advisors__list-item(v-for='advisor in advisors')
+            img(:src='advisor.img')
+            .advisors__list-item__text-box
+              .advisor__list-item__date
+                | {{ advisor.advisorsName }}
+              .advisors__list-item__text
+                | {{ advisor.advisorsTitle }}
   .section-download
     .container
       .section__header
@@ -116,6 +125,10 @@ export default {
         { img:'@/assets/logo--social--slack.svg', name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
         { img:'@/assets/logo--social--medium.svg', name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
         { img:'@/assets/logo--social--telegram.svg', name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
+      ],
+      advisors:[
+        { img:'@/assets/logo--media--coindesk.svg', advisorsName: '元道', advisorsTitle: '中观村区块练联盟理事长' },
+        { img:'@/assets/logo--media--chainb.png', advisorsName: '上野嘉久', advisorsTitle: 'Synapse Holdings 创始人' }
       ],
       medias:[
         { img:'@/assets/logo--media--coindesk.svg', mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
@@ -420,6 +433,77 @@ export default {
 .section-advisors {
   background-color: $color-gray-ligtest;
   .section__header {}
+  .left-box {
+    @include span(12 of 12);
+    @include tablet {
+      @include span(5 of 12);
+      text-align: left;
+    }
+  }
+  .right-box {
+    @include span(12 of 12);
+    @include tablet  {
+      @include span(7 of 12);
+    }
+  }
+  .advisors__list {
+    @include clear_list;
+    &-item {
+      background: #FFFFFF;
+      box-shadow: 20px 20px 40px 0 rgba(0,0,0,0.10);
+      border-radius: 5px;
+      padding: 30px;
+      @include span(1 of 1);
+      margin-bottom: gutter();
+      @include phone {
+        @include span(1 of 2);
+        margin-bottom: gutter();
+      }
+      @include tablet  {
+        @include span(4 of 8);
+        margin-bottom: gutter();
+      }
+      @include desktop  {
+        @include span(6 of 12);
+        margin-bottom: gutter();
+      }
+      &:hover {
+        background: #1A47B0;
+        box-shadow: 0 10px 30px 0 rgba(23,33,51,0.20);
+      }
+      &-wrapper {
+        padding: 25px 15px;
+        border-radius: 5px;
+        box-shadow: 0 30px 70px 0 rgba($color-gray-darkest, .1);
+        &:hover {
+          box-shadow: 0 10px 70px 0 rgba($color-gray-darkest, .5);
+        }
+      }
+      &__name {
+        color: $color-gray-ligtest;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 16px;
+        line-height: 28px;
+        font-weight: 400;
+      }
+      .btn {
+        line-height: 42px;
+        height: 42px;
+        border-radius: 21px;
+        border: 2px solid $color-gray-ligtest;
+        background-color: transparent;
+        background-image: url(../assets/icon--social-item-go.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        &:hover {
+          $btn-color: #FA2B56;
+          border: 2px solid $btn-color;
+          background-color: $btn-color;
+        }
+      }
+    }
+  }
 }
 .section-download {
   @extend %section-background--primary;
@@ -445,6 +529,7 @@ export default {
     @include span(12 of 12);
     @include tablet  {
       @include span(6 of 12);
+      text-align: left;
     }
   }
   .right-box {
