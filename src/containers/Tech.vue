@@ -33,59 +33,59 @@ div(v-bind:class='pageName')
             .text
               h6 稳定高效的
               h5 原生代币系统
-    .optration-flow
-      .container
-        .row.section-optration-flow
-          .section__header
-            h2 操作流程
-    .key-tech
-      .container
-        .row.section-key-tech
-          .section__header
-            h2 IDHub 關鍵技術
-          ul.key-tech-list
-            li.key-tech-list-item
-              .icon-box
-                img(src='@/assets/icon-key-tech-01.svg')
-                h5 Solidity
-                h6 面向智能合約
-              .text-box
-                p Solidity 是面向智能合約、語法類似 JavaScript 的高級編程語言。基於智能合約的數字身份可以採取多種形式：個人、設備、實體或機構。用例廣泛，如聲明、動作或交易進行數字簽名和驗證。由於可與區塊鏈互動，亦可控制數字資產如數字貨幣或代幣化的資產
-            li.key-tech-list-item
-              .icon-box
-                img(src='@/assets/icon-key-tech-02.svg')
-                h5 Merkle Tree
-                h6 葉節點數據塊
-              .text-box
-                p Merkle 樹是一種每個葉節點都標有數據塊，而每個非葉節點用其子節點標記的加密散列算法進行標記的樹，通過提供適當的散列來實現最低限度的信息披露，從而只公開所需要的數據。這樣可以幫助身份系統保持隱私，並減輕信息披露的潛在副作用
-            li.key-tech-list-item
-              .icon-box
-                img(src='@/assets/icon-key-tech-03.svg')
-                h5 OpenPDS
-                h6 用戶個人數據存儲
-              .text-box
-                p OpenPDS 可讓用戶存儲個人數據，而用戶以外的所有應用或服務只能獲取有限或所需的部分數據。OpenPDS 為用戶隱私及使用體驗提供了一個雙贏的解決方案，並且能在數字身份的應用場景扮演 Oracle 的角色。Oracle 是區塊鏈上自動取得數據的一個可信任節點
-            li.key-tech-list-item
-              .icon-box
-                img(src='@/assets/icon-key-tech-04.svg')
-                h5 Kademlia
-                h6 分布式哈希表
-              .text-box
-                p Kademlia 是一個點對點分布式哈希表，哈希表記錄了不同哈希值進行異或運算的結果 (XOR) 。由於是基於異或運算的新型度量拓撲，Kademlia 具有可靠的穩定性及性能，且具有延遲最小化路由、無延遲故障恢復和對稱單向拓撲等優勢和特點
-            li.key-tech-list-item
-              .icon-box
-                img(src='@/assets/icon-key-tech-05.svg')
-                h5 JSON Web Token
-                h6 身份屬性认证
-              .text-box
-                p 身份屬性的有效性通過由 JSON Web Token (JWT) 實現的認證來保證。JWT 是一種開放標準 (RFC 7519)，定義了一種緊湊且獨立的方式，以在各方之間以 JSON 對象的形式安全傳遞信息。該信息可以通過數字簽名驗證和授信，簽名用於驗證JWT的發行者，確保該消息在傳輸過程中保持完整
-            li.key-tech-list-item
-              .icon-box
-                img(src='@/assets/icon-key-tech-06.svg')
-                h5 Identity Graph
-                h6 身份圖
-              .text-box
-                p 身份圖是身份之間行為的一種表示。在圖中，節點就是身份，而邊界就是行為。行為包括以好友身份添加、認可、評論和交易等。在區塊鏈上，我們將這些行為轉變為交易。IDHub系統中身份的聲明和證明存儲在 Merkle 樹中，與其他身份的交互則以身份圖的形式存儲
+  .section-optration-flow
+    .container
+      .row
+        .section__header
+          h2 操作流程
+  .section-key-tech
+    .container
+      .row
+        .section__header
+          h2 IDHub 關鍵技術
+        ul.key-tech-list
+          li.key-tech-list-item
+            .icon-box
+              img(src='@/assets/icon-key-tech-01.svg')
+              h5 Solidity
+              h6 面向智能合約
+            .text-box
+              p Solidity 是面向智能合約、語法類似 JavaScript 的高級編程語言。基於智能合約的數字身份可以採取多種形式：個人、設備、實體或機構。用例廣泛，如聲明、動作或交易進行數字簽名和驗證。由於可與區塊鏈互動，亦可控制數字資產如數字貨幣或代幣化的資產
+          li.key-tech-list-item
+            .icon-box
+              img(src='@/assets/icon-key-tech-02.svg')
+              h5 Merkle Tree
+              h6 葉節點數據塊
+            .text-box
+              p Merkle 樹是一種每個葉節點都標有數據塊，而每個非葉節點用其子節點標記的加密散列算法進行標記的樹，通過提供適當的散列來實現最低限度的信息披露，從而只公開所需要的數據。這樣可以幫助身份系統保持隱私，並減輕信息披露的潛在副作用
+          li.key-tech-list-item
+            .icon-box
+              img(src='@/assets/icon-key-tech-03.svg')
+              h5 OpenPDS
+              h6 用戶個人數據存儲
+            .text-box
+              p OpenPDS 可讓用戶存儲個人數據，而用戶以外的所有應用或服務只能獲取有限或所需的部分數據。OpenPDS 為用戶隱私及使用體驗提供了一個雙贏的解決方案，並且能在數字身份的應用場景扮演 Oracle 的角色。Oracle 是區塊鏈上自動取得數據的一個可信任節點
+          li.key-tech-list-item
+            .icon-box
+              img(src='@/assets/icon-key-tech-04.svg')
+              h5 Kademlia
+              h6 分布式哈希表
+            .text-box
+              p Kademlia 是一個點對點分布式哈希表，哈希表記錄了不同哈希值進行異或運算的結果 (XOR) 。由於是基於異或運算的新型度量拓撲，Kademlia 具有可靠的穩定性及性能，且具有延遲最小化路由、無延遲故障恢復和對稱單向拓撲等優勢和特點
+          li.key-tech-list-item
+            .icon-box
+              img(src='@/assets/icon-key-tech-05.svg')
+              h5 JSON Web Token
+              h6 身份屬性认证
+            .text-box
+              p 身份屬性的有效性通過由 JSON Web Token (JWT) 實現的認證來保證。JWT 是一種開放標準 (RFC 7519)，定義了一種緊湊且獨立的方式，以在各方之間以 JSON 對象的形式安全傳遞信息。該信息可以通過數字簽名驗證和授信，簽名用於驗證JWT的發行者，確保該消息在傳輸過程中保持完整
+          li.key-tech-list-item
+            .icon-box
+              img(src='@/assets/icon-key-tech-06.svg')
+              h5 Identity Graph
+              h6 身份圖
+            .text-box
+              p 身份圖是身份之間行為的一種表示。在圖中，節點就是身份，而邊界就是行為。行為包括以好友身份添加、認可、評論和交易等。在區塊鏈上，我們將這些行為轉變為交易。IDHub系統中身份的聲明和證明存儲在 Merkle 樹中，與其他身份的交互則以身份圖的形式存儲
 </template>
 
 <script>
@@ -118,15 +118,26 @@ export default {
     background-repeat: no-repeat;
     .header {
       background: none;
+
     }
     .section__header {
       h2, h3 {
         color: $color-gray-ligtest;
       }
       text-align: center;
+      @include pt80;
+      @include pb80;
       @include tablet {
+        @include pt100;
+        @include pb100;
       }
-      @include laptop  {
+      @include laptop {
+        @include pt120;
+        @include pb120;
+      }
+      @include desktop {
+        @include pt150;
+        @include pb150;
       }
     }
   }
@@ -165,21 +176,14 @@ export default {
       }
     }
   }
-  .section__header {
-    margin: 0 auto;
-  }
-  .optration-flow {
-    background-color: white;
-  }
-  .key-tech {
-    background-color: $color-gray-ligtest;
-  }
   .section-optration-flow {
+    background-color: white;
     .section__header h2 {
       color: $color-gray-dark;
     }
   }
   .section-key-tech {
+    background-color: $color-gray-ligtest;
     .section__header {
       padding-bottom: 60px;
       margin-bottom: 0;
