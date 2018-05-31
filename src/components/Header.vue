@@ -2,21 +2,18 @@
 #header
   nav.header
     .container.header__container
-      .header__left_box
-        a.header__logo_box(href='#', title='Home')
-          .header__logo_img
-          .header__logo_text
-            | IDHub
-          //- li.header__menu_item(v-for="lan in lang")
-          //-   button(@click='changeLang')
-          //-     | {{lan}}
-      .header__right_box
-        ul.header__menu_list.header__item--desktop
-          li.header__menu_item(v-for='link in links')
-            router-link.header__menu_link.header__menu_link--white(:to='link.to')
-              | {{ $t(link.text) }}
-      .header__right_box
-        button.header__burger_button.header__item--mobile(type='button', @click='openMenu')
+      router-link.header__logo_box(to='/', title='Home')
+        .header__logo_img
+        .header__logo_text
+          | IDHub
+        //- li.header__menu_item(v-for="lan in lang")
+        //-   button(@click='changeLang')
+        //-     | {{lan}}
+      ul.header__menu_list.header__item--desktop
+        li.header__menu_item(v-for='link in links')
+          router-link.header__menu_link.header__menu_link--white(:to='link.to')
+            | {{ $t(link.text) }}
+      button.header__burger_button.header__item--mobile(type='button', @click='openMenu')
 </template>
 
 
@@ -32,7 +29,6 @@ export default {
     return {
       lang: ['en','cn','zh'],
       links: [
-        { to: 'home', text: 'home' },
         { to: 'tech', text: 'tech' },
         { to: 'news', text: 'news' },
         { to: 'activities', text: 'activities' },
@@ -76,30 +72,28 @@ export default {
 .header {
   background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
   &__container {
-    @include clearfix;
-    line-height: 42px;
-    text-align: center;
-  }
-  &__left_box {
-    position: relative;
-    z-index: 10;
-    float: left;
-    height: 100%;
-  }
-  &__right_box {
-    float: right;
-    position: relative;
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &:before, &:after {
+      display: none;
+    }
   }
   &__logo_box {
     display: inline-block;
-    margin-top: 4px;
-    @include tablet {
-      margin-top: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    order: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      text-decoration: none;
     }
   }
   &__logo_img {
-    display: inline-block;
     background-image: url(../assets/logo-w.png);
     background-size: cover;
     width: 42px;
@@ -121,15 +115,16 @@ export default {
   }
   &__logo_text {
     vertical-align: top;
-    display: inline-block;
     margin-left: 17px;
     color: white;
     height: 42px;
-    font-size: 42px;
+    line-height: 42px;
+    font-size: 32px;
     font-weight: 400;
     @include laptop {
-      font-size: 60px;
+      font-size: 42px;
       height: 60px;
+      line-height: 60px;
     }
     @include desktop {
       font-size: 48px;
@@ -155,6 +150,7 @@ export default {
   }
   &__menu_list {
     @include clear_list;
+    order: 2;
   }
   &__menu_item {
     display: inline-block;
@@ -210,6 +206,7 @@ export default {
     width: 20px;
     background-color: white;
     cursor: pointer;
+    order: 3;
     .header__right_box &{
       margin-left: 30px;
     }
