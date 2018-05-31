@@ -8,6 +8,12 @@ div(v-bind:class='pageName')
         h3 {{ $t('contact_page.subtitle') }}
   .section-contact
     .container.contact-container
+      form.contact-formbox
+        textarea(placeholder='內容')
+        input(type='text', placeholder='姓名')
+        input(type='mail', placeholder='郵箱')
+        input(type='phone', placeholder='手機')
+        button 送出
 </template>
 
 <script>
@@ -55,6 +61,55 @@ export default {
       @include laptop  {
         padding-top: 150px;
         padding-bottom: 150px;
+      }
+    }
+  }
+  .section-contact {
+    background-image: linear-gradient(-180deg, #061843 0%, #05112E 100%);
+  }
+  .contact {
+    &-formbox {
+      background: #FFFFFF;
+      box-shadow: 40px 40px 80px 0 rgba(2,8,22,0.30);
+      border-radius: 5px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content:space-between;
+      padding: 30px 40px;
+      @include tablet {
+        @include span(6 of 8);
+        @include push(1);
+        padding: 30px 60px;
+      }
+      @include laptop {
+        @include span(8 of 12);
+        @include push(2);
+        padding: 50px 100px;
+      }
+      input, textarea, button {
+        border: 1px solid #DDDFE7;
+        border-radius: 5px;
+        padding: 10px 15px;
+        margin-bottom: 30px;
+        @include laptop {
+          padding: 20px 30px;
+          margin-bottom: 30px;
+        }
+        &:active, &:focus {
+          box-shadow: 0 10px 20px 0 rgba(0,0,0,0.10);
+        }
+      }
+      textarea {
+        height: 150px;
+      }
+      button {
+        background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+        color: white;
+        border-width: 0;
+        &:hover {
+          box-shadow: 20px 20px 60px 0 rgba(0,0,0,0.4);
+        }
       }
     }
   }
