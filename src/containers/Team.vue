@@ -13,9 +13,12 @@ div(v-bind:class='pageName')
           li.team__item-wrapper(v-for='member in content.members')
             .ratio-1-1
               .team__item
-                div {{ $t(member.name) }}
-                div {{ $t(member.job) }}
-                div {{ $t(member.experience) }}
+                .team__item__name
+                  | {{ $t(member.name) }}
+                .team__item__job
+                  | {{ $t(member.job) }}
+                .team__item__experience
+                  | {{ $t(member.experience) }}
   Joinus
 </template>
 
@@ -94,10 +97,22 @@ export default {
     background-color:$color-gray-light;
     border-radius: 5px;
     transition: box-shadow 0.4s ease;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
     &:hover {
       background-image: linear-gradient(-180deg, #1B47AD 0%, #0D2F80 100%);
       box-shadow: 30px 30px 60px 0 rgba($color-gray-darkest, .3);
+      color: $color-gray-ligtest;
     }
+    &__name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    &__job {}
+    &__experience {}
     @media (#{$max_phone}) {
       padding: 20px 15px 20px;
     }
