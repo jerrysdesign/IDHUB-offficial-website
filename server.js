@@ -1,6 +1,6 @@
 'use strict'
 const getLocaleAndLang = (req) => {
-  const locales = ['ko-KR', 'zh-CN', 'zh-TW']
+  const locales = ['en-US', 'ko-KR', 'zh-CN', 'zh-TW']
   let locale = i18n.getLocale()
   if (locale === 'en') {
     if (req.locale) {
@@ -8,15 +8,15 @@ const getLocaleAndLang = (req) => {
       if (!locales.includes(locale)) {
         locale = null
       }
-    } else if (req.acceptsLanguages('ko-KR', 'zh-CN', 'zh-TW')) {
-      locale = req.acceptsLanguages('ko-KR', 'zh-CN', 'zh-TW')
+    } else if (req.acceptsLanguages('en-US', 'ko-KR', 'zh-CN', 'zh-TW')) {
+      locale = req.acceptsLanguages('en-US', 'ko-KR', 'zh-CN', 'zh-TW')
     }
     if (!locale) {
       locale = 'zh-CN'
     }
     i18n.setLocale(locale)
   }
-  const lang = locale.replace('ko-', '').replace('zh-', '').toLowerCase()
+  const lang = locale.replace('-US', '').replace('ko-', '').replace('zh-', '').toLowerCase()
   const version = (lang === 'cn') ? 'v0.4.2' : 'v0.5.0'
   return [lang, locale, version]
 }
@@ -24,7 +24,7 @@ const getLocaleAndLang = (req) => {
 const i18n = require('i18n')
 i18n.configure({
   // setup some locales - other locales default to en silently
-  locales:['ko-KR', 'zh-CN', 'zh-TW', 'en-US'],
+  locales:['en-US', 'ko-KR', 'zh-CN', 'zh-TW'],
   directory: __dirname + '/locales',
   defaultLocale: 'en'
 })
@@ -55,10 +55,6 @@ app.get('/product', function (req, res) {
     version: version
   })
 })
-
-// app.get('/support', function (req, res) {
-//   res.render('support');
-// })
 
 app.get('/api/v0/locales/:locale', function (req, res) {
   const {locale} = req.params
