@@ -5,7 +5,7 @@ mixin locales
       =' '
       span.caret
       ul#locales.dropdown-menu.dropdown-menu-right(aria-labelledby='dropdownMenu1')
-        //- li: a(title='en') EN
+        li: a(title='en-US') EN
         li: a(title='zh-CN') CN
         li: a(title='ko-KR') KR
         li: a(title='zh-TW') TW
@@ -25,7 +25,7 @@ html
     link(rel='stylesheet', type='text/css', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
     link(rel='stylesheet', type='text/css', href='./css/main.css')
   body
-    .overhang IDHub token #{dict.info.issued}，ERC20 #{dict.info.address} 0x29F20242051AccDA50D52a7E272A5F23237e4696。#{dict.info.check}，#{dict.info.alerted}。
+    .overhang #{dict.info.address}#{dict.info.alerted}
     .wrapper-container
       nav#heading(class='navbar navbar-inverse')
         .container
@@ -182,14 +182,6 @@ html
                       div(class='member_name') #{dict.team.leo.name}
                       div(class='member_bio')
                         p #{dict.team.leo.desc}
-                div(class='col-sm-6 col-md-4 col-lg-3')
-                  div(class='team_member_box')
-                    div(class='team_member_image text-center')
-                      img(src='./img/team_tasya.png' alt='Lekch Tasya')
-                    div(class='member_desc')
-                      div(class='member_name') #{dict.team.tasya.name}
-                      div(class='member_bio')
-                        p #{dict.team.tasya.desc}
       div(id='investors')
         div(class='container')
           div(class='row')
@@ -220,10 +212,26 @@ html
                 img(class='news_logo' src='./img/news_coindesk.png' border='0' alt='Link to Coindesk news')
               a(href='http://chainb.com/?P=Cont&id=4910' target='_blank' rel='noopener noreferrer')
                 img(class='news_logo' src='./img/news_chainb.png' border='0' alt='Link to Coindesk news')
-              a(href='https://medium.com/@leocao/an-exclusive-interview-with-mr-quming-the-founder-of-idhub-project-dcb242b70b26' target='_blank' rel='noopener noreferrer')
-                img(class='news_logo' src='./img/news_medium.png' border='0' alt='Link to Medium news')
               a(href='http://blockcast.it/2018/03/27/blcokchain-based-digital-identity-idhub/' target='_blank' rel='noopener noreferrer')
                 img(class='news_logo' src='./img/news_blockcast.png' border='0' alt='Link to Medium news')
+              a(href='http://software.it168.com/a2018/0515/3203/000003203255.shtml' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_it168.png' border='0' alt='Link to IT168 news')
+              a(href='http://markets.businessinsider.com/news/stocks/china-s-blockchain-community-correction-application-bestows-a-human-touch-1025068125' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_businessinsider.png' border='0' alt='Link to Business Insider news')
+              a(href='https://finance.yahoo.com/news/chinas-blockchain-community-correction-application-161300613.html' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_yahoo.png' border='0' alt='Link to IT168 news')
+              a(href='https://medium.com/theacoplatform/build-a-better-world-with-aco-idhub-to-be-the-%EF%AC%81rst-use-case-on-aco-platform-f1ebf42d1c62' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_medium.png' border='0' alt='Link to Medium news')
+              a(href='https://mp.weixin.qq.com/s/qUD97Q5EW5lPqQQC4DD68A' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_chainbs.png' border='0' alt='Link to IT168 news')
+              a(href='https://mp.weixin.qq.com/s/yWeebwVxsU_vNKc512vtkQ' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_wechat.png' border='0' alt='Link to IT168 news')
+              a(href='https://blog.csdn.net/dev_csdn/article/details/80559351' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_csdn.png' border='0' alt='Link to IT168 news')
+              a(href='http://biz.ifeng.com/a/20180606/45015468_0.shtml' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_ifeng.png' border='0' alt='Link to IT168 news')
+              a(href='https://www.jinse.com/blockchain/201058.html' target='_blank' rel='noopener noreferrer')
+                img(class='news_logo' src='./img/news_jinse.png' border='0' alt='Link to IT168 news')
       div(id='contact' class='section_block')
         div(class='conatiner')
           div(class='row')

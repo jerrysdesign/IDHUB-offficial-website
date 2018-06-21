@@ -1,10 +1,8 @@
 {
 	"dict": {
 		"info": {
-			"issued": "已发行",
-			"address": "合约地址为",
-			"check": "请核对合约地址",
-			"alerted": "避免受骗"
+			"address": "The contract address of IDHub token is 0x29F20242051AccDA50D52a7E272A5F23237e4696. ",
+			"alerted": "Please check and verify your token address."
 		},
 		"nav": {
 			"homepage": "초기 화면",
@@ -76,10 +74,6 @@
 			"leo": {
 				"name": "曹磊",
 				"desc": "IDHub 마케팅 관리자"
-			},
-			"tasya": {
-				"name": "Lekch Tasya",
-				"desc": "IDHub 커뮤니티 운영"
 			}
 		},
 		"advisor": {
