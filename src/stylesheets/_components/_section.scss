@@ -3,26 +3,36 @@
   position: relative;
   margin: auto;
   padding: 0;
-  @include pt80;
-  @include pb80;
+  @include pt40;
+  @include pb40;
+   @include phone {
+    @include pt60;
+    @include pb60;
+  }
   @include tablet {
+    @include pt80;
+    @include pb80;
+  }
+  @include laptop {
     @include pt100;
     @include pb100;
   }
-  @include laptop {
+  @include desktop {
     @include pt120;
     @include pb120;
   }
-  @include desktop {
+  @include fhd {
     @include pt150;
     @include pb150;
+  }
+  .section__header {
+    margin-bottom: 50px;
   }
 }
 
 .section__header {
   %title-color-gray { color: $color-gray-dark;}
   %title-color-white { color: $color-gray-ligtest;}
-  margin-bottom: 50px;
   padding-left: 15px;
   padding-right: 15px;
   // @include pt80;

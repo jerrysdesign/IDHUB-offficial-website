@@ -75,13 +75,21 @@ export default {
         color: $color-gray-ligtest;
       }
       text-align: center;
-      padding-top: 80px;
-      padding-bottom: 80px;
+      padding-top: 60px;
+      padding-bottom: 60px;
       @include tablet {
+        padding-top: 80px;
+        padding-bottom: 80px;
+      }
+      @include laptop  {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+      @include desktop  {
         padding-top: 120px;
         padding-bottom: 120px;
       }
-      @include laptop  {
+      @include fhd  {
         padding-top: 150px;
         padding-bottom: 150px;
       }

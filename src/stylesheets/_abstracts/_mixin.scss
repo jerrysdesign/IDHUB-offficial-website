@@ -56,6 +56,12 @@
 @mixin pt80 {
   @include pt(80);
 }
+@mixin pt60 {
+  @include pt(60);
+}
+@mixin pt40 {
+  @include pt(40);
+}
 @mixin pb150 {
   @include pb(150);
 }
@@ -67,4 +73,10 @@
 }
 @mixin pb80 {
   @include pb(80);
+}
+@mixin pb40 {
+  @include pb(40);
+}
+@mixin pb60 {
+  @include pb(60);
 }

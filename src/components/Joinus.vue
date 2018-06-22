@@ -6,8 +6,7 @@
         h4 {{ joinUsTitle }}
         h5 {{ joinUsDesction }}
       .btn-box
-        .btn
-          | {{ joinUsBtn }}
+        router-link.btn(to='/careers', title='careers', replace) {{ joinUsBtn }}
 </template>
 
 

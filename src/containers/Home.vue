@@ -28,7 +28,7 @@ div(v-bind:class='pageName')
       .section__header
         h2 {{ $t('home-version-title') }}
         h3 {{ $t('home-version-subtitle') }}
-        .btn {{$t('seemore')}}
+        router-link.btn(to='tech', title='tech', replace) {{$t('seemore')}}
       ul.version__list
         li.version__list-item
           img.version__list-item__icon(src='@/assets/icon--version-service.svg')
@@ -62,8 +62,7 @@ div(v-bind:class='pageName')
       .section__header.left-box
         h2 {{ $t('home-advisors-title') }}
         h4 {{ $t('home-advisors-text') }}
-        button(type="button", class="btn btn-danger")
-          |{{$t('seemore')}}
+        router-link.btn(to='/team', title='tech') {{$t('seemore')}}
       .right-box
         ul.advisors__list
           li.advisors__list-item(v-for='advisor in advisors')
@@ -203,9 +202,6 @@ export default {
     @include tablet {
       width: 120%;
     }
-    // @include laptop {
-    //   width: 120%;
-    // }
   }
   &__link {
     @include font_loader($montserrat, 7, 'n');
@@ -270,11 +266,6 @@ export default {
   &__footer_left_box {
     @extend .container;
   }
-  // &__footer_button {
-  //   position: relative;
-  //   z-index: 1;
-  //   top: -2px;//to make it visually look centered
-  // }
   &__footer_title {
     @include font_loader($montserrat, 4, 'n');
     display: inline-block;
@@ -421,6 +412,9 @@ export default {
       left: 0;
       bottom: 0;
       text-align: center;
+      img {
+        width: 1011px;
+      }
     }
   }
   .timeline-line {
@@ -477,8 +471,8 @@ export default {
         color: $color-gray-dark;
       }
       img {
-        width: 203px;
-        height: 203px;
+        width: 160px;
+        height: 160px;
         background: #D7DDED;
         border-radius: 200px;
         margin-bottom: 28px;
@@ -524,14 +518,14 @@ export default {
   .left-box {
     @include span(12 of 12);
     @include tablet  {
-      @include span(6 of 12);
+      @include span(5 of 12);
       text-align: left;
     }
   }
   .right-box {
     @include span(12 of 12);
     @include tablet  {
-      @include span(6 of 12);
+      @include span(7 of 12);
     }
   }
   .social__list {

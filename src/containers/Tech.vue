@@ -38,6 +38,46 @@ div(v-bind:class='pageName')
       .row
         .section__header
           h2 操作流程
+      .row
+        ol.optration-flow-nav
+          li
+            .num 01
+            .title 创建
+            .step Step 1
+          li
+            .num 02
+            .title 认证
+            .step Step 2
+          li
+            .num 03
+            .title 查询
+            .step Step 4
+          li
+            .num 04
+            .title 授权
+            .step Step 4
+        ol.optration-flow-content
+          //- li
+          //-   .icon
+          //-     img(src='@/assets/icon--optration-success.svg')
+          //-   .title 创建
+          //-   .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+          //- li
+          //-   .icon
+          //-     img(src='@/assets/icon--optration-success.svg')
+          //-   .title 认证
+          //-   .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+          //- li
+          //-   .icon
+          //-     img(src='@/assets/icon--optration-success.svg')
+          //-   .title 查询
+          //-   .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+          li
+            .icon
+              img(src='@/assets/icon--optration-success.svg')
+            .title 授权
+            .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+
   .section-key-tech
     .container
       .row
@@ -125,17 +165,21 @@ export default {
         color: $color-gray-ligtest;
       }
       text-align: center;
-      @include pt80;
-      @include pb80;
+      @include pt60;
+      @include pb60;
       @include tablet {
+        @include pt80;
+        @include pb80;
+      }
+      @include laptop {
         @include pt100;
         @include pb100;
       }
-      @include laptop {
+      @include desktop {
         @include pt120;
         @include pb120;
       }
-      @include desktop {
+      @include fhd {
         @include pt150;
         @include pb150;
       }
@@ -176,10 +220,46 @@ export default {
       }
     }
   }
+  .optration-flow-nav {
+    @include clear_list;
+    display: flex;
+
+    .num {
+      border: 1px solid #B4BFD9;
+      border-radius: 100%;
+      line-height: 67px;
+      width: 67px;
+      height: 67px;
+      font-size: 36px;
+      font-weight: 900;
+      color: $color-gray-light;
+      float: left;
+    }
+    .title {}
+    .step {}
+  }
   .section-optration-flow {
     background-color: white;
     .section__header h2 {
       color: $color-gray-dark;
+    }
+  }
+  .optration-flow-content {
+    @include clear_list;
+    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+    box-shadow: 20px 20px 40px 0 rgba(0,0,0,0.10);
+    border-radius: 5px;
+    color: white;
+    padding: 100px 25%;
+    text-align: center;
+    .icon {
+      margin-bottom: 40px;
+    }
+    .title {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 30px;
     }
   }
   .section-key-tech {
@@ -205,8 +285,12 @@ export default {
         align-items: center;
         justify-content: center;
         color: $color-gray-ligtest;
-        h5 {font-size: 48px; margin-top: 20px;}
-        h6{font-size: 18px;}
+        h5 {font-size: 32px; margin-top: 10px;}
+        h6 {font-size: 18px;}
+        img {
+          width: 96px;
+          height: 96px;
+        }
       }
       .text-box {
         background-color: white;
@@ -222,10 +306,25 @@ export default {
         &:nth-child(odd) {.icon-box{order:2;}.text-box{order:1;}}
         .icon-box {
           width: 50%;
-          padding: 56px 0;
+          padding: 48px 0;
+          h5 {font-size: 36px; margin-top: 20px;}
         }
         .text-box {
           width: 50%;
+        }
+      }
+      @include tablet {
+        .icon-box {
+          h5 {font-size: 42px;}
+          img {
+            width: 128px;
+            height: 128px;
+          }
+        }
+      }
+      @include fhd {
+        .icon-box {
+          h5 {font-size: 48px;}
         }
       }
     }
