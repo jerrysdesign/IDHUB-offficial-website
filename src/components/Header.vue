@@ -6,14 +6,15 @@
         .header__logo_img
         .header__logo_text
           | IDHub
-        //- li.header__menu_item(v-for="lan in lang")
-        //-   button(@click='changeLang')
-        //-     | {{lan}}
       ul.header__menu_list.header__item--desktop
         li.header__menu_item(v-for='link in links')
           router-link.header__menu_link.header__menu_link--white(:to='link.to')
             | {{ $t(link.text) }}
       button.header__burger_button.header__item--mobile(type='button', @click='openMenu')
+  ul.dev-box
+    li(v-for="lang in langs")
+      button(@click='changeLang')
+        | {{lang}}
 </template>
 
 
@@ -27,7 +28,7 @@ export default {
   name: 'headbar',
   data: () => {
     return {
-      lang: ['en','cn','zh'],
+      langs: ['en','cn','zh'],
       links: [
         { to: 'tech', text: 'tech' },
         { to: 'news', text: 'news' },
@@ -237,6 +238,22 @@ export default {
   &__item--mobile{
     @media (#{$min_tablet}){
       display: none;
+    }
+  }
+}
+.dev-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  @include clear_list;
+  li {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: rgba(white, .75);
+    button {
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
 }
