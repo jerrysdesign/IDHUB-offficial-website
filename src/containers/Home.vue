@@ -100,13 +100,14 @@ div(v-bind:class='pageName')
         h3 {{ $t('home-media-text') }}
       ul.media__list
         li.media__list-item(v-for='media in medias')
-          .img
-            img(:src='media.img')
-          .media__list-item__text-box
-            .media__list-item__date
-              | {{ media.mediaDate }}
-            .media__list-item__text
-              | {{ media.mediaText }}
+          a(:href='media.href')
+            .img
+              img(:src='media.img')
+            .media__list-item__text-box
+              .media__list-item__date
+                | {{ media.mediaDate }}
+              .media__list-item__text
+                | {{ media.mediaText }}
 
 </template>
 
@@ -130,9 +131,9 @@ export default {
         { img:require('@/assets/logo--media--chainb.png'), advisorsName: '上野嘉久', advisorsTitle: 'Synapse Holdings 创始人' }
       ],
       medias:[
-        { img:require('@/assets/logo--media--coindesk.svg'), mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
-        { img:require('@/assets/logo--media--medium.svg'), mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
-        { img:require('@/assets/logo--media--chainb.png'), mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
+        { href: '#123', img:require('@/assets/logo--media--coindesk.svg'),mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
+        { href: '#456', img:require('@/assets/logo--media--medium.svg'), mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
+        { href: '#789', img:require('@/assets/logo--media--chainb.png'), mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
       ]
     }
   },
