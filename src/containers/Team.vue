@@ -59,6 +59,11 @@ import Headbar from '@/components/Header'
 import Joinus from '@/components/Joinus'
 export default {
   name: 'team',
+  data: () => {
+    return {
+      pageName: 'page-team'
+    }
+  },
   // data: () => {
   //   let numberOfAdvisor = 2
   //   let numberOfPerson = 11
