@@ -8,12 +8,12 @@ div(v-bind:class='pageName')
         h3 {{ $t('contact_page.subtitle') }}
   .section-contact
     .container.contact-container
-      form.contact-formbox
-        textarea(placeholder='內容')
+      form.contact-formbox( action='mailto:support@idhub.network', method='GET')
+        textarea(placeholder='內容', name='body')
         input(type='text', placeholder='姓名')
         input(type='mail', placeholder='郵箱')
         input(type='phone', placeholder='手機')
-        button 送出
+        input(type='submit', value='送出')
 </template>
 
 <script>
@@ -95,7 +95,7 @@ export default {
         @include push(2);
         padding: 50px 100px;
       }
-      input, textarea, button {
+      input, textarea, input {
         border: 1px solid #DDDFE7;
         border-radius: 5px;
         padding: 10px 15px;
@@ -111,7 +111,7 @@ export default {
       textarea {
         height: 150px;
       }
-      button {
+      input[type='sumbit'] {
         background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
         color: white;
         border-width: 0;
