@@ -3,8 +3,8 @@ import en from '@/i18n/langpack/en'
 import tw from '@/i18n/langpack/tw'
 
 const messages = {
-  en,
   cn,
+  en,
   tw,
 }
 

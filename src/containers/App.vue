@@ -1,5 +1,5 @@
 <template lang="pug">
-.page.page-app
+.page(v-bind:class='pageName')
     h1 {{ pageName }}
 </template>
 
@@ -8,7 +8,7 @@ export default {
   name: 'app',
   data: () => {
     return {
-      pageName: 'App'
+      pageName: 'page-app'
     }
   }
 }

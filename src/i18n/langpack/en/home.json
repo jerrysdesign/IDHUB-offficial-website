@@ -8,14 +8,14 @@
     "contact": "Contact",
     "heading1": "Decentralized digital identity",
     "heading2": "management and application platform",
-    "learnMore": "Learn More",
-    "desc": "IDHub is a decentralized identity platform which serves as an entrance to digital society. IDHub will empower user to reclaim their control of identity from service providers. Our vision is to realize sovereignty, security, and privacy and link identity to digital assets."
+    "learnMore": "Learn More"
   },
   "info": {
     "tokenAddress": "The contract address of IDHub token is 0x29F20242051AccDA50D52a7E272A5F23237e4696. Please check and verify your token address."
   },
   "vision": {
     "title": "Vision",
+    "subtitle": "IDHub is a decentralized identity platform which serves as an entrance to digital society. IDHub will empower user to reclaim their control of identity from service providers. Our vision is to realize sovereignty, security, and privacy and link identity to digital assets.",
     "service": "Separating identity from applications to reduce switching cost among service providers.",
     "asset": "Monetizing digital assets such as identity attributes and credit scores.",
     "life": "Identity records could be the inputs of artificial intelligence for behavior forecasting."
