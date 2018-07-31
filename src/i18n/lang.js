@@ -1,11 +1,11 @@
 import cn from '@/i18n/langpack/cn'
 import en from '@/i18n/langpack/en'
-import zh from '@/i18n/langpack/zh'
+import tw from '@/i18n/langpack/tw'
 
 const messages = {
   en,
   cn,
-  zh,
+  tw,
 }
 
 export default messages

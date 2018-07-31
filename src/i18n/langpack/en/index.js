@@ -1,13 +1,13 @@
-import home from './home.json'
-import description from './description.json'
-import team from './team.json'
 import careers from './careers.json'
 import contact from './contact.json'
+import home from './home.json'
+import product from './product.json'
+import team from './team.json'
 
 export default {
-  ...home,
-  ...description,
-  ...team,
   ...careers,
-  ...contact
+  ...contact,
+  ...home,
+  ...product,
+  ...team
 }

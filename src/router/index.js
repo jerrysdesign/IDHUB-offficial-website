@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/containers/Home'
-import Tech from '@/containers/Tech'
+import Product from '@/containers/Product'
+// import Tech from '@/containers/Tech'
 import App from '@/containers/App'
 import Team from '@/containers/Team'
 import News from '@/containers/News'
@@ -24,10 +25,15 @@ export default new Router({
       component: Home
     },
     {
-      path: '/tech',
-      name: 'Tech',
-      component: Tech
+      path: '/product',
+      name: 'Product',
+      component: Product
     },
+    // {
+    //   path: '/tech',
+    //   name: 'Tech',
+    //   component: Tech
+    // },
     {
       path: '/app',
       name: 'App',

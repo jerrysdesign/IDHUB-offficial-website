@@ -3,62 +3,94 @@ div(v-bind:class='pageName')
   Headbar
   .team
     .container
-      .section-team(v-for='content in contents')
+      .section-team
         .team__title-box
           h2.team__title
-            | {{ $t(content.title) }}
-          h3.team__desction
-            | {{ $t(content.subtitle) }}
+            | {{ $t('team') }}
         ul.team__box
-          li.team__item-wrapper(v-for='member in content.members')
+          li.team__item-wrapper(v-for="(item, key, index) in $t('members')")
+            img(:src="require('@/assets/team_' + key + '.png')")
             .ratio-1-1
               .team__item
                 .team__item__name
-                  | {{ $t(member.name) }}
+                  | {{ $t(item.name) }}
                 .team__item__job
-                  | {{ $t(member.job) }}
-                .team__item__experience
-                  | {{ $t(member.experience) }}
-  Joinus
+                  | {{ item.desc }}
+                .team__item__experience(v-if='item.desc2')
+                  | {{ $t(item.desc2) }}
+                .team__item__experience(v-if='item.desc3')
+                  | {{ $t(item.desc3) }}
+      .section-team
+        .team__title-box
+          h2.team__title
+            | {{ $t('advisor') }}
+        ul.team__box
+          li.team__item-wrapper(v-for="(item, key, index) in $t('advisors')")
+            img(:src="require('@/assets/advisor_' + key + '.png')")
+            .ratio-1-1
+              .team__item
+                .team__item__name
+                  | {{ $t(item.name) }}
+                .team__item__job
+                  | {{ item.desc }}
+                .team__item__experience(v-if='item.desc2')
+                  | {{ $t(item.desc2) }}
+      //- .section-team(v-for='content in contents')
+      //-   .team__title-box
+      //-     h2.team__title
+      //-       | {{ $t(content.title) }}
+      //-     //- h3.team__desction
+      //-     //-   | {{ $t(content.subtitle) }}
+      //-   ul.team__box
+      //-     li.team__item-wrapper(v-for='member in content.members')
+      //-       .ratio-1-1
+      //-         .team__item
+      //-           .team__item__name
+      //-             | {{ $t(member.name) }}
+      //-           .team__item__job
+      //-             | {{ $t(member.job) }}
+      //-           .team__item__experience
+      //-             | {{ $t(member.experience) }}
+  //- Joinus
 </template>
-
 
 <script>
 import Headbar from '@/components/Header'
 import Joinus from '@/components/Joinus'
 export default {
   name: 'team',
-  data: () => {
-    let numberOfAdvisor = 2
-    let numberOfPerson = 11
-    let advisor = []
-    let person = []
-    for(let i = 1; i <= numberOfAdvisor; i++){
-      advisor.push({
-        name: `advisor.name-${i}`,
-        job: `advisor.job-${i}`,
-        experience: `advisor.experience-${i}`
-      })
-    }
-    for(let i = 1; i <= numberOfPerson; i++){
-      person.push({
-        name: `person.name-${i}`,
-        job: `person.job-${i}`,
-        experience: `person.experience-${i}`
-      })
-    }
-    return {
-      pageName: 'page-team',
-      contents: [{
-        title: 'team_page.title-1',
-        subtitle: 'team_page.subtitle-1',
-        members: advisor}, {
-        title: 'team_page.title-2',
-        subtitle: 'team_page.subtitle-2',
-        members: person}
-      ]
-    }
-  },
+  // data: () => {
+  //   let numberOfAdvisor = 2
+  //   let numberOfPerson = 11
+  //   let advisor = []
+  //   let person = []
+  //   let member = {}
+  //   for(let i = 1; i <= numberOfAdvisor; i++) {
+  //     advisor.push({
+  //       name: `advisor.name-${i}`,
+  //       job: `advisor.job-${i}`,
+  //       experience: `advisor.experience-${i}`
+  //     })
+  //   }
+  //   for(let i = 1; i <= numberOfPerson; i++) {
+  //     person.push({
+  //       name: `person.name-${i}`,
+  //       job: `person.job-${i}`,
+  //       experience: `person.experience-${i}`
+  //     })
+  //   }
+  //   return {
+  //     pageName: 'page-team',
+  //     contents: [{
+  //       title: 'team',
+  //       subtitle: 'team_page.subtitle-1',
+  //       members: person}, {
+  //       title: 'advisor',
+  //       subtitle: 'team_page.subtitle-2',
+  //       members: advisor}
+  //     ]
+  //   }
+  // },
   components: {
     Headbar,
     Joinus

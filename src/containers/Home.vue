@@ -6,84 +6,89 @@ div(v-bind:class='pageName')
       .cover__text_box
         h3.cover__sub-title
           span.cover__sub-title_text
-            | {{ $t('home-cover-subtitle') }}
+            | {{ $t('nav.heading1') }}
         h2.cover__title
           span.cover__title_text
-            | {{ $t('home-cover-title') }}
+            | {{ $t('nav.heading2') }}
         .cover__description_box
           span.cover__description_text
-            | {{ $t('home-cover-content') }}
-        a.cover__link(href='javascript:;')
-          | {{$t('whitepaper')}}{{$t('download')}}
+            | {{ $t('nav.desc') }}
+        a.cover__link(href='/static/IDHub_whitepaper_v0.5.0_en.pdf' target='_blank')
+          | {{$t('whitepaper')}}
       .cover__pic_box
         img.cover__img(src='@/assets/page-home__cover-img.svg')
     .cover__footer
       .cover__footer_left_box
-        h3.cover__footer_title
-          | {{$t('home-cover-footer')}}
+        //- h3.cover__footer_title
+        //-   | {{$t('home-cover-footer')}}
         span.cover__footer_text
-          | {{$t('home-cover-footer-content')}}
-  .section-version
-    .container.section-version__container
+          | {{$t('info.tokenAddress')}}
+  .section-vision
+    .container.section-vision__container
       .section__header
-        h2 {{ $t('home-version-title') }}
-        h3 {{ $t('home-version-subtitle') }}
-        router-link.btn(to='tech', title='tech', replace) {{$t('seemore')}}
-      ul.version__list
-        li.version__list-item
-          img.version__list-item__icon(src='@/assets/icon--version-service.svg')
-          h5.version__list-item__title {{$t('home-version-list-1-title')}}
-          p.version__list-item__text {{$t('home-version-list-1-text')}}
-        li.version__list-item
-          img.version__list-item__icon(src='@/assets/icon--version-digiasset.svg')
-          h5.version__list-item__title {{$t('home-version-list-2-title')}}
-          p.version__list-item__text {{$t('home-version-list-2-text')}}
-        li.version__list-item
-          img.version__list-item__icon(src='@/assets/icon--version-digilife.svg')
-          h5.version__list-item__title {{$t('home-version-list-3-title')}}
-          p.version__list-item__text {{$t('home-version-list-3-text')}}
-  .section-case
-    .container
-      .section__header
-        h2 {{ $t('home-case-title') }}
-      .case-box
-        .world-map
-          img(src='@/assets/world-map.svg')
+        h2 {{ $t('vision.title') }}
+        <!-- h3 {{ $t('home-vision-subtitle') }} -->
+        router-link.btn(to='tech', title='tech', replace) {{$t('nav.learnMore')}}
+      ul.vision__list
+        li.vision__list-item
+          img.vision__list-item__icon(src='@/assets/icon--vision-service.svg')
+          h5.vision__list-item__title ID as a Service
+          p.vision__list-item__text {{$t('vision.service')}}
+        li.vision__list-item
+          img.vision__list-item__icon(src='@/assets/icon--vision-digiasset.svg')
+          h5.vision__list-item__title ID as a Digital Asset
+          p.vision__list-item__text {{$t('vision.asset')}}
+        li.vision__list-item
+          img.vision__list-item__icon(src='@/assets/icon--vision-digilife.svg')
+          h5.vision__list-item__title ID as a Digital Life
+          p.vision__list-item__text {{$t('vision.life')}}
+  //- .section-case
+  //-   .container
+  //-     .section__header
+  //-       h2 {{ $t('case-title') }}
+  //-     .case-box
+  //-       .world-map
+  //-         img(src='@/assets/world-map.svg')
   .section-roadmap
     .section__header
-      h2 {{ $t('home-roadmap-title') }}
+      h2 {{ $t('roadmap') }}
     .timeline-box
       .container
         .timeline-graph
           img(src='@/assets/tlimeline-graph.png')
     .timeline-line
-  .section-advisors
+  .section-team
     .container
       .section__header.left-box
-        h2 {{ $t('home-advisors-title') }}
-        h4 {{ $t('home-advisors-text') }}
-        router-link.btn(to='/team', title='tech') {{$t('seemore')}}
+        h2 {{ $t('nav.team') }}
+        //- h4 {{ $t('home-team-text') }}
+        router-link.btn(to='/team', title='tech') {{$t('nav.learnMore')}}
       .right-box
-        ul.advisors__list
-          li.advisors__list-item(v-for='advisor in advisors')
-            img(:src='advisor.img')
-            .advisors__list-item__text-box
-              .advisors__list-item__name
-                | {{ advisor.advisorsName }}
-              .advisors__list-item__title
-                | {{ advisor.advisorsTitle }}
-  .section-download
-    .container
-      .section__header
-        h2 {{ $t('home-download-title') }}
-        h3 {{ $t('home-download-text') }}
-        button(type="button", class="btn btn-danger")
-          |{{$t('download')}}
+        ul.team__list
+          li.team__list-item(v-for="(item, key, index) in $t('members')" v-if='index < 2')
+            //- p {{key}}
+            img(:src="require('@/assets/team_' + key + '.png')")
+            .team__list-item__text-box
+              .team__list-item__name
+                | {{ item.name }}
+              .team__list-item__title
+                | {{ item.desc }}
+              .team__list-item__title(v-if='item.desc2')
+                | {{ item.desc2 }}
+              .team__list-item__title(v-if='item.desc3')
+                | {{ item.desc3 }}
+  //- .section-download
+  //-   .container
+  //-     .section__header
+  //-       h2 {{ $t('home-download-title') }}
+  //-       h3 {{ $t('home-download-text') }}
+  //-       button(type="button", class="btn btn-danger")
+  //-         |{{$t('download')}}
   .section-social
     .container
       .section__header.left-box
-        h2 {{ $t('home-social-title') }}
-        h4 {{ $t('home-social-text') }}
+        h2 {{ $t('community') }}
+        //- h4 {{ $t('home-social-text') }}
       .right-box
         ul.social__list
           li.social__list-item(v-for='social in socials')
@@ -92,23 +97,22 @@ div(v-bind:class='pageName')
                 img(:src='social.img' )
               .social__list-item__name
                 | {{ social.name }}
-              a.btn(:href='social.socialLink')
-  .section-media
+              a.btn(:href='social.url' target='_blank' rel='noopener noreferrer')
+  .section-news
     .container
       .section__header
-        h2 {{ $t('home-media-title') }}
-        h3 {{ $t('home-media-text') }}
-      ul.media__list
-        li.media__list-item(v-for='media in medias')
-          a(:href='media.href')
+        h2 {{ $t('nav.news') }}
+        //- h3 {{ $t('home-media-text') }}
+      ul.news__list
+        li.news__list-item(v-for='item in news')
+          a(:href='item.url' target='_blank' rel='noopener noreferrer')
             .img
-              img(:src='media.img')
-            .media__list-item__text-box
-              .media__list-item__date
-                | {{ media.mediaDate }}
-              .media__list-item__text
-                | {{ media.mediaText }}
-
+              img(:src='item.img')
+            .news__list-item__text-box
+              .news__list-item__date
+                | {{ item.newsDate }}
+              .news__list-item__text
+                | {{ item.newsTitle }}
 </template>
 
 <script>
@@ -119,21 +123,26 @@ export default {
     return {
       pageName: 'page-home',
       socials:[
-        { img:require('@/assets/logo--social--facebook.svg'), name: 'facebook', socialLink: 'http://google.com', background: '#34579A' },
-        { img:require('@/assets/logo--social--twitter.svg'), name: 'twitter', socialLink: 'javascript:;', background: '#009FF4' },
-        { img:require('@/assets/logo--social--github.svg'), name: 'github', socialLink: 'javascript:;', background: '#303030' },
-        { img:require('@/assets/logo--social--slack.svg'), name: 'slack', socialLink: 'javascript:;', background: '#FF496B' },
-        { img:require('@/assets/logo--social--medium.svg'), name: 'medium', socialLink: 'javascript:;', background: '#00B871' },
-        { img:require('@/assets/logo--social--telegram.svg'), name: 'telegram', socialLink: 'javascript:;', background: '#00AADF' }
+        { img:require('@/assets/community_facebook.svg'), name: 'facebook', url: 'https://www.facebook.com/IdhubOfficial', background: '#34579A' },
+        { img:require('@/assets/community_twitter.svg'), name: 'twitter', url: 'https://twitter.com/IDHUBOFFICIAL', background: '#009FF4' },
+        { img:require('@/assets/community_github.svg'), name: 'github', url: 'https://github.com/idhubnetwork', background: '#303030' },
+        { img:require('@/assets/community_slack.svg'), name: 'slack', url: 'https://idhubnetwork.herokuapp.com/', background: '#FF496B' },
+        { img:require('@/assets/community_medium.svg'), name: 'medium', url: 'https://medium.com/@IDHUBOFFICIAL', background: '#00B871' },
+        { img:require('@/assets/community_telegram.svg'), name: 'telegram', url: 'https://t.me/joinchat/GwYlyA8g8aNQCBElmAk1Dw', background: '#00AADF' }
       ],
-      advisors:[
-        { img:require('@/assets/logo--media--coindesk.svg'), advisorsName: '元道', advisorsTitle: '中观村区块练联盟理事长' },
-        { img:require('@/assets/logo--media--chainb.png'), advisorsName: '上野嘉久', advisorsTitle: 'Synapse Holdings 创始人' }
-      ],
-      medias:[
-        { href: '#123', img:require('@/assets/logo--media--coindesk.svg'),mediaDate: '23 Jun 2017', mediaText: 'Local Government in China Trials Blockchain for Public Services...' },
-        { href: '#456', img:require('@/assets/logo--media--medium.svg'), mediaDate: '5 Jan 2017', mediaText: 'An Exclusive Interview with Mr. Quming — the Founder of IDHub Project...' },
-        { href: '#789', img:require('@/assets/logo--media--chainb.png'), mediaDate: '24 Jul 2017', mediaText: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...”' }
+      news:[
+        { url: 'https://www.coindesk.com/local-government-china-trials-blockchain-public-services/', img:require('@/assets/news_coindesk.svg'), newsDate: '2017-06-23', newsTitle: 'Local Government in China Trials Blockchain for Public Services...' },
+        { url: 'http://chainb.com/?P=Cont&id=4910', img:require('@/assets/news_chainb.png'), newsDate: '2017-07-24', newsTitle: '光载无限助力佛山禅城打造全国首个区块链政务应用，市民办事...' },
+        { url: 'https://blockcast.it/2018/03/27/blcokchain-based-digital-identity-idhub/', img:require('@/assets/news_blockcast.png'), newsDate: '2018-03-27', newsTitle: '發展區塊鏈數位身份 IDHub 讓你於社群與商業展現個人價值...' },
+        { url: 'http://software.it168.com/a2018/0515/3203/000003203255.shtml', img:require('@/assets/news_it168.png'), newsDate: '2018-05-15', newsTitle: 'IDHub助力全国首个“区块链+社区矫正”应用禅城发布...' },
+        { url: 'https://markets.businessinsider.com/news/stocks/china-s-blockchain-community-correction-application-bestows-a-human-touch-1025068125', img:require('@/assets/news_businessinsider.png'), newsDate: '2018-05-21', newsTitle: "China's Blockchain Community Correction application bestows a human touch..." },
+        { url: 'https://finance.yahoo.com/news/chinas-blockchain-community-correction-application-161300613.html', img:require('@/assets/news_yahoo.png'), newsDate: '2018-05-22', newsTitle: "China's Blockchain Community Correction application bestows a human touch..." },
+        { url: 'https://medium.com/theacoplatform/build-a-better-world-with-aco-idhub-to-be-the-%EF%AC%81rst-use-case-on-aco-platform-f1ebf42d1c62', img:require('@/assets/news_medium.svg'), newsDate: '2018-05-29', newsTitle: '“Build a better world with ACO.” IDHub to be the ﬁrst use case on ACO platform...' },
+        { url: 'https://mp.weixin.qq.com/s/qUD97Q5EW5lPqQQC4DD68A', img:require('@/assets/news_chainbs.png'), newsDate: '2018-05-30', newsTitle: "拆解IDHub：如何成为未来价值互联网的基石？..." },
+        { url: 'https://mp.weixin.qq.com/s/yWeebwVxsU_vNKc512vtkQ', img:require('@/assets/news_wechat.png'), newsDate: '2018-06-03', newsTitle: "IDHub与Hivelocity达成战略合作，为60万用户提供身份验证服务..." },
+        { url: 'https://blog.csdn.net/dev_csdn/article/details/80559351', img:require('@/assets/news_csdn.png'), newsDate: '2018-06-03', newsTitle: "IDHub创始人曲明：数字身份将是下一个万亿市场..." },
+        { url: 'http://biz.ifeng.com/a/20180606/45015468_0.shtml', img:require('@/assets/news_ifeng.png'), newsDate: '2018-06-06', newsTitle: "IDHub创始人曲明出席以太坊技术大会 破解数字身份的基因密码..." },
+        { url: 'https://www.jinse.com/blockchain/201058.html', img:require('@/assets/news_jinse.png'), newsDate: '2018-06-08', newsTitle: "IDHub正式加入企業以太坊聯盟(EEA)，開啓國際化新征程..." }
       ]
     }
   },
@@ -315,7 +324,7 @@ export default {
     opacity: .15;
   }
 }
-.section-version {
+.section-vision {
   background-color: $color-gray-ligtest;
   position: relative;
   overflow: hidden;
@@ -343,7 +352,7 @@ export default {
   &__container {
     position: relative;
   }
-  .version {
+  .vision {
     &__list {
       @include clear_list;
       margin-top: 80px;
@@ -425,7 +434,7 @@ export default {
     height: 8px;
   }
 }
-.section-advisors {
+.section-team {
   background-color: $color-gray-ligtest;
   .section__header {}
   .left-box {
@@ -441,7 +450,7 @@ export default {
       @include span(7 of 12);
     }
   }
-  .advisors__list {
+  .team__list {
     @include clear_list;
     &-item {
       background: #FFFFFF;
@@ -580,11 +589,11 @@ export default {
     }
   }
 }
-.section-media {
+.section-news {
   background-color: $color-gray-ligtest;
   .section__header {}
 }
-.media {
+.news {
   &__list {
     @include container;
     @include clear_list;

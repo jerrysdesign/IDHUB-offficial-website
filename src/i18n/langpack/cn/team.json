@@ -1,54 +1,69 @@
 {
-  "team_page": {
-    "title-1": "顾问",
-    "subtitle-1": "我们的顾问团队",
-    "title-2": "成员",
-    "subtitle-2": "我们的开发成员"
+  "advisor": "顾问",
+  "team": "团队",
+  "advisors": {
+    "josh": {
+      "name": "元道",
+      "desc": "世纪互联创始人",
+      "desc2": "中关村区块链产业联盟理事长"
+    },
+    "ueno": {
+      "name": "上野嘉久",
+      "desc": "世纪互联董事兼牵头 VC 投资人",
+      "desc2": "Synapse Holdings 创始人"
+    }
   },
-  "advisor": {
-    "name-1": "元道",
-    "job-1": "世纪互联创始人",
-    "experience-1": "中关村区块链产业联盟理事长",
-    "name-2": "上野嘉久",
-    "job-2": "世纪互联董事兼牵头 VC 投资人",
-    "experience-2": "Synapse Holdings 创始人"
-  },
-  "person": {
-    "name-1": "曲明",
-    "job-1": "IDHub 创始人",
-    "experience-1": "互联城市咨询委员会 (CCAB) 理事会成员",
-    "name-2": "陈振国",
-    "job-2": "IDHub 技术总监",
-    "experience-2": "曾任亚太线上 CTO, 威睿科技联合创始人 & CTO",
-    "name-3": "李骁宇",
-    "job-3": "IDHub 核心工程师",
-    "experience-3": "北京交通大学硕士",
-    "name-4": "謝承璋",
-    "job-4": "IDHub 核心工程师",
-    "experience-4": "",
-    "name-5": "林展民",
-    "job-5": "IDHub 核心工程师",
-    "experience-5": "台湾政治大学理学硕士",
-    "name-6": "姚泽乾",
-    "job-6": "IDHub 研发工程师",
-    "experience-6": "",
-    "name-7": "李嘉淇",
-    "job-7": "IDHub 研发工程师",
-    "experience-7": "",
-    "name-8": "王沛智",
-    "job-8": "IDHub 商务拓展经理",
-    "experience-8": "伯明翰大学硕士",
-    "name-9": "吴茜",
-    "job-9": "IDHub 市场总监",
-    "experience-9": "英国大众传播和媒体研究硕士",
-    "name-10": "薛玉成",
-    "job-10": "IDHub 市场公关经理",
-    "experience-10": "",
-    "name-11": "曹磊",
-    "job-11": "IDHub 市场经理",
-    "experience-11": "",
-    "name-11": "Lekch Tasya",
-    "job-11": "IDHub 社区运营",
-    "experience-11": ""
+  "members": {
+    "qu": {
+      "name": "曲明",
+      "desc": "IDHub 创始人",
+      "desc2": "互联城市咨询委员会 (CCAB) 理事会成员"
+    },
+    "kenneth": {
+      "name": "陈振国",
+      "desc": "IDHub 技术总监",
+      "desc2": "曾任亚太线上 CTO",
+      "desc3": "威睿科技联合创始人 & CTO"
+    },
+    "xiaoyu": {
+      "name": "李骁宇",
+      "desc": "IDHub 核心工程师",
+      "desc2": "北京交通大学硕士"
+    },
+    "don": {
+      "name": "謝承璋",
+      "desc": "IDHub 核心工程师"
+    },
+    "jamie": {
+      "name": "林展民",
+      "desc": "IDHub 核心工程师",
+      "desc2": "台湾政治大学理学硕士"
+    },
+    "zaakin": {
+      "name": "姚泽乾",
+      "desc": "IDHub 研发工程师"
+    },
+    "jiaqi": {
+      "name": "李嘉淇",
+      "desc": "IDHub 研发工程师"
+    },
+    "michael": {
+      "name": "王沛智",
+      "desc": "IDHub 商务拓展经理",
+      "desc2": "伯明翰大学硕士"
+    },
+    "cecilia": {
+      "name": "吴茜",
+      "desc": "IDHub 市场总监",
+      "desc2": "英国大众传播和媒体研究硕士"
+    },
+    "derek": {
+      "name": "薛玉成",
+      "desc": "IDHub 市场公关经理"
+    },
+    "leo": {
+      "name": "曹磊",
+      "desc": "IDHub 市场经理"
+    }
   }
 }

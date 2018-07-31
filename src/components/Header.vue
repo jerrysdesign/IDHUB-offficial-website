@@ -6,6 +6,9 @@
         .header__logo_img
         .header__logo_text
           | IDHub
+        //- li.header__menu_item(v-for="lan in lang")
+        //-   button(@click='changeLang')
+        //-     | {{lan}}
       ul.header__menu_list.header__item--desktop
         li.header__menu_item(v-for='link in links')
           router-link.header__menu_link.header__menu_link--white(:to='link.to')
@@ -25,16 +28,16 @@ import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
 
 export default {
-  name: 'headbar',
+  name: 'navbar',
   data: () => {
     return {
-      langs: ['en','cn','zh'],
+      langs: ['en','cn','tw'],
       links: [
-        { to: 'tech', text: 'tech' },
-        { to: 'news', text: 'news' },
-        { to: 'activities', text: 'activities' },
-        { to: 'team', text: 'team' },
-        { to: 'contact', text: 'contact' }
+        { to: 'product', text: 'nav.product' },
+        { to: 'news', text: 'nav.news' },
+        // { to: 'activities', text: 'activities' },
+        { to: 'team', text: 'nav.team' },
+        { to: 'contact', text: 'nav.contact' }
       ]
     }
   },

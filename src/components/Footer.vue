@@ -14,7 +14,7 @@ footer.footer
       .footer__right_box
         ul.footer__menu.footer__menu
           li.footer__menu__item.footer__menu__title
-            | {{ $t('product') }}
+            | {{ $t('nav.product') }}
           li.footer__menu__item(v-for='linksProduct in linksProducts')
             router-link.footer__menu__link(:to= 'linksProduct.to')
               | {{ $t(linksProduct.text) }}
@@ -32,7 +32,7 @@ footer.footer
               | {{ $t(linksAbout.text) }}
         ul.footer__menu.footer__menu
           li.footer__menu__item.footer__menu__title
-            | {{ $t('contact') }}
+            | {{ $t('nav.contact') }}
           li.footer__menu__item(v-for='linksContact in linksContacts')
             router-link.footer__menu__link(:to= 'linksContact.to')
               | {{ linksContact.text }}
@@ -56,22 +56,21 @@ export default {
       { href: 'javascript:;', title: 'Say hello in Reddit!', class: 'social__link--reddit' }
       ],
       linksProducts: [
-        { to: 'tech', text: 'tech' },
-        { to: 'app', text: 'app' }
+        { to: 'product', text: 'nav.product' }
+        // { to: 'app', text: 'app' }
       ],
       linksNews: [
-        { to: 'news', text: 'news' },
-        { to: 'news', text: 'activities' },
-        { to: 'contact', text: 'contact' }
+        { to: 'news', text: 'nav.news' },
+        // { to: 'news', text: 'activities' },
+        { to: 'contact', text: 'nav.contact' }
       ],
       linksAbouts: [
-        { to: 'team', text: 'team' },
-        { to: 'careers', text: 'careers' }
+        { to: 'team', text: 'team' }
+        // { to: 'careers', text: 'careers' }
       ],
       linksContacts: [
         { to: 'contact', text: 'idhub.network' },
-        { to: 'contact', text: 'hello@idhub.network' },
-        { to: 'contact', text: '+86 123 456 789' }
+        { to: 'contact', text: 'support@idhub.network' }
       ],
     }
   }

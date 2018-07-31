@@ -75,7 +75,7 @@ export default {
     padding:  0;
   }
   &__item {
-    position:  absolute;
+    position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
