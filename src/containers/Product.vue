@@ -56,28 +56,28 @@ div(v-bind:class='pageName')
             .num 04
             .title 授权
             .step Step 4
-        ol.optration-flow-content
-          li
+        swiper(:options='swiperOption')
+          swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
             .title 创建
             .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
-          li
+          swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
             .title 认证
             .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
-          li
+          swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
             .title 查询
             .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
-          li
+          swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
             .title 授权
             .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
-
+          div(class='swiper-pagination swiper-pagination-bullets', slot='pagination')
   .section-key-tech
     .container
       .row
@@ -130,25 +130,38 @@ div(v-bind:class='pageName')
 
 <script>
 import Headbar from '@/components/Header'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'tech',
   data: () => {
     return {
-      pageName: 'page-tech'
+      pageName: 'page-tech',
+      swiperOption: {
+        pagination: {
+          el: '.optration-flow-nav',
+          clickable: true,
+          renderBullet(index, className) {
+            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> 创建 </div><div class='step'> Step 1 </div></li>`
+          }
+        }
+      }
     }
   },
   components: {
-    Headbar
+    Headbar,
+    swiper,
+    swiperSlide
   }
 }
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import '../stylesheets/_abstracts/_variables';
 @import '../stylesheets/_abstracts/_mixin';
 @import '../stylesheets/_abstracts/_grid';
+@import '../../node_modules/swiper/dist/css/swiper.css';
 .page-tech {
   .cover {
     height: auto;
@@ -220,10 +233,19 @@ export default {
       }
     }
   }
-  .optration-flow-nav {
+  .optration-flow-nav,
+  .swiper-pagination {
     @include clear_list;
     display: flex;
-
+    width: 100%;
+    margin-bottom: 50px;
+    li {
+      &:focus {
+        outline-style: none;
+        box-shadow: none;
+        border-color: transparent;
+      }
+    }
     .num {
       border: 1px solid #B4BFD9;
       border-radius: 100%;
@@ -234,9 +256,10 @@ export default {
       font-weight: 900;
       color: $color-gray-light;
       float: left;
+      margin-right: 12px;
     }
-    .title {}
-    .step {}
+    .title {text-align: left;}
+    .step {text-align: left;}
   }
   .section-operation-flow {
     background-color: white;
@@ -244,7 +267,8 @@ export default {
       color: $color-gray-dark;
     }
   }
-  .optration-flow-content {
+  .optration-flow-content,
+  .swiper-slide {
     @include clear_list;
     background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
     box-shadow: 20px 20px 40px 0 rgba(0,0,0,0.10);
@@ -329,5 +353,22 @@ export default {
       }
     }
   }
+
+  .swiper-pagination-bullet-custom {
+    display: inline-block;
+    width: 25%;
+    height: auto;
+    background: transparent;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet-custom.swiper-pagination-bullet-active {
+    .num {
+      background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+      box-shadow: 10px 10px 40px 0 rgba(0,0,0,0.40);
+      border-radius: 100%;
+      color: #fff;
+    }
+  }
 }
+
 </style>
