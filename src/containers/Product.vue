@@ -40,22 +40,6 @@ div(v-bind:class='pageName')
           h2 操作流程
       .row
         ol.optration-flow-nav
-          li
-            .num 01
-            .title 创建
-            .step Step 1
-          li
-            .num 02
-            .title 认证
-            .step Step 2
-          li
-            .num 03
-            .title 查询
-            .step Step 4
-          li
-            .num 04
-            .title 授权
-            .step Step 4
         swiper(:options='swiperOption')
           swiper-slide
             .icon
@@ -142,7 +126,7 @@ export default {
           el: '.optration-flow-nav',
           clickable: true,
           renderBullet(index, className) {
-            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> 创建 </div><div class='step'> Step 1 </div></li>`
+            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> 创建 </div><div class='step'> Step 0${index + 1} </div></li>`
           }
         }
       }
@@ -270,9 +254,6 @@ export default {
   .optration-flow-content,
   .swiper-slide {
     @include clear_list;
-    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
-    box-shadow: 20px 20px 40px 0 rgba(0,0,0,0.10);
-    border-radius: 5px;
     color: white;
     padding: 100px 25%;
     text-align: center;
@@ -353,7 +334,10 @@ export default {
       }
     }
   }
-
+  .swiper-container {
+    background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+    border-radius: 5px;
+  }
   .swiper-pagination-bullet-custom {
     display: inline-block;
     width: 25%;
