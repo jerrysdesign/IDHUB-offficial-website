@@ -19,30 +19,30 @@ div(v-bind:class='pageName')
     .container
       .row
         .section__header
-          h2 {{ $t('optrationFlot.title') }}
+          h2 {{ $t('flow.title') }}
       .row
         ol.optration-flow-nav
         swiper(:options='swiperOption')
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title {{ $t('optrationFlot.step[0].title') }}
-            .decstion {{ $t('optrationFlot.step[0].decstion') }}
+            .title {{ $t('flow.steps[0].title') }}
+            .content {{ $t('flow.steps[0].content') }}
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title {{ $t('optrationFlot.step[1].title') }}
-            .decstion {{ $t('optrationFlot.step[1].decstion') }}
+            .title {{ $t('flow.steps[1].title') }}
+            .content {{ $t('flow.steps[1].content') }}
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title {{ $t('optrationFlot.step[2].title') }}
-            .decstion {{ $t('optrationFlot.step[2].decstion') }}
+            .title {{ $t('flow.steps[2].title') }}
+            .content {{ $t('flow.steps[2].content') }}
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title {{ $t('optrationFlot.step[3].title') }}
-            .decstion {{ $t('optrationFlot.step[3].decstion') }}
+            .title {{ $t('flow.steps[3].title') }}
+            .content {{ $t('flow.steps[3].content') }}
   .section-key-tech
     .container
       .row
@@ -71,7 +71,7 @@ export default {
           el: '.optration-flow-nav',
           clickable: true,
           renderBullet(index, className) {
-            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> 创建 </div><div class='step'> Step 0${index + 1} </div></li>`
+            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> 创建 </div><div class='step'> $t{'flow.step'} 0${index + 1} </div></li>`
           }
         }
       }
