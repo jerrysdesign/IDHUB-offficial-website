@@ -1,47 +1,73 @@
 {
   "component": {
     "title": "IDHub will provide",
-    "smartContract": {
-      "name": "identifier",
-      "note": "Smart contract defined"
-    },
-    "sdk": {
-      "name": "SDK",
-      "note": "Connecting identity to identifier"
-    },
-    "wallet": {
-      "name": "identity wallet",
-      "note": "Blockchain based"
-    },
-    "token": {
-      "name": "native token",
-      "note": "Highly stable"
-    }
+    "list": [
+      {
+        "itemName":"smartContract",
+        "icon": "icon-component--01",
+        "img": "icon-tech-01",
+        "note": "Smart contract defined",
+        "name": "identifier"
+      },
+      {
+        "itemName":"sdk",
+        "icon": "icon-component--02",
+        "img": "icon-tech-02",
+        "note": "Connecting identity to identifier",
+        "name": "SDK"
+      },
+      {
+        "itemName":"wallet",
+        "icon": "icon-component--03",
+        "img": "icon-tech-03",
+        "note": "Blockchain based",
+        "name": "identity wallet"
+      },
+      {
+        "itemName":"token",
+        "icon": "icon-component--04",
+        "img": "icon-tech-04",
+        "note": "Highly stable",
+        "name": "native token"
+      }
+    ]
   },
-  "smartContract": {
-    "title": "Smart Contracts",
-    "desc": "Smart contracts realize the functionalities of an identity and link an identifier with its attributes.",
-    "proxy": {
-      "name": "Proxy Contract",
-      "desc": "Allocates users an identifier on blockchain. Binds the identifier with users' public key."
-
-    },
-    "controller": {
-      "name": "Controller Contract",
-      "desc": "States the functions of an identity, which includes the delegates for identity recovery."
-    },
-    "registry": {
-      "name": "Registry Contract",
-      "desc": "Correlates an identifier with its attributes. The attributes are stored on IPFS."
-    }
+  "optrationFlot": {
+    "title": "操作流程"
   },
   "techs": {
     "title": "IDHub Technical Components",
-    "solidity": "The smart contract based identities can attest and verify claims from individuals or institutions.  It can also control cryptocurrencies or tokenized assets.",
-    "merkle": "A Merkle tree is a hash based data structure that is a generalization of the hash list. It is a tree structure in which each leaf node is a hash of a block of data, and each non-leaf node is a hash of its children. Merkle trees are used in distributed system for efficient data verification. We use Merkle trees to realize the least disclosure of user data.",
-    "openPDS": "OpenPDS stores user data. It allows external query only if the user grants permission.",
-    "kademlia": "Kademlia is a distributed hash table for decentralized peer-to-peer networks. Kademlia uses a distance calculation between two nodes. This distance is computed as the exclusive or (XOR) of the two node identifiers. Kademlia offers latency-minimized routing.",
-    "jwt": "JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact JSON format for claims. This format can be signed, authorized, and verified.",
-    "graph": "The interactions among identities are depicted as an identity graph in which each node is an identity and each edge is an action. The actions are converted to transactions on blockchain. An identity of IDHub is represented by a Merkle tree and an identity graph."
+    "list":[
+      {
+        "itemName": "Solidity",
+        "title": "The smart contract based identities can attest and verify claims from individuals or institutions.  It can also control cryptocurrencies or tokenized assets.",
+        "icon": "icon-key-tech-01"
+      },
+      {
+        "itemName": "Merkle",
+        "title": "A Merkle tree is a hash based data structure that is a generalization of the hash list. It is a tree structure in which each leaf node is a hash of a block of data, and each non-leaf node is a hash of its children. Merkle trees are used in distributed system for efficient data verification. We use Merkle trees to realize the least disclosure of user data.",
+        "icon": "icon-key-tech-02"
+      },
+      {
+        "itemName": "openPDS",
+        "title": "OpenPDS stores user data. It allows external query only if the user grants permission.",
+        "icon": "icon-key-tech-03"
+      },
+      {
+        "itemName": "Kademlia",
+        "title": "Kademlia is a distributed hash table for decentralized peer-to-peer networks. Kademlia uses a distance calculation between two nodes. This distance is computed as the exclusive or (XOR) of the two node identifiers. Kademlia offers latency-minimized routing.",
+        "icon": "icon-key-tech-04"
+      },
+      {
+        "itemName": "JWT",
+        "title": "JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact JSON format for claims. This format can be signed, authorized, and verified.",
+        "icon": "icon-key-tech-05"
+      },
+      {
+        "itemName": "Graph",
+        "title": "The interactions among identities are depicted as an identity graph in which each node is an identity and each edge is an action. The actions are converted to transactions on blockchain. An identity of IDHub is represented by a Merkle tree and an identity graph.",
+        "icon": "icon-key-tech-06"
+      }
+    ]
   }
 }

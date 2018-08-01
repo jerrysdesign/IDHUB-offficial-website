@@ -9,107 +9,52 @@ div(v-bind:class='pageName')
           //- h3 IDHub 平台提供以下组件，智能合约定义”标示符”、实现身分与标示符的软体开发工具、基于区块链的身分应用钱包和原生的代币系统
       .row
         ul.component-list
-          li.component-list-item
-            .icon-component--01
-              img(src='@/assets/icon-tech-01.svg')
+          li.component-list-item(v-for="(item, index) in $t('component.list')")
+            div(v-bind:class='item.icon')
+              img(:src="require('@/assets/' + item.img + '.svg')")
             .text
-              h6 {{ $t('component.smartContract.note') }}
-              h5 {{ $t('component.smartContract.name') }}
-          li.component-list-item
-            .icon-component--02
-              img(src='@/assets/icon-tech-02.svg')
-            .text
-              h6 {{ $t('component.sdk.note') }}
-              h5 {{ $t('component.sdk.name') }}
-          li.component-list-item
-            .icon-component--03
-              img(src='@/assets/icon-tech-03.svg')
-            .text
-              h6 {{ $t('component.wallet.note') }}
-              h5 {{ $t('component.wallet.name') }}
-          li.component-list-item
-            .icon-component--04
-              img(src='@/assets/icon-tech-04.svg')
-            .text
-              h6 {{ $t('component.token.note') }}
-              h5 {{ $t('component.token.name') }}
+              h6 {{ item.note }}
+              h5 {{ item.name }}
   .section-operation-flow
     .container
       .row
         .section__header
-          h2 操作流程
+          h2 {{ $t('optrationFlot.title') }}
       .row
         ol.optration-flow-nav
         swiper(:options='swiperOption')
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title 创建
-            .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+            .title {{ $t('optrationFlot.step[0].title') }}
+            .decstion {{ $t('optrationFlot.step[0].decstion') }}
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title 认证
-            .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+            .title {{ $t('optrationFlot.step[1].title') }}
+            .decstion {{ $t('optrationFlot.step[1].decstion') }}
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title 查询
-            .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
+            .title {{ $t('optrationFlot.step[2].title') }}
+            .decstion {{ $t('optrationFlot.step[2].decstion') }}
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
-            .title 授权
-            .decstion 用户享受自由权力，通过私钥签名，用户可授权第三方调用数字存储模块的接口查询和使用身分信息。
-          div(class='swiper-pagination swiper-pagination-bullets', slot='pagination')
+            .title {{ $t('optrationFlot.step[3].title') }}
+            .decstion {{ $t('optrationFlot.step[3].decstion') }}
   .section-key-tech
     .container
       .row
         .section__header
           h2 {{ $t('techs.title') }}
         ul.key-tech-list
-          li.key-tech-list-item
+          li.key-tech-list-item(v-for="(item, index) in $t('techs.list')")
             .icon-box
-              img(src='@/assets/icon-key-tech-01.svg')
-              h5 Solidity
-              //- h6 面向智能合約
+              img(:src="require('@/assets/' + item.icon + '.svg')")
+              h5 {{ item.itemName }}
             .text-box
-              p {{ $t('techs.solidity') }}
-          li.key-tech-list-item
-            .icon-box
-              img(src='@/assets/icon-key-tech-02.svg')
-              h5 Merkle Tree
-              //- h6 葉節點數據塊
-            .text-box
-              p {{ $t('techs.merkle') }}
-          li.key-tech-list-item
-            .icon-box
-              img(src='@/assets/icon-key-tech-03.svg')
-              h5 OpenPDS
-              //- h6 用戶個人數據存儲
-            .text-box
-              p {{ $t('techs.openPDS') }}
-          li.key-tech-list-item
-            .icon-box
-              img(src='@/assets/icon-key-tech-04.svg')
-              h5 Kademlia
-              //- h6 分布式哈希表
-            .text-box
-              p {{ $t('techs.kademlia') }}
-          li.key-tech-list-item
-            .icon-box
-              img(src='@/assets/icon-key-tech-05.svg')
-              h5 JSON Web Token
-              //- h6 身份屬性认证
-            .text-box
-              p {{ $t('techs.jwt') }}
-          li.key-tech-list-item
-            .icon-box
-              img(src='@/assets/icon-key-tech-06.svg')
-              h5 Identity Graph
-              //- h6 身份圖
-            .text-box
-              p {{ $t('techs.graph') }}
+              p {{ item.title }}
 </template>
 
 <script>
