@@ -8,49 +8,31 @@ div(v-bind:class='pageName')
           h2.team__title
             | {{ $t('team') }}
         ul.team__box
-          li.team__item-wrapper(v-for="(item, key, index) in $t('members')")
-            img(:src="require('@/assets/team_' + key + '.png')")
+          li.team__item-wrapper(v-for="(item, index) in $t('members')")
             .ratio-1-1
               .team__item
+                .team__item__avatar
+                  img(:src="require('@/assets/team_' + item.avatar + '.png')")
                 .team__item__name
-                  | {{ $t(item.name) }}
+                  | {{ item.name }}
                 .team__item__job
-                  | {{ item.desc }}
-                .team__item__experience(v-if='item.desc2')
-                  | {{ $t(item.desc2) }}
-                .team__item__experience(v-if='item.desc3')
-                  | {{ $t(item.desc3) }}
-      .section-team
-        .team__title-box
-          h2.team__title
-            | {{ $t('advisor') }}
-        ul.team__box
-          li.team__item-wrapper(v-for="(item, key, index) in $t('advisors')")
-            img(:src="require('@/assets/advisor_' + key + '.png')")
-            .ratio-1-1
-              .team__item
-                .team__item__name
-                  | {{ $t(item.name) }}
-                .team__item__job
-                  | {{ item.desc }}
-                .team__item__experience(v-if='item.desc2')
-                  | {{ $t(item.desc2) }}
-      //- .section-team(v-for='content in contents')
+                  | {{ item.job }}
+      //- .section-team
       //-   .team__title-box
       //-     h2.team__title
-      //-       | {{ $t(content.title) }}
-      //-     //- h3.team__desction
-      //-     //-   | {{ $t(content.subtitle) }}
+      //-       | {{ $t('advisor') }}
       //-   ul.team__box
-      //-     li.team__item-wrapper(v-for='member in content.members')
+      //-     li.team__item-wrapper(v-for="(item, key, index) in $t('advisors')")
+      //-       img(:src="require('@/assets/advisor_' + key + '.png')")
       //-       .ratio-1-1
       //-         .team__item
       //-           .team__item__name
-      //-             | {{ $t(member.name) }}
+      //-             | {{ $t(item.name) }}
       //-           .team__item__job
-      //-             | {{ $t(member.job) }}
-      //-           .team__item__experience
-      //-             | {{ $t(member.experience) }}
+      //-             | {{ item.desc }}
+      //-           .team__item__experience(v-if='item.desc2')
+      //-             | {{ $t(item.desc2) }}
+
   //- Joinus
 </template>
 
@@ -142,6 +124,19 @@ export default {
       background-image: linear-gradient(-180deg, #1B47AD 0%, #0D2F80 100%);
       box-shadow: 30px 30px 60px 0 rgba($color-gray-darkest, .3);
       color: $color-gray-ligtest;
+      .team__item__avatar {
+        opacity: .1;
+        transition: opacify, .4s;
+      }
+    }
+    &__avatar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 0;
+      img {
+        width: 100%;
+      }
     }
     &__name {
       font-size: 24px;

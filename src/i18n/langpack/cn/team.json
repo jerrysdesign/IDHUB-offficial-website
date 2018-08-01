@@ -1,69 +1,84 @@
 {
   "advisor": "顾问",
   "team": "团队",
-  "advisors": {
-    "josh": {
-      "name": "元道",
-      "desc": "世纪互联创始人",
-      "desc2": "中关村区块链产业联盟理事长"
-    },
-    "ueno": {
-      "name": "上野嘉久",
-      "desc": "世纪互联董事兼牵头 VC 投资人",
-      "desc2": "Synapse Holdings 创始人"
+  "advisors": [
+    {
+      "josh": {
+        "name": "元道",
+        "exps": ["世纪互联创始人", "中关村区块链产业联盟理事长"]
+      },
+      "ueno": {
+        "name": "上野嘉久",
+        "exps": ["世纪互联董事兼牵头 VC 投资人", "Synapse Holdings 创始人"]
+      }
     }
-  },
-  "members": {
-    "qu": {
+  ],
+  "members": [
+    {
       "name": "曲明",
-      "desc": "IDHub 创始人",
-      "desc2": "互联城市咨询委员会 (CCAB) 理事会成员"
+      "avatar": "qu",
+      "job": "IDHub 创始人",
+      "exps":[ "互联城市咨询委员会 (CCAB) 理事会成员"]
     },
-    "kenneth": {
+    {
       "name": "陈振国",
-      "desc": "IDHub 技术总监",
-      "desc2": "曾任亚太线上 CTO",
-      "desc3": "威睿科技联合创始人 & CTO"
+      "avatar": "kenneth",
+      "job": "IDHub 技术总监",
+      "exps": ["曾任亚太线上 CTO", "威睿科技联合创始人 & CTO"]
     },
-    "xiaoyu": {
+    {
       "name": "李骁宇",
-      "desc": "IDHub 核心工程师",
-      "desc2": "北京交通大学硕士"
+      "avatar": "xiaoyu",
+      "job": "IDHub 核心工程师",
+      "exps": ["北京交通大学硕士"]
     },
-    "don": {
+    {
       "name": "謝承璋",
-      "desc": "IDHub 核心工程师"
+      "avatar": "don",
+      "job": "IDHub 核心工程师",
+      "exps": [""]
     },
-    "jamie": {
+    {
       "name": "林展民",
-      "desc": "IDHub 核心工程师",
-      "desc2": "台湾政治大学理学硕士"
+      "avatar": "jamie",
+      "job": "IDHub 核心工程师",
+      "exps": ["台湾政治大学理学硕士"]
     },
-    "zaakin": {
+    {
       "name": "姚泽乾",
-      "desc": "IDHub 研发工程师"
+      "avatar": "zaakin",
+      "job": "IDHub 研发工程师",
+      "exps": [""]
     },
-    "jiaqi": {
+    {
       "name": "李嘉淇",
-      "desc": "IDHub 研发工程师"
+      "avatar": "jiaqi",
+      "job": "IDHub 研发工程师",
+      "exps": [""]
     },
-    "michael": {
+    {
       "name": "王沛智",
-      "desc": "IDHub 商务拓展经理",
-      "desc2": "伯明翰大学硕士"
+      "avatar": "michael",
+      "job": "IDHub 商务拓展经理",
+      "exps": ["伯明翰大学硕士"]
     },
-    "cecilia": {
+    {
       "name": "吴茜",
-      "desc": "IDHub 市场总监",
-      "desc2": "英国大众传播和媒体研究硕士"
+      "avatar": "cecilia",
+      "job": "IDHub 市场总监",
+      "exps": ["英国大众传播和媒体研究硕士"]
     },
-    "derek": {
+    {
       "name": "薛玉成",
-      "desc": "IDHub 市场公关经理"
+      "avatar": "derek",
+      "job": "IDHub 市场公关经理",
+      "exps": [""]
     },
-    "leo": {
+    {
       "name": "曹磊",
-      "desc": "IDHub 市场经理"
+      "avatar": "leo",
+      "job": "IDHub 市场经理",
+      "exps": [""]
     }
-  }
+  ]
 }
