@@ -63,7 +63,8 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
   name: 'tech',
-  data: () => {
+  data: function() {
+    let flowitle = [this.$t('flow.steps[0].title'), this.$t('flow.steps[1].title'), this.$t('flow.steps[2].title'), this.$t('flow.steps[3].title')]
     return {
       pageName: 'page-tech',
       swiperOption: {
@@ -71,7 +72,7 @@ export default {
           el: '.optration-flow-nav',
           clickable: true,
           renderBullet(index, className) {
-            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> 创建 </div><div class='step'> $t{'flow.step'} 0${index + 1} </div></li>`
+            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> ${flowitle[index]} </div><div class='step'> Step 0${index + 1} </div></li>`
           }
         }
       }
