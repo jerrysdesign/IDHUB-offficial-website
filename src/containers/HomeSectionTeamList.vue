@@ -1,6 +1,6 @@
 <template lang="pug">
 ul.team__list
-  li.team__list-item(v-for="(item, key, index) in $t('members')" v-if='index < 2')
+  li.team__list-item(v-for="(item, key, index) in $t('members')", v-if='index < 2')
     //- p {{key}}
     img(:src="require('@/assets/team_' + key + '.png')")
     .team__list-item__text-box
