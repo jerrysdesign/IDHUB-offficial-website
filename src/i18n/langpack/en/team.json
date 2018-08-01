@@ -1,69 +1,84 @@
 {
   "advisor": "Advisors",
   "team": "Team",
-  "advisors": {
-    "josh": {
-      "name": "Yuan Dao",
-      "desc": "Founder of 21Vianet Group, Inc.",
-      "desc2": "Chairman of Z-Park Blockchain Industry Alliance"
-    },
-    "ueno": {
-      "name": "Yoshihisa Ueno",
-      "desc": "Director and leading investor of 21Vianet Group, Inc.",
-      "desc2": "Founder of Synapse Holdings"
+  "advisors": [
+    {
+      "josh": {
+        "name": "Yuan Dao",
+        "wxps": ["Founder of 21Vianet Group, Inc.", "Chairman of Z-Park Blockchain Industry Alliance"]
+      },
+      "ueno": {
+        "name": "Yoshihisa Ueno",
+        "wxps": ["Director and leading investor of 21Vianet Group, Inc.", "Founder of Synapse Holdings"]
+      }
     }
-  },
-  "members": {
-    "qu": {
+  ],
+  "members": [
+    {
       "name": "Doer Qu",
-      "desc": "Founder",
-      "desc2": "Council member of Connected City Advisory Board (CCAB)"
+      "avatar": "qu",
+      "job": "Founder",
+      "exps": ["Council member of Connected City Advisory Board (CCAB)"]
     },
-    "kenneth": {
+    {
       "name": "Kenneth Chen",
-      "desc": "CTO",
-      "desc2": "Former CTO of APTG",
-      "desc3": "Co-Founder & CTO of Genie Networks Ltd."
+      "avatar": "kenneth",
+      "job": "CTO",
+      "exps": ["Former CTO of APTG", "Co-Founder & CTO of Genie Networks Ltd."]
     },
-    "xiaoyu": {
+    {
       "name": "Xiaoyu Li",
-      "desc": "Core Developer",
-      "desc2": "Master degree at Beijing Jiaotong University"
+      "avatar": "xiaoyu",
+      "job": "Core Developer",
+      "exps": ["Master degree at Beijing Jiaotong University"]
     },
-    "don": {
+    {
       "name": "Don Hsieh",
-      "desc": "Core Developer"
+      "avatar": "don",
+      "job": "Core Developer",
+      "exps": [""]
     },
-    "jamie": {
+    {
       "name": "Jamie Lin",
-      "desc": "Core Developer",
-      "desc2": "The Degree of Master of Science of National Chengchi University"
+      "avatar": "jamie",
+      "job": "Core Developer",
+      "exps": ["The Degree of Master of Science of National Chengchi University"]
     },
-    "zaakin": {
+    {
       "name": "Zeqian Yao",
-      "desc": "Developer"
+      "avatar": "zaakin",
+      "job": "Developer",
+      "exps": [""]
     },
-    "jiaqi": {
+    {
       "name": "Jiaqi Li",
-      "desc": "Developer"
+      "avatar": "jiaqi",
+      "job": "Developer",
+      "exps": [""]
     },
-    "michael": {
+    {
       "name": "Michael Wang",
-      "desc": "Business Development Manager",
-      "desc2": "Master degree at University of Birmingham"
+      "avatar": "michael",
+      "job": "Business Development Manager",
+      "exps": ["Master degree at University of Birmingham"]
     },
-    "cecilia": {
+    {
       "name": "Cecilia Wu",
-      "desc": "Marketing Director",
-      "desc2": "Msc in Mass Communication and Media Research"
+      "avatar": "cecilia",
+      "job": "Marketing Director",
+      "exps":[ "Msc in Mass Communication and Media Research"]
     },
-    "derek": {
+    {
       "name": "Derek Xue",
-      "desc": "Marketing & PR Manager"
+      "avatar": "derek",
+      "job": "Marketing & PR Manager",
+      "exps": [""]
     },
-    "leo": {
+    {
       "name": "Leo Cao",
-      "desc": "Marketing Manager"
+      "avatar": "leo",
+      "job": "Marketing Manager",
+      "exps": [""]
     }
-  }
+  ]
 }
