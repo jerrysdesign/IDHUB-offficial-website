@@ -40,8 +40,8 @@ div(v-bind:class='pageName')
   .section-download
     .container
       .section__header
-        h2 {{ $t('home-download-title') }}
-        h3 {{ $t('home-download-text') }}
+        h2 {{ $t('whitepaper') }}
+        h3 {{ $t('download-whitepaper-text') }}
         button(type="button", class="btn btn-danger")
           |{{$t('download')}}
   .section-social

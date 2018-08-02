@@ -73,6 +73,13 @@
     h4 {@extend %title-color-white;}
   }
   .section-download & {
+    @include tablet {
+      @include span(8);
+    }
+    @include laptop {
+      @include span(10);
+      @include push(1);
+    }
     h2 {@extend %title-color-white;}
     h3 {@extend %title-color-white;}
     h4 {@extend %title-color-white;}
