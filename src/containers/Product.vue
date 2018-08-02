@@ -64,24 +64,30 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   name: 'tech',
   data: function() {
-    let flowTitle = [this.$t('flow.steps[0].title'), this.$t('flow.steps[1].title'), this.$t('flow.steps[2].title'), this.$t('flow.steps[3].title')]
     return {
       pageName: 'page-tech',
-      swiperOption: {
-        pagination: {
-          el: '.optration-flow-nav',
-          clickable: true,
-          renderBullet(index, className) {
-            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> ${flowTitle[index]} </div><div class='step'> Step 0${index + 1} </div></li>`
-          }
-        }
-      }
+      flowTitle: ['flow.steps[0].title', 'flow.steps[1].title', 'flow.steps[2].title', 'flow.steps[3].title'],
     }
   },
   components: {
     Headbar,
     swiper,
     swiperSlide
+  },
+  computed: {
+    swiperOption: function(){
+      let flowTitle = this.flowTitle
+      let translate = this.$t
+      return {
+        pagination: {
+          el: '.optration-flow-nav',
+          clickable: true,
+          renderBullet(index, className) {
+            return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> ${translate(flowTitle[index])} </div><div class='step'> Step 0${index + 1} </div></li>`
+          }
+        }
+      }
+    }
   }
 }
 </script>
