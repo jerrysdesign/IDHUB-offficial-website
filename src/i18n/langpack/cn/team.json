@@ -3,14 +3,14 @@
   "team": "团队",
   "advisors": [
     {
-      "josh": {
-        "name": "元道",
-        "exps": ["世纪互联创始人", "中关村区块链产业联盟理事长"]
-      },
-      "ueno": {
-        "name": "上野嘉久",
-        "exps": ["世纪互联董事兼牵头 VC 投资人", "Synapse Holdings 创始人"]
-      }
+      "name": "元道",
+      "avatar": "josh",
+      "exps": ["世纪互联创始人", "中关村区块链产业联盟理事长"]
+    },
+    {
+      "name": "上野嘉久",
+      "avatar": "ueno",
+      "exps": ["世纪互联董事兼牵头 VC 投资人", "Synapse Holdings 创始人"]
     }
   ],
   "members": [

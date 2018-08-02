@@ -3,14 +3,14 @@
   "team": "Team",
   "advisors": [
     {
-      "josh": {
-        "name": "Yuan Dao",
-        "wxps": ["Founder of 21Vianet Group, Inc.", "Chairman of Z-Park Blockchain Industry Alliance"]
-      },
-      "ueno": {
-        "name": "Yoshihisa Ueno",
-        "wxps": ["Director and leading investor of 21Vianet Group, Inc.", "Founder of Synapse Holdings"]
-      }
+      "name": "Yuan Dao",
+      "avatar": "josh",
+      "wxps": ["Founder of 21Vianet Group, Inc.", "Chairman of Z-Park Blockchain Industry Alliance"]
+    },
+    {
+      "name": "Yoshihisa Ueno",
+      "avatar": "ueno",
+      "wxps": ["Director and leading investor of 21Vianet Group, Inc.", "Founder of Synapse Holdings"]
     }
   ],
   "members": [
