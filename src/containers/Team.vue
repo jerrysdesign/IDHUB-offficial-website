@@ -17,6 +17,9 @@ div(v-bind:class='pageName')
                   | {{ item.name }}
                 .team__item__job
                   | {{ item.job }}
+                .team__item__exp(v-for="(exp) in item.exps")
+                  | {{ exp }}
+
       //- .section-team
       //-   .team__title-box
       //-     h2.team__title
