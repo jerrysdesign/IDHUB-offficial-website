@@ -29,20 +29,12 @@ div(v-bind:class='pageName')
     .section__header
       h2 {{ $t('roadmap') }}
     HomeSectionRoadMap
-  .section-team
-    .container
-      .section__header.left-box
-        h2 {{ $t('nav.team') }}
-        //- h4 {{ $t('home-team-text') }}
-        router-link.btn(to='/team', title='tech') {{$t('nav.learnMore')}}
-      .right-box
-        HomeSectionTeamList
   .section-download
     .container
       .section__header
         h2 {{ $t('whitepaper') }}
         h3 {{ $t('download-whitepaper-text') }}
-        button(type="button", class="btn btn-danger")
+        a.btn.btn-danger(href='/static/IDHub_whitepaper_v0.5.0_en.pdf' target='_blank')
           |{{$t('download')}}
   .section-social
     .container

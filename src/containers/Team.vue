@@ -67,9 +67,6 @@ export default {
   &__item-wrapper {
     @include clear_list;
     .ratio-1-1 {
-      width: 100%;
-      padding-top: 100%;
-      position: relative;
     }
   }
   &__box {
