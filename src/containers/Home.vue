@@ -92,8 +92,9 @@ export default {
   @include tablet {
     text-align: left;
     background-color: white;
-    background-position: 50% 120%;
+    background-position: right top;
     background-image: url(../assets/home-cover-bg.svg);
+    background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
   };
