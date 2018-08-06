@@ -48,8 +48,9 @@ div(v-bind:class='pageName')
       .section__header
         h2 {{ $t('nav.news') }}
         //- h4 {{ $t('home-media-text') }}
-      HomeSectionNewsList
+      HomeSectionNewsList(v-bind:order='6')
 </template>
+
 
 <script>
 import Headbar from '@/components/Header'
