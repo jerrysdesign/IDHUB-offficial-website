@@ -6,9 +6,6 @@
         .header__logo_img
         .header__logo_text
           | IDHub
-        //- li.header__menu_item(v-for="lan in lang")
-        //-   button(@click='changeLang')
-        //-     | {{lan}}
       ul.header__menu_list.header__item--desktop
         li.header__menu_item(v-for='link in links')
           router-link.header__menu_link.header__menu_link--white(:to='link.to')
@@ -185,13 +182,13 @@ export default {
       transition: width .4s cubic-bezier(.1, 0.88, 0.25, 1);
     }
     &:hover,
-    &.state-active {
+    &.router-link-active {
       &:before{
         width: 100%;
       }
       text-decoration: none;
     }
-    &.state-active{
+    &.router-link-active{
       cursor: default;
     }
     &--white:before{
@@ -206,9 +203,9 @@ export default {
   &__burger_button {
     position: relative;
     vertical-align: middle;
-    height: 16px;
-    width: 20px;
-    background-color: white;
+    height: 38px;
+    width: 38px;
+    background: url(../assets/header__burger_button.svg);
     cursor: pointer;
     order: 3;
     .header__right_box &{

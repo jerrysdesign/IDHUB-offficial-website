@@ -6,35 +6,35 @@ div(v-bind:class='pageName')
       .cover__text_box
         h3.cover__sub-title
           span.cover__sub-title_text
-            | {{ $t('nav.heading1') }}
+            | {{ $t('cover.heading1') }}
         h2.cover__title
           span.cover__title_text
-            | {{ $t('nav.heading2') }}
-        a.cover__link(href='/static/IDHub_whitepaper_v0.5.0_en.pdf' target='_blank')
+            | {{ $t('cover.heading2') }}
+        a.cover__link(href='/static/IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           | {{$t('whitepaper')}}
       .cover__pic_box
         img.cover__img(src='@/assets/page-home__cover-img.svg')
     .cover__footer
       .cover__footer_left_box
         span.cover__footer_text
-          | {{$t('info.tokenAddress')}}
+          | {{$t('cover.tokenAddress')}}
   .section-vision
     .container.section-vision__container
       .section__header
         h2 {{ $t('vision.title') }}
         h4 {{ $t('vision.subtitle') }}
-        router-link.btn(to='tech', title='tech', replace) {{$t('nav.learnMore')}}
-      HomeSectionVisionList
+        router-link.btn(to='product', title='tech', replace) {{$t('vision.learnMore')}}
+      VisionList
   .section-roadmap
     .section__header
       h2 {{ $t('roadmap') }}
-    HomeSectionRoadMap
+    RoadMap
   .section-download
     .container
       .section__header
         h2 {{ $t('whitepaper') }}
         h3 {{ $t('download-whitepaper-text') }}
-        a.btn.btn-danger(href='/static/IDHub_whitepaper_v0.5.0_en.pdf' target='_blank')
+        a.btn.btn-danger(href='/static/IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           |{{$t('download')}}
   .section-social
     .container
@@ -42,23 +42,22 @@ div(v-bind:class='pageName')
         h2 {{ $t('community') }}
         //- h4 {{ $t('home-social-text') }}
       .right-box
-        HomeSectionSocialList
+        SocialList
   .section-news
     .container
       .section__header
         h2 {{ $t('nav.news') }}
         //- h4 {{ $t('home-media-text') }}
-      HomeSectionNewsList(v-bind:order='6')
+      NewsList(v-bind:order='6')
 </template>
 
 
 <script>
 import Headbar from '@/components/Header'
-import HomeSectionVisionList from '@/containers/HomeSectionVisionList'
-import HomeSectionRoadMap from '@/containers/HomeSectionRoadMap'
-import HomeSectionTeamList from '@/containers/HomeSectionTeamList'
-import HomeSectionSocialList from '@/containers/HomeSectionSocialList'
-import HomeSectionNewsList from '@/containers/HomeSectionNewsList'
+import VisionList from '@/containers/section/VisionList'
+import RoadMap from '@/containers/section/RoadMap'
+import SocialList from '@/containers/section/SocialList'
+import NewsList from '@/containers/section/NewsList'
 export default {
   name: 'home',
   data: () => {
@@ -69,11 +68,10 @@ export default {
   },
   components: {
     Headbar,
-    HomeSectionVisionList,
-    HomeSectionRoadMap,
-    HomeSectionTeamList,
-    HomeSectionSocialList,
-    HomeSectionNewsList
+    VisionList,
+    RoadMap,
+    SocialList,
+    NewsList
   }
 }
 </script>

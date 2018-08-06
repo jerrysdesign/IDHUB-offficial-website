@@ -5,13 +5,13 @@ div(v-bind:class='pageName')
     .container
       .section__header
         h2 {{ $t('nav.news') }}
-      HomeSectionNewsList(v-bind:order='999')
+      SectionNewsList(v-bind:order='999')
 </template>
 
 
 <script>
 import Headbar from '@/components/Header'
-import HomeSectionNewsList from '@/containers/HomeSectionNewsList'
+import SectionNewsList from '@/containers/section/NewsList'
 export default {
   name: 'news',
   data: () => {
@@ -22,7 +22,7 @@ export default {
   },
   components: {
     Headbar,
-    HomeSectionNewsList
+    SectionNewsList
   },
 }
 </script>

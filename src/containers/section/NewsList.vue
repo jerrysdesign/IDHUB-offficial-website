@@ -37,9 +37,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../stylesheets/_abstracts/_variables';
-@import '../stylesheets/_abstracts/_mixin';
-@import '../stylesheets/_abstracts/_grid';
+@import '../../stylesheets/_abstracts/_variables';
+@import '../../stylesheets/_abstracts/_mixin';
+@import '../../stylesheets/_abstracts/_grid';
 .news {
   &__list {
     @include container;

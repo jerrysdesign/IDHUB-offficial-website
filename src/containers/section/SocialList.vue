@@ -28,9 +28,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import '../stylesheets/_abstracts/_variables';
-@import '../stylesheets/_abstracts/_mixin';
-@import '../stylesheets/_abstracts/_grid';
+@import '../../stylesheets/_abstracts/_variables';
+@import '../../stylesheets/_abstracts/_mixin';
+@import '../../stylesheets/_abstracts/_grid';
+$assets-path: '../../assets';
+
 .social__list {
   @include clear_list;
   &-item {
@@ -70,7 +72,7 @@ export default {
       border-radius: 21px;
       border: 2px solid $color-gray-ligtest;
       background-color: transparent;
-      background-image: url(../assets/icon--social-item-go.svg);
+      background-image: url(#{$assets-path}/icon--social-item-go.svg);
       background-position: center;
       background-repeat: no-repeat;
       padding-left: 4em;

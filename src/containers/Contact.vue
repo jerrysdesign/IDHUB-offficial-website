@@ -33,14 +33,15 @@ export default {
 
 
 <style lang="scss" scoped>
-
 @import '../stylesheets/_abstracts/_variables';
 @import '../stylesheets/_abstracts/_mixin';
 @import '../stylesheets/_abstracts/_grid';
+$assets-path: '../assets';
+
 .page-contact {
   .cover {
     height: auto;
-    background-image: url(../assets/page-cover-bg.svg);
+    background-image: url(#{$assets-path}/page-cover-bg.svg);
     background-position: 0 center;
     background-color: $color-primary-dark;
     background-repeat: no-repeat;

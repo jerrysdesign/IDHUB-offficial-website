@@ -22,9 +22,9 @@ export default {
       close: 'close',
       links: [
         { to: 'home', text: 'home' },
-        { to: 'tech', text: 'tech' },
+        { to: 'product', text: 'product' },
         { to: 'news', text: 'news' },
-        { to: 'news', text: 'activities' },
+        // { to: 'news', text: 'activities' },
         { to: 'team', text: 'team' },
         { to: 'contact', text: 'contact' }
       ],
@@ -67,7 +67,7 @@ $_menu_left_margin: 50px;
   padding-bottom: 30px;
   background-color: $color-primary;
   transition: right .2s ease;
-  &.state-opened{
+  &.state-opened {
     right: 0;
   }
   @media (#{$max_phone}) {
@@ -86,6 +86,7 @@ $_menu_left_margin: 50px;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
+      width: 100%;
     }
   }
   &__closer {
@@ -129,7 +130,7 @@ $_menu_left_margin: 50px;
     margin-left: 0;
     margin-bottom: 44px;
     padding-bottom: 20px;
-    border-bottom: 2px solid white;
+    // border-bottom: 2px solid white;
     @media (#{$max_tablet}){
       display: block;
     }
@@ -142,6 +143,7 @@ $_menu_left_margin: 50px;
     @include font_loader($montserrat, 4, 'n');
     font-size: 20px;
     letter-spacing: .05em;
+    display: block;
     &, &:hover, &:focus{
       color: white;
       text-decoration: none;
