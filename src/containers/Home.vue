@@ -6,10 +6,10 @@ div(v-bind:class='pageName')
       .cover__text_box
         h3.cover__sub-title
           span.cover__sub-title_text
-            | {{ $t('cover.heading1') }}
+            | {{ $t('cover.subtitle') }}
         h2.cover__title
           span.cover__title_text
-            | {{ $t('cover.heading2') }}
+            | {{ $t('cover.title') }}
         a.cover__link(href='/static/IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           | {{$t('whitepaper')}}
       .cover__pic_box
@@ -17,7 +17,7 @@ div(v-bind:class='pageName')
     .cover__footer
       .cover__footer_left_box
         span.cover__footer_text
-          | {{$t('cover.tokenAddress')}}
+          | {{$t('cover.message')}}
   .section-vision
     .container.section-vision__container
       .section__header

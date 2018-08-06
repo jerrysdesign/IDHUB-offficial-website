@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Home from '@/containers/Home'
 import Product from '@/containers/Product'
 // import Tech from '@/containers/Tech'
-import App from '@/containers/App'
 import Team from '@/containers/Team'
 import News from '@/containers/News'
 import Careers from '@/containers/Careers'
@@ -34,11 +33,6 @@ export default new Router({
     //   name: 'Tech',
     //   component: Tech
     // },
-    {
-      path: '/app',
-      name: 'App',
-      component: App
-    },
     {
       path: '/team',
       name: 'Team',

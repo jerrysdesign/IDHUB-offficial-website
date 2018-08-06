@@ -8,9 +8,9 @@
     "contact": "Contact"
   },
   "cover": {
-    "tokenAddress": "The contract address of IDHub token is 0x29F20242051AccDA50D52a7E272A5F23237e4696. Please check and verify your token address.",
-    "heading1": "Decentralized digital identity",
-    "heading2": "management and application platform"
+    "title": "management and application platform",
+    "subtitle": "Decentralized digital identity",
+    "message": "The contract address of IDHub token is 0x29F20242051AccDA50D52a7E272A5F23237e4696. Please check and verify your token address."
   },
   "vision": {
     "title": "Vision",
