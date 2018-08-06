@@ -1,6 +1,13 @@
 {
   "contact_page": {
     "title": "聯繫我們",
-    "subtitle": "發展區塊鏈數位身份 IDHub 讓你於社群與商業展現個人價值"
+    "subtitle": "發展區塊鏈數位身份 IDHub 讓你於社群與商業展現個人價值",
+     "forms": {
+      "name": "姓名",
+      "mail": "电子邮件",
+      "phone": "手機",
+      "content": "內容",
+      "sumbit": "送出"
+    }
   }
 }

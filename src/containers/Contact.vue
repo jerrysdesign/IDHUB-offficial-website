@@ -8,12 +8,12 @@ div(v-bind:class='pageName')
         h3 {{ $t('contact_page.subtitle') }}
   .section-contact
     .container.contact-container
-      form.contact-formbox( action='mailto:support@idhub.network', method='GET')
-        textarea(placeholder='內容', name='body')
-        input(type='text', placeholder='姓名')
-        input(type='mail', placeholder='郵箱')
-        input(type='phone', placeholder='手機')
-        input(type='submit', value='送出')
+      form.contact-formbox(action='mailto:support@idhub.network', method='GET')
+        textarea(v-bind:placeholder="$t('contact_page.forms.content')", name='body')
+        input(type='text', v-bind:placeholder="$t('contact_page.forms.name')")
+        input(type='email',v-bind:placeholder="$t('contact_page.forms.mail')")
+        input(type='tel', v-bind:placeholder="$t('contact_page.forms.phone')")
+        input(type='submit', v-bind:value="$t('contact_page.forms.sumbit')")
 </template>
 
 <script>
@@ -112,11 +112,12 @@ $assets-path: '../assets';
       textarea {
         height: 150px;
       }
-      input[type='sumbit'] {
+      input[type='submit'] {
         background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
         color: white;
         border-width: 0;
         &:hover {
+          color: white;
           background: #1A47B0;
           box-shadow: 20px 20px 60px 0 rgba(0,0,0,0.4);
         }

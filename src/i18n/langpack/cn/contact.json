@@ -1,6 +1,13 @@
 {
   "contact_page": {
     "title": "联系我们",
-    "subtitle": "发展区块链数位身份 IDHub 让你于社群与商业展现个人价值"
+    "subtitle": "发展区块链数位身份 IDHub 让你于社群与商业展现个人价值",
+    "forms": {
+      "name": "姓名",
+      "mail": "邮箱",
+      "phone": "手机",
+      "content": "内容",
+      "sumbit": "送出"
+    }
   }
 }

@@ -21,12 +21,12 @@ export default {
     return {
       close: 'close',
       links: [
-        { to: 'home', text: 'home' },
-        { to: 'product', text: 'product' },
-        { to: 'news', text: 'news' },
-        // { to: 'news', text: 'activities' },
-        { to: 'team', text: 'team' },
-        { to: 'contact', text: 'contact' }
+        { to: 'home', text: 'nav.homepage' },
+        { to: 'product', text: 'nav.product' },
+        { to: 'news', text: 'nav.news' },
+        // { to: 'news', text: 'nav.activities' },
+        { to: 'team', text: 'nav.team' },
+        { to: 'contact', text: 'nav.contact' }
       ],
       menuState: 'state-closed',
     }

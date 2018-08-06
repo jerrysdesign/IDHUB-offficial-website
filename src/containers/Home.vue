@@ -33,7 +33,7 @@ div(v-bind:class='pageName')
     .container
       .section__header
         h2 {{ $t('whitepaper') }}
-        h3 {{ $t('download-whitepaper-text') }}
+        h4 {{ $t('downloads.subtitle') }}
         a.btn.btn-danger(href='/static/IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           |{{$t('download')}}
   .section-social
