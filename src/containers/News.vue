@@ -130,13 +130,13 @@ export default {
     &:nth-last-child(-n+2) {
       margin-bottom: 0;
     }
-    @media (#{$min_tablet}) {
+    @include tablet {
       @include gallery(4);
       &:nth-last-child(-n+3) {
         margin-bottom: 0;
       }
     }
-    @media (#{$min_desktop}) {
+    @include desktop {
       @include gallery(3);
       &:nth-last-child(-n+4) {
         margin-bottom: 0;

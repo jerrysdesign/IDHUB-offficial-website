@@ -92,11 +92,16 @@ export default {
   @include tablet {
     text-align: left;
     background-color: white;
-    background-position: right top;
-    background-image: url(../assets/home-cover-bg.svg);
-    background-size: cover;
+    background-position: center top;
+    background-size: 100%;
     background-repeat: no-repeat;
     height: 100vh;
+    @include tablet {
+      background-image: url(../assets/home-cover-1440-bg.svg);
+    }
+    @include desktop {
+      background-image: url(../assets/home-cover-1920-bg.svg);
+    }
   };
   &__container {
     display:flex;
