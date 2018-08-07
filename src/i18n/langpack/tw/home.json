@@ -5,7 +5,9 @@
     "team": "團隊",
     "forum": "論壇",
     "news": "媒體報導",
-    "contact": "聯繫我們"
+    "contact": "聯繫我們",
+    "switch-langs": "繁中",
+    "switch-langs-title": "切換語系"
   },
   "cover": {
     "title": "數字身份管理和應用平台",
