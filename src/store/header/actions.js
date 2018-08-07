@@ -4,5 +4,5 @@ export default {
   },
   closeMenu({commit}) {
     commit('changeMstatue', false)
-  },
+  }
 }
