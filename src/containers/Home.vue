@@ -27,7 +27,7 @@ div(v-bind:class='pageName')
       VisionList
   .section-roadmap
     .section__header
-      h2 {{ $t('roadmap') }}
+      h2 {{ $t('roadmap.title') }}
     RoadMap
   .section-download
     .container

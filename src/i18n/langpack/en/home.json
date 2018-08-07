@@ -22,7 +22,56 @@
     "life": "Identity records could be the inputs of artificial intelligence for behavior forecasting.",
     "learnMore": "Learn More"
   },
-  "roadmap": "Roadmap",
+  "roadmap": {
+    "title": "Roadmap",
+    "2017": {
+      "Q1": [],
+      "Q2": [],
+      "Q3": [
+        "The IDHub project is established"
+      ],
+      "Q4": [
+        "Blockchain application contest finalist",
+        "Whitepaper released"
+      ]
+    },
+    "2018": {
+      "Q1": [
+        "Pre-sale",
+        "IDHub Foundation established in Singapore"
+      ],
+      "Q2": [
+        "Enterprise Ethereum Alliance (EEA) membership acquired",
+        "Roadshow in Kuala Lumpur, Malaysia",
+        "Crowdsale"
+      ],
+      "Q3": [
+        "IDHUB tokens available on exchanges",
+        "Strategic alliance with Hivelocity"
+      ],
+      "Q4": [
+        "API released",
+        "IDHub can validate identities on the Ethereum testnet"
+      ]
+    },
+    "2019": {
+      "Q1": [
+        "Mobile app released",
+        "Rollout of IDHub community developer program"
+      ],
+      "Q2": [
+        "IDHUB tokens can be used to pay for KYC services",
+        "Storage is decentralized"
+      ],
+      "Q3": [
+        "Credit score integration"
+      ],
+      "Q4": [
+        "Advertisement integration",
+        "Biometrics integration"
+      ]
+    }
+  },
   "community": "Community",
   "whitepaper": "Whitepaper",
   "whitepaperPath": "http://idhub.network/data/IDHub_whitepaper_v0.5.0_en.pdf",
