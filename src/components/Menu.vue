@@ -5,7 +5,7 @@
       .menu__box
         ul.menu__list
           li.menu__item(v-for='link in links')
-            router-link.menu__link(:to='link.to')
+            router-link.menu__link(:to='link.to', v-on:click.native='closeMenu')
               | {{ $t(link.text) }}
         .menu__list
           h3.menu__title
