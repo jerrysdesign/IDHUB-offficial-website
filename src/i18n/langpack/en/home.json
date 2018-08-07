@@ -5,7 +5,9 @@
     "team": "Team",
     "forum": "Forum",
     "news": "News",
-    "contact": "Contact"
+    "contact": "Contact",
+    "switch-langs": "English",
+    "switch-langs-title": "Switch The Language"
   },
   "cover": {
     "title": "management and application platform",

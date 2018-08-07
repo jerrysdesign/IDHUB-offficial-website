@@ -10,16 +10,23 @@
         li.header__menu_item(v-for='link in links')
           router-link.header__menu_link.header__menu_link--white(:to='link.to')
             | {{ $t(link.text) }}
+        li.header__menu_item
+          button#show-modal(@click='closeModal') {{ $t('nav.switch-langs') }}
       button.header__burger_button.header__item--mobile(type='button', @click='openMenu')
-  ul.dev-box
-    li(v-for="lang in langs")
-      button(@click='changeLang')
-        | {{lang}}
+  modal(v-if='showModal', @close='showModal = false')
+    h4(slot='header') {{ $t('nav.switch-langs-title') }}
+    .language-list(slot='body')
+      ul.flages
+        li(v-for="lang in langs")
+          a(@click='changeLang', href='javascript:;')
+            span.flag(:style="{ backgroundImage: 'url(' + lang.image + ')' }")
+            span.text {{lang.text}}
 </template>
 
 
 <script>
 const body = document.querySelector('body')
+import modal from '@/components/Modal'
 import { store } from '@/store/header'
 import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
@@ -28,7 +35,12 @@ export default {
   name: 'navbar',
   data: () => {
     return {
-      langs: ['en','cn','tw'],
+      showModal: false,
+      langs: [
+        {'text': 'en', 'image': '/static/en.png'},
+        {'text': 'cn', 'image': '/static/zh-hans.png'},
+        {'text': 'tw', 'image': '/static/zh-hant.png'},
+      ],
       links: [
         { to: 'product', text: 'nav.product' },
         { to: 'news', text: 'nav.news' },
@@ -39,6 +51,7 @@ export default {
     }
   },
   components: {
+    modal
   },
   store,
   methods: {
@@ -48,7 +61,23 @@ export default {
       const locale = target.target.textContent
       Vue.config.lang = locale
       this.$i18n.locale = locale
+      this.closeModal()
     },
+    show(resizable, adaptive, draggable) {
+      this.resizable = resizable
+      this.adaptive = adaptive
+      this.draggable = draggable
+      /*
+        $nextTick is required because the data model with new
+        "resizable, adaptive, draggable" values is not updated yet.. eh
+      */
+      this.$nextTick(() => {
+        this.$modal.show('example-modal')
+      })
+    },
+    closeModal() {
+      this.showModal =  !this.showModal
+    }
   }
 }
 </script>
@@ -257,4 +286,54 @@ export default {
     }
   }
 }
+#show-modal {
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.flages {
+  @include clear_list;
+  text-align: center;
+  li {
+    display: inline-block;
+    padding: 15px;
+    a {
+      text-decoration: none;
+      vertical-align: middle;
+      display: inline-block;
+      cursor: pointer;
+      color: rgba(white, .8);
+      position: relative;
+      &:hover {
+        color: rgba(white, 1);
+      }
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 40px;
+        // padding: 10px;
+      }
+      .flag {
+        width: 40px;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .text {
+        padding-left: 50px;
+        float: left;
+        display: block;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+}
+
 </style>
