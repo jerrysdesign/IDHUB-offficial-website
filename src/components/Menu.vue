@@ -2,29 +2,28 @@
   nav.menu(v-bind:class='menuState')
     .menu__container
       button.menu__closer(type='button', @click='closeMenu')
-        | close
       .menu__box
-        //- h3.menu__title
-        //-   | menu
         ul.menu__list
           li.menu__item(v-for='link in links')
             router-link.menu__link(:to='link.to')
               | {{ $t(link.text) }}
+        .menu__list
+          h3.menu__title
+            | {{ $t('nav.switch-langs-title') }}
+          //- I18nSwitch
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex'
+// import I18nSwitch from '@/components/I18n'
 
 export default {
   name: 'side-menu',
   data: () => {
     return {
-      close: 'close',
       links: [
-        { to: 'home', text: 'nav.homepage' },
         { to: 'product', text: 'nav.product' },
         { to: 'news', text: 'nav.news' },
-        // { to: 'news', text: 'nav.activities' },
         { to: 'team', text: 'nav.team' },
         { to: 'contact', text: 'nav.contact' }
       ],
@@ -35,7 +34,7 @@ export default {
     ...mapState(['menuStatus']),
   },
   methods: {
-    ...mapActions(['closeMenu'])
+    ...mapActions(['closeMenu']),
   },
   watch: {
     menuStatus: function(val) {
@@ -46,6 +45,9 @@ export default {
       }
     }
   },
+  components: {
+    // I18nSwitch
+  }
 }
 </script>
 
@@ -90,29 +92,15 @@ $_menu_left_margin: 50px;
     }
   }
   &__closer {
-    @include font_loader($montserrat, 4, 'n');
-    position: absolute;
-    z-index: 1;
-    top: 50px;
-    margin: 0 0 0 $_menu_left_margin;
-    padding-left: 30px;
-    color: white;
-    font-size: 14px;
     cursor: pointer;
     &:before {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      top: 0;
-      width: 15px;
-      // background: url(#{$icons_path}i--cross--white.svg) no-repeat center / 100% auto;
-    }
-    @media (#{$max_desktop}){
-      right: $container_side_margin;
-    }
-    @media (#{$max_phone}){
-      top: 40px;
+      right: 15px;
+      top: 8px;
+      height: 36px;
+      width: 36px;
+      background: url(../assets/header__burger_button--close.svg);
     }
   }
   &__title {
@@ -126,11 +114,10 @@ $_menu_left_margin: 50px;
   &__list {
     @include clearfix;
     @include clear_list;
-    display: inline-block;
+    display: block;
     margin-left: 0;
     margin-bottom: 44px;
     padding-bottom: 20px;
-    // border-bottom: 2px solid white;
     @media (#{$max_tablet}){
       display: block;
     }

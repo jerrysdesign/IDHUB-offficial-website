@@ -13,20 +13,21 @@
         li.header__menu_item
           button#show-modal(@click='closeModal') {{ $t('nav.switch-langs') }}
       button.header__burger_button.header__item--mobile(type='button', @click='openMenu')
-  modal(v-if='showModal', @close='showModal = false')
+  Modal(v-if='showModal', @close='showModal = false')
     h4(slot='header') {{ $t('nav.switch-langs-title') }}
     .language-list(slot='body')
       ul.flages
-        li(v-for="lang in langs")
+        li(v-for='lang in langs')
           a(@click='changeLang', href='javascript:;')
             span.flag(:style="{ backgroundImage: 'url(' + lang.image + ')' }")
-            span.text {{lang.text}}
+            span.hide {{ lang.target }}
+            span.text {{ lang.display }}
 </template>
 
 
 <script>
 const body = document.querySelector('body')
-import modal from '@/components/Modal'
+import Modal from '@/components/Modal'
 import { store } from '@/store/header'
 import Vue from 'vue'
 import { mapState, mapActions } from 'vuex'
@@ -37,21 +38,20 @@ export default {
     return {
       showModal: false,
       langs: [
-        {'text': 'en', 'image': '/static/en.png'},
-        {'text': 'cn', 'image': '/static/zh-hans.png'},
-        {'text': 'tw', 'image': '/static/zh-hant.png'},
+        {'target': 'cn', 'display': 'cn', 'image': '/static/zh-hans.png'},
+        {'target': 'tw', 'display': 'tw', 'image': '/static/zh-hant.png'},
+        {'target': 'en', 'display': 'en', 'image': '/static/en.png'}
       ],
       links: [
         { to: 'product', text: 'nav.product' },
         { to: 'news', text: 'nav.news' },
-        // { to: 'activities', text: 'activities' },
         { to: 'team', text: 'nav.team' },
         { to: 'contact', text: 'nav.contact' }
       ]
     }
   },
   components: {
-    modal
+    Modal
   },
   store,
   methods: {
@@ -62,18 +62,6 @@ export default {
       Vue.config.lang = locale
       this.$i18n.locale = locale
       this.closeModal()
-    },
-    show(resizable, adaptive, draggable) {
-      this.resizable = resizable
-      this.adaptive = adaptive
-      this.draggable = draggable
-      /*
-        $nextTick is required because the data model with new
-        "resizable, adaptive, draggable" values is not updated yet.. eh
-      */
-      this.$nextTick(() => {
-        this.$modal.show('example-modal')
-      })
     },
     closeModal() {
       this.showModal =  !this.showModal
@@ -92,7 +80,11 @@ export default {
     color: white;
   }
 }
-.page-tech, .page-activities, .page-careers, .page-contact {
+.page-team,
+.page-tech,
+.page-activities,
+.page-careers,
+.page-contact {
   .cover {
     .header {
       background: none;
@@ -223,42 +215,27 @@ export default {
     &--white:before{
       background-color: white;
     }
-    &--white, &--white:hover, &--white:focus, &--white:active, &--white:visited{
+    &--white,
+    &--white:hover,
+    &--white:focus
+    &--white:active,
+    &--white:visited {
       color: white;
       text-decoration: none;
-      color: white;
     }
   }
   &__burger_button {
     position: relative;
     vertical-align: middle;
-    height: 38px;
-    width: 38px;
+    height: 36px;
+    width: 36px;
     background: url(../assets/header__burger_button.svg);
     cursor: pointer;
     order: 3;
-    .header__right_box &{
-      margin-left: 30px;
-    }
-    &:before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      top: 0;
-    }
-    &.state-opened{
-      &:before{
-        // background: url(#{$icons_path}i--cross--big--white.svg) no-repeat center / 100% auto;
-      }
-    }
   }
-
   .page-home & {
     background: none;
   }
-
   &__item--desktop{
     @media (#{$max_tablet}){
       display: none;
@@ -267,22 +244,6 @@ export default {
   &__item--mobile{
     @media (#{$min_tablet}){
       display: none;
-    }
-  }
-}
-.dev-box {
-  position: fixed;
-  left: 0;
-  top: 0;
-  @include clear_list;
-  li {
-    display: inline-block;
-    padding: 5px 10px;
-    background-color: rgba(white, .75);
-    button {
-      &:hover {
-        cursor: pointer;
-      }
     }
   }
 }
@@ -297,6 +258,11 @@ export default {
   li {
     display: inline-block;
     padding: 15px;
+    .state-opened & {
+      display: block;
+      padding: 5px 15px;
+      text-align: left;
+    }
     a {
       text-decoration: none;
       vertical-align: middle;
@@ -311,7 +277,9 @@ export default {
         display: inline-block;
         vertical-align: middle;
         line-height: 40px;
-        // padding: 10px;
+        .state-opened & {
+          line-height: 24px;
+        }
       }
       .flag {
         width: 40px;
@@ -324,6 +292,11 @@ export default {
         top: 0;
         left: 0;
         z-index: 1;
+        border: 2px solid rgba(white, 1);
+        .state-opened & {
+          width: 24px;
+          height: 24px;
+        }
       }
       .text {
         padding-left: 50px;
@@ -331,9 +304,14 @@ export default {
         display: block;
         position: relative;
         z-index: 2;
+        .state-opened & {
+          padding-left: 34px;
+        }
       }
     }
   }
+  .hide {
+    @include hide;
+  }
 }
-
 </style>

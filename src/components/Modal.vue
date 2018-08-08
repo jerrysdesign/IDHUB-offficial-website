@@ -5,14 +5,14 @@
         .modal-container
           .modal-heade
             slot(name='header')
-            slot(name='body')
+          slot(name='body')
 </template>
 
 <script>
 
 export default {
   name: 'modal',
-  data: function(){
+  data: () => {
     return {
       showModal: false
     }
