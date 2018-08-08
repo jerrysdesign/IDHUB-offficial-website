@@ -80,3 +80,10 @@
 @mixin pb60 {
   @include pb(60);
 }
+
+@mixin hide {
+  display: none;
+}
+.hide {
+  @include hide;
+}
