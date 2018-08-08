@@ -1,9 +1,8 @@
 <template lang="pug">
-#app
-  main.page_wrapper
-    Sitemenu
-    router-view
-    Footbar
+#app.page_wrapper
+  Sitemenu
+  router-view
+  Footbar
 </template>
 
 <script>
