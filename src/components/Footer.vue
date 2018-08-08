@@ -12,7 +12,7 @@ footer.footer
           li.social__item(v-for='social__item in social__items')
             a.social__link.social__link--rounded(target='_blank', :href='social__item.href', :title='social__item.title', :class='social__item.class')
       .footer__right_box
-        ul.footer__menu.footer__menu
+        ul.footer__menu
           li.footer__menu__item.footer__menu__title
             | {{ $t('nav.product') }}
           li.footer__menu__item(v-for='linksProduct in linksProducts')
@@ -65,7 +65,7 @@ export default {
         { to: 'contact', text: 'nav.contact' }
       ],
       linksAbouts: [
-        { to: 'team', text: 'team' }
+        { to: 'team', text: 'nav.team' }
         // { to: 'careers', text: 'careers' }
       ],
       linksContacts: [
@@ -85,6 +85,10 @@ export default {
 @import '../stylesheets/_abstracts/_grid';
 
 .footer {
+  text-align: center;
+  @include tablet {
+    text-align: right;
+  }
   &__container {
     position: relative;
   }
@@ -113,27 +117,26 @@ export default {
       left: -200px;
       top: -300px;
     }
-    @media (#{$min_tablet}) {
+    @include tablet {
       padding: 50px 0;
     }
-    @media (#{$min_laptop}) {
+    @include laptop {
       padding: 80px 0;
     }
-    @media (#{$min_desktop}) {
+    @include desktop {
       padding: 100px 0;
     }
   }
   &__left_box {
     margin-right: 10%;
-    @media (#{$min_tablet}) {
+    margin-bottom: 50px;
+    @include tablet {
       float: left;
-    }
-    @media (#{$max_tablet}) {
-      margin-bottom: 50px;
+      margin-bottom: 0;
     }
   }
   &__right_box {
-    @media (#{$min_tablet}) {
+    @include tablet {
       float: right;
     }
   }
@@ -176,24 +179,31 @@ export default {
   &__copyright {
     @include font_loader($montserrat, 1, 'n');
     color: rgba(white, .3);
-    font-size: 16px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: .05em;
   }
   &__menu {
     @include clear_list;
-    @media (#{$min_tablet}) {
+    @include tablet {
+      text-align: left;
       display: inline-block;
       vertical-align: top;
-      margin-right: 65px;
+      margin-right: 32px;
       &:last-child {
         margin-right: 0;
       }
     }
+    @include laptop {
+      margin-right: 48px;
+    }
+    @include desktop {
+      margin-right: 60px;
+    }
   }
   &__menu__item {
     margin-bottom: 15px;
-    @media (#{$min_tablet}) {
+    @include tablet {
       &:last-child {
         margin-bottom: 0;
       }
@@ -209,14 +219,11 @@ export default {
     font-size: 14px;
     letter-spacing: .05em;
     text-transform: uppercase;
-    @media (#{$min_tablet}) {
-      font-size: 18px;
-    }
   }
   &__menu__link {
     @include font_loader($montserrat, 4, 'n');
     color: $color-primary-light;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: .05em;
     &:hover, &:focus {
       color: white;
