@@ -22,55 +22,65 @@
     "life": "Identity records could be the inputs of artificial intelligence for behavior forecasting.",
     "learnMore": "Learn More"
   },
-  "roadmap": {
-    "title": "Roadmap",
-    "2017": {
-      "Q1": [],
-      "Q2": [],
-      "Q3": [
-        "The IDHub project is established"
-      ],
-      "Q4": [
-        "Blockchain application contest finalist",
-        "Whitepaper released"
-      ]
-    },
-    "2018": {
-      "Q1": [
-        "Pre-sale",
-        "IDHub Foundation established in Singapore"
-      ],
-      "Q2": [
-        "Enterprise Ethereum Alliance (EEA) membership acquired",
-        "Roadshow in Kuala Lumpur, Malaysia",
-        "Crowdsale"
-      ],
-      "Q3": [
-        "IDHUB tokens available on exchanges",
-        "Strategic alliance with Hivelocity"
-      ],
-      "Q4": [
-        "API released",
-        "IDHub can validate identities on the Ethereum testnet"
-      ]
-    },
-    "2019": {
-      "Q1": [
-        "Mobile app released",
-        "Rollout of IDHub community developer program"
-      ],
-      "Q2": [
-        "IDHUB tokens can be used to pay for KYC services",
-        "Storage is decentralized"
-      ],
-      "Q3": [
-        "Credit score integration"
-      ],
-      "Q4": [
-        "Advertisement integration",
-        "Biometrics integration"
-      ]
-    }
+    "roadmap": {
+    "title": "发展路线",
+    "time-lines":[
+      {
+        "year": "2017",
+        "periods": [
+          {
+            "period": "Q3",
+            "events": ["The IDHub project is established"]
+          },
+          {
+            "period": "Q4",
+            "events": ["Blockchain application contest finalist", "Whitepaper released"]
+          }
+        ]
+      },
+      {
+        "year": "2018",
+        "periods": [
+          {
+            "period": "Q1",
+            "events":  ["Pre-sale",  "IDHub Foundation established in Singapore"]
+          },
+          {
+            "period": "Q2",
+            "events": ["Enterprise Ethereum Alliance (EEA) membership acquired", "Roadshow in Kuala Lumpur, Malaysia", "Crowdsale"]
+          },
+          {
+            "period": "Q3",
+            "events": ["IDHUB tokens available on exchanges", "Strategic alliance with Hivelocity"]
+          },
+          {
+            "period": "Q4",
+            "events": ["API released", "IDHub can validate identities on the Ethereum testnet"]
+          }
+        ]
+      },
+      {
+        "year": "2019",
+        "periods": [
+          {
+            "period": "Q1",
+            "events":  ["Mobile app released", "Rollout of IDHub community developer program"]
+          },
+          {
+            "period": "Q2",
+            "events": ["IDHUB tokens can be used to pay for KYC services", "Storage is decentralized"]
+          },
+          {
+            "period": "Q3",
+            "events": ["Credit score integration"]
+          },
+          {
+            "period": "Q4",
+            "events": ["Advertisement integration", "Biometrics integration"]
+          }
+        ]
+      }
+    ]
   },
   "community": "Community",
   "whitepaper": "Whitepaper",
