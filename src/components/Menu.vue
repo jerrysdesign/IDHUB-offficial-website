@@ -10,12 +10,12 @@
         .menu__list
           h3.menu__title
             | {{ $t('nav.switch-langs-title') }}
-          //- I18nSwitch
+          I18nSwitch(v-on:closeHook="closeMenuHook")
 </template>
 
 <script>
 import { mapState, mapActions } from 'vuex'
-// import I18nSwitch from '@/components/I18n'
+import I18nSwitch from '@/components/I18n'
 
 export default {
   name: 'side-menu',
@@ -35,6 +35,9 @@ export default {
   },
   methods: {
     ...mapActions(['closeMenu']),
+    closeMenuHook(){
+      this.closeMenu()
+    }
   },
   watch: {
     menuStatus: function(val) {
@@ -46,7 +49,7 @@ export default {
     }
   },
   components: {
-    // I18nSwitch
+    I18nSwitch
   }
 }
 </script>
