@@ -19,9 +19,7 @@
 @mixin font_loader($font_family, $font_weight, $font_style){
   font-weight: #{$font_weight + '00'};
   $font_map: (
-    $notosans: 'notosans',
-    $playfair: 'playfairdisplay',
-    $montserrat: 'montserrat'
+    $notosans: 'notosans'
   );
 
   .wf-#{map-get($font_map, $font_family)}-#{$font_style + $font_weight}-active &{
