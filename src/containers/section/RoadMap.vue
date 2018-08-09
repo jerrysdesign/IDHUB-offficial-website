@@ -182,7 +182,7 @@ export default {
         }
         span.price {
           color: mediumturquoise;
-          font-weight: 500;
+          font-weight: 400;
         }
       }
     }

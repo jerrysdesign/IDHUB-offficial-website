@@ -1,16 +1,15 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 * {
   box-sizing: border-box;
-
-  font-weight: 400;
 }
 html {
   height: 100%;
 }
 
 body {
+  font-family: 'Noto Sans CJK SC', 'Noto Sans CJK TC', 'Noto Sans', sans-serif, 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
+  font-weight: 400;
   height: 100%;
-  font-family: 'Noto Sans', 'Noto Sans CJK', sans-serif, 'Helvetica Neue', Helvetica, Arial, 'Microsoft Yahei', 'Hiragino Sans GB', 'Heiti SC', 'WenQuanYi Micro Hei', sans-serif;
   color: $color-gray-dark;
   background-color: $color-gray-ligtest;
   &.state-fixed{

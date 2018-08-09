@@ -195,7 +195,7 @@ export default {
       width: 67px;
       height: 67px;
       font-size: 36px;
-      font-weight: 900;
+      font-weight: 700;
       color: $color-gray-light;
       float: left;
       margin-right: 12px;
