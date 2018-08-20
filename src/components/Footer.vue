@@ -3,8 +3,7 @@ footer.footer
   .footer__main_box
     .container.footer__container
       .footer__left_box
-        a.footer__logo_box(href='javascript:;')
-          img.footer__logo(src='img/etc/logo--circle--white.svg')
+        router-link.footer__logo_box(to='/')
           span.footer__logo_text
             | IDHub
         span.footer__copyright
@@ -13,23 +12,27 @@ footer.footer
           li.social__item(v-for='social__item in social__items')
             a.social__link.social__link--rounded(target='_blank', :href='social__item.href', :title='social__item.title', :class='social__item.class')
       .footer__right_box
-        ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 产品
+        ul.footer__menu
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('nav.product') }}
           li.footer__menu__item(v-for='linksProduct in linksProducts')
             router-link.footer__menu__link(:to= 'linksProduct.to')
-              | {{ linksProduct.text }}
+              | {{ $t(linksProduct.text) }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 消息
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('information') }}
           li.footer__menu__item(v-for='linksNew in linksNews')
             router-link.footer__menu__link(:to= 'linksNew.to')
-              | {{ linksNew.text }}
+              | {{ $t(linksNew.text) }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 关于我们
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('abount_us') }}
           li.footer__menu__item(v-for='linksAbout in linksAbouts')
             router-link.footer__menu__link(:to= 'linksAbout.to')
-              | {{ linksAbout.text }}
+              | {{ $t(linksAbout.text) }}
         ul.footer__menu.footer__menu
-          li.footer__menu__item.footer__menu__title 保持联系
+          li.footer__menu__item.footer__menu__title
+            | {{ $t('nav.contact') }}
           li.footer__menu__item(v-for='linksContact in linksContacts')
             router-link.footer__menu__link(:to= 'linksContact.to')
               | {{ linksContact.text }}
@@ -53,22 +56,21 @@ export default {
       { href: 'javascript:;', title: 'Say hello in Reddit!', class: 'social__link--reddit' }
       ],
       linksProducts: [
-        { to: 'tech', text: '技术' },
-        { to: 'app', text: '应用程序' }
+        { to: 'product', text: 'nav.product' }
+        // { to: 'app', text: 'app' }
       ],
       linksNews: [
-        { to: 'news', text: '新闻' },
-        { to: 'news', text: '活动' },
-        { to: 'news', text: '合作夥伴' }
+        { to: 'news', text: 'nav.news' },
+        // { to: 'news', text: 'activities' },
+        { to: 'contact', text: 'nav.contact' }
       ],
       linksAbouts: [
-        { to: 'team', text: '团队' },
-        { to: 'careers', text: '招聘' }
+        { to: 'team', text: 'nav.team' }
+        // { to: 'careers', text: 'careers' }
       ],
       linksContacts: [
         { to: 'contact', text: 'idhub.network' },
-        { to: 'contact', text: 'hello@idhub.network' },
-        { to: 'contact', text: '+86 123 456 789' }
+        { to: 'contact', text: 'support@idhub.network' }
       ],
     }
   }
@@ -83,6 +85,10 @@ export default {
 @import '../stylesheets/_abstracts/_grid';
 
 .footer {
+  text-align: center;
+  @include tablet {
+    text-align: right;
+  }
   &__container {
     position: relative;
   }
@@ -90,30 +96,47 @@ export default {
     padding: 35px 0;
     border-bottom: 1px solid rgba($cloud, .12);
     background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
-    @media (#{$max_tablet}) {
-      text-align: center;
+    position: relative;
+    overflow: hidden;
+    color: $color-gray-ligtest;
+    text-align: center;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction: column;
+    &:before {
+      background:  #1A47B0;
+      width: 1000px;
+      height: 1000px;
+      border-radius: 100px;
+      content: '';
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      opacity: .15;
+      left: -200px;
+      top: -300px;
     }
-    @media (#{$min_tablet}) {
+    @include tablet {
       padding: 50px 0;
     }
-    @media (#{$min_laptop}) {
+    @include laptop {
       padding: 80px 0;
     }
-    @media (#{$min_desktop}) {
+    @include desktop {
       padding: 100px 0;
     }
   }
   &__left_box {
     margin-right: 10%;
-    @media (#{$min_tablet}) {
+    margin-bottom: 50px;
+    @include tablet {
       float: left;
-    }
-    @media (#{$max_tablet}) {
-      margin-bottom: 50px;
+      margin-bottom: 0;
     }
   }
   &__right_box {
-    @media (#{$min_tablet}) {
+    @include tablet {
       float: right;
     }
   }
@@ -126,9 +149,6 @@ export default {
     img {
       height: 100%;
     }
-  }
-  &__logo {
-    margin-right: 10px;
   }
   &__social_box {
     margin-top: 16px;
@@ -159,24 +179,31 @@ export default {
   &__copyright {
     @include font_loader($montserrat, 1, 'n');
     color: rgba(white, .3);
-    font-size: 16px;
+    font-size: 15px;
     text-transform: uppercase;
     letter-spacing: .05em;
   }
   &__menu {
     @include clear_list;
-    @media (#{$min_tablet}) {
+    @include tablet {
+      text-align: left;
       display: inline-block;
       vertical-align: top;
-      margin-right: 65px;
+      margin-right: 32px;
       &:last-child {
         margin-right: 0;
       }
     }
+    @include laptop {
+      margin-right: 48px;
+    }
+    @include desktop {
+      margin-right: 60px;
+    }
   }
   &__menu__item {
     margin-bottom: 15px;
-    @media (#{$min_tablet}) {
+    @include tablet {
       &:last-child {
         margin-bottom: 0;
       }
@@ -192,14 +219,11 @@ export default {
     font-size: 14px;
     letter-spacing: .05em;
     text-transform: uppercase;
-    @media (#{$min_tablet}) {
-      font-size: 18px;
-    }
   }
   &__menu__link {
     @include font_loader($montserrat, 4, 'n');
     color: $color-primary-light;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: .05em;
     &:hover, &:focus {
       color: white;

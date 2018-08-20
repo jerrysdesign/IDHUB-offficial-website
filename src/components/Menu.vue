@@ -1,51 +1,56 @@
 <template lang="pug">
-  nav(:class='menuClass')
+  nav.menu(v-bind:class='menuState')
     .menu__container
-      button.menu__closer.js-close-menu(type='button', @click='closeMenu')
-        | close
+      button.menu__closer(type='button', @click='closeMenu')
       .menu__box
-        //- h3.menu__title
-        //-   | menu
         ul.menu__list
           li.menu__item(v-for='link in links')
-            router-link.menu__link(:to='link.to')
-              | {{ link.text }}
+            router-link.menu__link(:to='link.to', v-on:click.native='closeMenu')
+              | {{ $t(link.text) }}
+        .menu__list
+          h3.menu__title
+            | {{ $t('nav.switch-langs-title') }}
+          I18nSwitch(v-on:closeHook="closeMenuHook")
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex'
+import I18nSwitch from '@/components/I18n'
 
 export default {
   name: 'side-menu',
   data: () => {
     return {
-      close: 'close',
       links: [
-        { to: 'home', text: 'Home' },
-        { to: 'tech', text: '技术' },
-        { to: 'news', text: '媒体报导' },
-        { to: 'news', text: '最新活动' },
-        { to: 'team', text: '团队' },
-        { to: 'contact', text: '联络我们' }
+        { to: 'product', text: 'nav.product' },
+        { to: 'news', text: 'nav.news' },
+        { to: 'team', text: 'nav.team' },
+        { to: 'contact', text: 'nav.contact' }
       ],
-      menuClass: 'menu js-menu state-closed',
+      menuState: 'state-closed',
     }
   },
   computed: {
     ...mapState(['menuStatus']),
   },
   methods: {
-    ...mapActions(['closeMenu'])
+    ...mapActions(['closeMenu']),
+    closeMenuHook(){
+      this.closeMenu()
+    }
   },
   watch: {
     menuStatus: function(val) {
       if (val) {
-        this.menuClass = 'menu js-menu state-opened';
+        this.menuState = 'state-opened';
       } else {
-        this.menuClass = 'menu js-menu state-closed';
+        this.menuState = 'state-closed';
       }
     }
   },
+  components: {
+    I18nSwitch
+  }
 }
 </script>
 
@@ -66,11 +71,11 @@ $_menu_left_margin: 50px;
   min-width: 320px;
   padding-bottom: 30px;
   background-color: $color-primary;
-  transition: right .7s ease;
-  &.state-opened{
+  transition: right .2s ease;
+  &.state-opened {
     right: 0;
   }
-  @media (#{$max_phone}){
+  @media (#{$max_phone}) {
     transition-duration: .4s;
   }
   &__box{
@@ -86,34 +91,22 @@ $_menu_left_margin: 50px;
       left: 0;
       top: 50%;
       transform: translateY(-50%);
+      width: 100%;
     }
   }
-  &__closer{
-    @include font_loader($montserrat, 4, 'n');
-    position: absolute;
-    z-index: 1;
-    top: 50px;
-    margin: 0 0 0 $_menu_left_margin;
-    padding-left: 30px;
-    color: white;
-    font-size: 14px;
-    &:before{
+  &__closer {
+    cursor: pointer;
+    &:before {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      top: 0;
-      width: 15px;
-      // background: url(#{$icons_path}i--cross--white.svg) no-repeat center / 100% auto;
-    }
-    @media (#{$max_desktop}){
-      right: $container_side_margin;
-    }
-    @media (#{$max_phone}){
-      top: 40px;
+      right: 15px;
+      top: 8px;
+      height: 36px;
+      width: 36px;
+      background: url(../assets/header__burger_button--close.svg);
     }
   }
-  &__title{
+  &__title {
     @include font_loader($montserrat, 4, 'n');
     margin: 0 0 20px;
     color: white;
@@ -121,32 +114,32 @@ $_menu_left_margin: 50px;
     text-transform: uppercase;
     font-size: 10px;
   }
-  &__list{
+  &__list {
     @include clearfix;
     @include clear_list;
-    display: inline-block;
+    display: block;
     margin-left: 0;
     margin-bottom: 44px;
     padding-bottom: 20px;
-    border-bottom: 2px solid white;
     @media (#{$max_tablet}){
       display: block;
     }
   }
-  &__item{
+  &__item {
     margin-bottom: 20px;
   }
   &__link,
-  &__phone_link{
+  &__phone_link {
     @include font_loader($montserrat, 4, 'n');
     font-size: 20px;
     letter-spacing: .05em;
+    display: block;
     &, &:hover, &:focus{
       color: white;
       text-decoration: none;
     }
   }
-  &__phone_link{
+  &__phone_link {
     display: block;
     margin: 0 0 50px 0;
     padding-left: 30px;
@@ -161,7 +154,7 @@ $_menu_left_margin: 50px;
       // background: url(#{$icons_path}i--phone-call.svg) no-repeat center / 100% auto;
     }
   }
-  &__about_text{
+  &__about_text {
     @include font_loader($montserrat, 4, 'n');
     font-size: 13px;
     color: rgba(white, .65);

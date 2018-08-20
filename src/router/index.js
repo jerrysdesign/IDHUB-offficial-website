@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import Tech from '@/components/Tech'
-import App from '@/components/App'
-import Team from '@/components/Team'
-import News from '@/components/News'
-import Careers from '@/components/Careers'
-import Cooperate from '@/components/Cooperate'
-import Contact from '@/components/Contact'
+import Home from '@/containers/Home'
+import Product from '@/containers/Product'
+// import Tech from '@/containers/Tech'
+import Team from '@/containers/Team'
+import News from '@/containers/News'
+import Careers from '@/containers/Careers'
+import Cooperate from '@/containers/Cooperate'
+import Contact from '@/containers/Contact'
+import Activities from '@/containers/Activities'
 
 Vue.use(Router)
 
@@ -23,15 +24,15 @@ export default new Router({
       component: Home
     },
     {
-      path: '/tech',
-      name: 'Tech',
-      component: Tech
+      path: '/product',
+      name: 'Product',
+      component: Product
     },
-    {
-      path: '/app',
-      name: 'App',
-      component: App
-    },
+    // {
+    //   path: '/tech',
+    //   name: 'Tech',
+    //   component: Tech
+    // },
     {
       path: '/team',
       name: 'Team',
@@ -56,6 +57,11 @@ export default new Router({
       path: '/contact',
       name: 'Contact',
       component: Contact
+    },
+    {
+      path: '/activities',
+      name: 'Activities',
+      component: Activities
     }
   ]
 })

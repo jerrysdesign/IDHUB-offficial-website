@@ -1,0 +1,84 @@
+{
+  "advisor": "顧問",
+  "team": "團隊",
+  "advisors": [
+    {
+      "name": "元道",
+      "avatar": "josh",
+      "exps": ["世紀互聯創始人", "中關村區塊鏈產業聯盟理事長"]
+    },
+    {
+      "name": "上野嘉久",
+      "avatar": "ueno",
+      "exps": ["世紀互聯董事兼牽頭 VC 投資人", "Synapse Holdings 創始人"]
+    }
+  ],
+  "members": [
+    {
+      "name": "曲明",
+      "avatar": "qu",
+      "job": "IDHub 創始人",
+      "exps":[ "互聯城市咨詢委員會 (CCAB) 理事會成員"]
+    },
+    {
+      "name": "陳振國",
+      "avatar": "kenneth",
+      "job": "IDHub 技術總監",
+      "exps": ["曾任亞太線上 CTO", "威睿科技聯合創始人 & CTO"]
+    },
+    {
+      "name": "李驍宇",
+      "avatar": "xiaoyu",
+      "job": "IDHub 核心工程師",
+      "exps": ["北京交通大學碩士"]
+    },
+    {
+      "name": "謝承璋",
+      "avatar": "don",
+      "job": "IDHub 核心工程師",
+      "exps": [""]
+    },
+    {
+      "name": "林展民",
+      "avatar": "jamie",
+      "job": "IDHub 核心工程師",
+      "exps": ["台灣政治大學理學碩士"]
+    },
+    {
+      "name": "姚澤乾",
+      "avatar": "zaakin",
+      "job": "IDHub 研發工程師",
+      "exps": [""]
+    },
+    {
+      "name": "李嘉淇",
+      "avatar": "jiaqi",
+      "job": "IDHub 研發工程師",
+      "exps": [""]
+    },
+    {
+      "name": "王沛智",
+      "avatar": "michael",
+      "job": "IDHub 商務拓展經理",
+      "exps": ["伯明翰大學碩士"]
+    },
+    {
+      "name": "吳茜",
+      "avatar": "cecilia",
+      "job": "IDHub 市場總監",
+      "exps": ["英國大眾傳播和媒體研究碩士"]
+    },
+    {
+      "name": "薛玉成",
+      "avatar": "derek",
+      "job": "IDHub 市場公關經理",
+      "exps": [""]
+    },
+    {
+      "name": "曹磊",
+      "avatar": "leo",
+      "job": "IDHub 市場經理",
+      "exps": [""]
+    }
+  ]
+}

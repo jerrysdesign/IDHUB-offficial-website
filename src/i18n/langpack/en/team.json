@@ -1,0 +1,84 @@
+{
+  "advisor": "Advisors",
+  "team": "Team",
+  "advisors": [
+    {
+      "name": "Yuan Dao",
+      "avatar": "josh",
+      "wxps": ["Founder of 21Vianet Group, Inc.", "Chairman of Z-Park Blockchain Industry Alliance"]
+    },
+    {
+      "name": "Yoshihisa Ueno",
+      "avatar": "ueno",
+      "wxps": ["Director and leading investor of 21Vianet Group, Inc.", "Founder of Synapse Holdings"]
+    }
+  ],
+  "members": [
+    {
+      "name": "Doer Qu",
+      "avatar": "qu",
+      "job": "Founder",
+      "exps": ["Council member of Connected City Advisory Board (CCAB)"]
+    },
+    {
+      "name": "Kenneth Chen",
+      "avatar": "kenneth",
+      "job": "CTO",
+      "exps": ["Former CTO of APTG", "Co-Founder & CTO of Genie Networks Ltd."]
+    },
+    {
+      "name": "Xiaoyu Li",
+      "avatar": "xiaoyu",
+      "job": "Core Developer",
+      "exps": ["Master degree at Beijing Jiaotong University"]
+    },
+    {
+      "name": "Don Hsieh",
+      "avatar": "don",
+      "job": "Core Developer",
+      "exps": [""]
+    },
+    {
+      "name": "Jamie Lin",
+      "avatar": "jamie",
+      "job": "Core Developer",
+      "exps": ["The Degree of Master of Science of National Chengchi University"]
+    },
+    {
+      "name": "Zeqian Yao",
+      "avatar": "zaakin",
+      "job": "Developer",
+      "exps": [""]
+    },
+    {
+      "name": "Jiaqi Li",
+      "avatar": "jiaqi",
+      "job": "Developer",
+      "exps": [""]
+    },
+    {
+      "name": "Michael Wang",
+      "avatar": "michael",
+      "job": "Business Development Manager",
+      "exps": ["Master degree at University of Birmingham"]
+    },
+    {
+      "name": "Cecilia Wu",
+      "avatar": "cecilia",
+      "job": "Marketing Director",
+      "exps":[ "Msc in Mass Communication and Media Research"]
+    },
+    {
+      "name": "Derek Xue",
+      "avatar": "derek",
+      "job": "Marketing & PR Manager",
+      "exps": [""]
+    },
+    {
+      "name": "Leo Cao",
+      "avatar": "leo",
+      "job": "Marketing Manager",
+      "exps": [""]
+    }
+  ]
+}

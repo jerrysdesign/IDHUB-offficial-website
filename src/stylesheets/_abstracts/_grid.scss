@@ -7,42 +7,44 @@
 // ----------------
 
 $phone: 480px;
-$tablet: 992px;
-$tablet--landscape: 1024px;
-$laptop: 1200px;
-$desktop: 1440px;
+$tablet: 576px;
+$laptop: 768px;
+$desktop: 992px;
+$fhd: 1200px;
 
 // Responsive Grids
 // ----------------
-$phone-layout             : layout(4 1/4);
-$tablet-layout            : layout(8 1/4);
-$tablet--lnadscape-layout : layout(10 1/4);
-$laptop-layout            : layout(12 1/4);
-$desktop-layout           : layout(12 1/4);
+$phone-layout   : layout(4 1/4);
+$tablet-layout  : layout(8 1/4);
+$laptop-layout  : layout(12 1/4);
+$desktop-layout : layout(12 1/4);
+$fhd-layout     : layout(12 1/4);
 
 // Breakpoints
 // -----------
 $susy-breakpoint: (
-  phone             : 480px,
-  tablet            : 992px,
-  tablet--lnadscape : 1024px,
-  laptop            : 1200px,
-  desktop           : 1440px
+  phone   : 576px,
+  tablet  : 768px,
+  laptop  : 992px,
+  desktop : 1200px,
+  fhd     : 1440px
 );
 
 
 // Susy Setup
 // ----------
 $susy: (
-  columns: 2,
-  gutters: 1/4,
+  columns: 12,
+  gutters: 1/3,
   container: $desktop,
   global-box-sizing: border-box,
   gutter-position: split,
-  // debug: (
-  //   image: show-columns,
-  //   color: rgba(#D7DDED, .5),
-  // ),
+  debug: (
+    image: hide,
+    output: background,
+    color: rgba(#66f, .25),
+    toggle: top right
+  ),
   use-custom: (
     clearfix: true,
   )
@@ -65,6 +67,7 @@ $simplifica: 'Simplifica', $fallback;
 $glober: 'Glober', $fallback;
 // Breakpoints
 // -----------
+// at-breakpoint(<$media-layout> [, <$font-size>]) { <@content> }
 @mixin phone {
   @include susy-breakpoint(map-get($susy-breakpoint, phone), $phone-layout) {
     @content;
@@ -72,11 +75,6 @@ $glober: 'Glober', $fallback;
 }
 @mixin tablet {
   @include susy-breakpoint(map-get($susy-breakpoint, tablet), $tablet-layout) {
-    @content;
-  }
-}
-@mixin tablet--lnadscape {
-  @include susy-breakpoint(map-get($susy-breakpoint, tablet--lnadscape), $tablet--lnadscape-layout) {
     @content;
   }
 }
@@ -90,19 +88,21 @@ $glober: 'Glober', $fallback;
     @content;
   }
 }
+@mixin fhd {
+  @include susy-breakpoint(map-get($susy-breakpoint, fhd), $fhd-layout) {
+    @content;
+  }
+}
 
 .container {
-  padding: 0 gutter();
+  z-index: 1;
+  // padding: 0 gutter();
   @include container();
   @include clearfix;
-
   @include phone {
     @include show-grid();
   }
   @include tablet {
-    @include show-grid();
-  }
-  @include tablet--lnadscape {
     @include show-grid();
   }
   @include laptop {
@@ -117,4 +117,23 @@ $glober: 'Glober', $fallback;
   @include clearfix;
   margin-right: auto;
   margin-left: auto;
+}
+
+.ratio-1-1 {
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    padding-bottom: calc( 100% / 1 );
+  }
+  > :first-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  > img {
+    height: auto;
+  }
 }
