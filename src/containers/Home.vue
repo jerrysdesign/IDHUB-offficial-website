@@ -1,7 +1,8 @@
 <template lang="pug">
 div(v-bind:class='pageName')
   .cover
-    Headbar
+    .cover__header
+      Headbar
     .container.cover__container
       .cover__text_box
         h3.cover__sub-title
@@ -88,6 +89,10 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content:space-between;
+  background-image: linear-gradient(-180deg, #123075 0%, #092056 100%);
+  > .cover__header {position: relative; z-index: 111;}
+  > .cover__container {position: relative; z-index: 11;}
+  > .cover__footer {position: relative; z-index: 1;}
   @include tablet {
     text-align: left;
     background-color: white;
@@ -95,13 +100,13 @@ export default {
     background-size: 100%;
     background-repeat: no-repeat;
     height: 100vh;
-    @include tablet {
-      background-image: url(../assets/home-cover-1440-bg.svg);
-    }
-    @include desktop {
-      background-image: url(../assets/home-cover-1920-bg.svg);
-    }
-  };
+  }
+  @include tablet {
+    background-image: url(../assets/home-cover-1440-bg.svg);
+  }
+  @include desktop {
+    background-image: url(../assets/home-cover-1920-bg.svg);
+  }
   &__container {
     display:flex;
     align-items: center;
