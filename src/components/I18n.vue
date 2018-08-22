@@ -9,7 +9,7 @@
 
 <script>
 import Vue from 'vue'
-import { mapState, mapActions } from 'vuex'
+// import { mapState, mapActions } from 'vuex'
 
 export default {
   name: 'i18n-switch',
@@ -17,9 +17,9 @@ export default {
     return {
       showModal: false,
       langs: [
-        {'target': 'cn', 'display': '中文-简体', 'image': '/static/zh-hans.png'},
-        {'target': 'tw', 'display': '中文-繁體', 'image': '/static/zh-hant.png'},
-        {'target': 'en', 'display': 'English', 'image': '/static/en.png'}
+        {'target': 'cn', 'display': '中文-简体', 'image': './zh-hans.png'},
+        {'target': 'tw', 'display': '中文-繁體', 'image': './zh-hant.png'},
+        {'target': 'en', 'display': 'English', 'image': './en.png'}
       ]
     }
   },

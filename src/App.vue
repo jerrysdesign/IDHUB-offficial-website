@@ -11,7 +11,7 @@ import Sitemenu from '@/components/Menu'
 import Footbar from '@/components/Footer'
 import VueI18n from 'vue-i18n'
 import i18n from '@/i18n'
-import { store } from '@/store/header'
+import store from '@/store'
 Vue.use(VueI18n)
 Vue.config.productionTip = false
 

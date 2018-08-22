@@ -21,12 +21,11 @@
 
 
 <script>
-const body = document.querySelector('body')
 import Modal from '@/components/Modal'
 import I18nSwitch from '@/components/I18n'
-import { store } from '@/store/header'
+import store from '@/store'
 import Vue from 'vue'
-import { mapState, mapActions } from 'vuex'
+import { mapActions } from 'vuex'
 
 export default {
   name: 'navbar',
@@ -44,7 +43,6 @@ export default {
   components: {
     Modal,
     I18nSwitch
-
   },
   store,
   methods: {
