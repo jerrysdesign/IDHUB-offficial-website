@@ -5,15 +5,15 @@ div(v-bind:class='pageName')
       Headbar
     .container.cover__container
       .cover__text_box
-        h3.cover__sub-title
+        h3.cover__sub-title(v-scroll-reveal.reset={ delay: 200 })
           span.cover__sub-title_text
             | {{ $t('cover.subtitle') }}
-        h2.cover__title
+        h2.cover__title(v-scroll-reveal.reset={ delay: 250 })
           span.cover__title_text
             | {{ $t('cover.title') }}
-        a.cover__link(href='./IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
+        a.cover__link(href='./IDHub_whitepaper_v0.5.0_en.pdf', v-scroll-reveal.reset={ delay: 250 })
           | {{$t('whitepaper')}}
-      .cover__pic_box
+      .cover__pic_box(v-scroll-reveal.reset={ delay: 400 })
         img.cover__img(src='@/assets/page-home__cover-img.svg')
     .cover__footer
       .cover__footer_left_box
@@ -21,35 +21,35 @@ div(v-bind:class='pageName')
           | {{$t('cover.message')}}
   .section-vision
     .container.section-vision__container
-      .section__header
+      .section__header(v-scroll-reveal.reset={ delay: 200 })
         h2 {{ $t('vision.title') }}
         h4 {{ $t('vision.subtitle') }}
         router-link.btn(to='product', title='tech', replace) {{$t('vision.learnMore')}}
       VisionList
   .section-roadmap
-    .section__header
+    .section__header(v-scroll-reveal.reset={ delay: 200 })
       h2 {{ $t('roadmap.title') }}
-    RoadMap
+    RoadMap(v-scroll-reveal.reset={ delay: 250 })
   .section-download
     .container
-      .section__header
+      .section__header(v-scroll-reveal.reset={ delay: 200 })
         h2 {{ $t('whitepaper') }}
         h4 {{ $t('downloads.subtitle') }}
         a.btn.btn-danger(href='./IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           |{{$t('download')}}
   .section-social
     .container
-      .section__header.left-box
+      .section__header.left-box(v-scroll-reveal.reset={ delay: 200 })
         h2 {{ $t('community') }}
         //- h4 {{ $t('home-social-text') }}
-      .right-box
+      .right-box(v-scroll-reveal.reset={ delay: 250 })
         SocialList
   .section-news
     .container
-      .section__header
+      .section__header(v-scroll-reveal.reset={ delay: 200 })
         h2 {{ $t('nav.news') }}
         //- h4 {{ $t('home-media-text') }}
-      NewsList(v-bind:order='6')
+      NewsList(v-bind:order='6', v-scroll-reveal.reset={ delay: 250 })
 </template>
 
 
