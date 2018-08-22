@@ -11,7 +11,7 @@ div(v-bind:class='pageName')
 
 <script>
 import Headbar from '@/components/Header'
-import SectionNewsList from '@/containers/section/NewsList'
+import SectionNewsList from '@/views/section/NewsList'
 export default {
   name: 'news',
   data: () => {

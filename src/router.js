@@ -1,27 +1,33 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/containers/Home'
-import Product from '@/containers/Product'
-// import Tech from '@/containers/Tech'
-import Team from '@/containers/Team'
-import News from '@/containers/News'
-import Careers from '@/containers/Careers'
-import Cooperate from '@/containers/Cooperate'
-import Contact from '@/containers/Contact'
-import Activities from '@/containers/Activities'
+import Home from './views/Home.vue'
+import Product from '@/views/Product'
+// import Tech from '@/views/Tech'
+import Team from '@/views/Team'
+import News from '@/views/News'
+import Careers from '@/views/Careers'
+import Cooperate from '@/views/Cooperate'
+import Contact from '@/views/Contact'
+import Activities from '@/views/Activities'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
-      path: '*',
-      redirect: '/home'
+      path: '/',
+      name: 'home',
+      component: Home
     },
     {
-      path: '/home',
-      name: 'Home',
-      component: Home
+      path: '/about',
+      name: 'about',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
       path: '/product',
