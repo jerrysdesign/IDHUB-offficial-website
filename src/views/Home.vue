@@ -11,7 +11,7 @@ div(v-bind:class='pageName')
         h2.cover__title
           span.cover__title_text
             | {{ $t('cover.title') }}
-        a.cover__link(href='/static/IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
+        a.cover__link(href='./IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           | {{$t('whitepaper')}}
       .cover__pic_box
         img.cover__img(src='@/assets/page-home__cover-img.svg')
@@ -35,7 +35,7 @@ div(v-bind:class='pageName')
       .section__header
         h2 {{ $t('whitepaper') }}
         h4 {{ $t('downloads.subtitle') }}
-        a.btn.btn-danger(href='/static/IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
+        a.btn.btn-danger(href='./IDHub_whitepaper_v0.5.0_en.pdf', target='_blank')
           |{{$t('download')}}
   .section-social
     .container
@@ -54,17 +54,16 @@ div(v-bind:class='pageName')
 
 
 <script>
-import Headbar from '@/components/Header'
-import VisionList from '@/containers/section/VisionList'
-import RoadMap from '@/containers/section/RoadMap'
-import SocialList from '@/containers/section/SocialList'
-import NewsList from '@/containers/section/NewsList'
+import Headbar from '@/components/Header.vue'
+import VisionList from '@/views/section/VisionList.vue'
+import RoadMap from '@/views/section/RoadMap.vue'
+import SocialList from '@/views/section/SocialList.vue'
+import NewsList from '@/views/section/NewsList.vue'
 export default {
   name: 'home',
   data: () => {
     return {
       pageName: 'page-home',
-
     }
   },
   components: {

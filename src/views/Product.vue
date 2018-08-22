@@ -62,10 +62,10 @@ import Headbar from '@/components/Header'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
 
 export default {
-  name: 'tech',
-  data: function() {
+  name: 'product',
+  data: () => {
     return {
-      pageName: 'page-tech',
+      pageName: 'page-product',
       flowTitle: ['flow.steps[0].title', 'flow.steps[1].title', 'flow.steps[2].title', 'flow.steps[3].title'],
     }
   },
@@ -74,9 +74,15 @@ export default {
     swiper,
     swiperSlide
   },
+  watch: {
+    i18b2() {
+      console.log("aaa")
+    }
+  },
   computed: {
-    swiperOption: function(){
+    swiperOption(){
       let flowTitle = this.flowTitle
+      // var i18nhelp = this.$i18n
       let translate = this.$t
       return {
         spaceBetween: 30,
@@ -89,6 +95,7 @@ export default {
           el: '.optration-flow-nav',
           clickable: true,
           renderBullet(index, className) {
+            // this.$i18n = i18nhelp
             return `<li class="${className} swiper-pagination-bullet-custom"><div class='num'>0${index + 1}</div><div class='title'> ${translate(flowTitle[index])} </div><div class='step'> Step 0${index + 1} </div></li>`
           }
         }
@@ -104,7 +111,7 @@ export default {
 @import '../stylesheets/_abstracts/_mixin';
 @import '../stylesheets/_abstracts/_grid';
 @import '../../node_modules/swiper/dist/css/swiper.css';
-.page-tech {
+.page-product {
   .cover {
     height: auto;
     background-image: url(../assets/page-cover-bg.svg);
@@ -113,7 +120,6 @@ export default {
     background-repeat: no-repeat;
     .header {
       background: none;
-
     }
     .section__header {
       h2, h3 {
