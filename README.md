@@ -1,4 +1,4 @@
-# hello-world
+# IDHub
 
 ## Project setup
 ```
