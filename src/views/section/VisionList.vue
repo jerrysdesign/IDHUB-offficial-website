@@ -1,14 +1,14 @@
 <template lang="pug">
 ul.vision__list
-  li.vision__list-item
+  li.vision__list-item(v-scroll-reveal.reset={ delay: 300 })
     img.vision__list-item__icon(src='@/assets/icon--vision-service.svg')
     h5.vision__list-item__title ID as a Service
     p.vision__list-item__text {{$t('vision.service')}}
-  li.vision__list-item
+  li.vision__list-item(v-scroll-reveal.reset={ delay: 350 })
     img.vision__list-item__icon(src='@/assets/icon--vision-digiasset.svg')
     h5.vision__list-item__title ID as a Digital Asset
     p.vision__list-item__text {{$t('vision.asset')}}
-  li.vision__list-item
+  li.vision__list-item(v-scroll-reveal.reset={ delay: 400 })
     img.vision__list-item__icon(src='@/assets/icon--vision-digilife.svg')
     h5.vision__list-item__title ID as a Digital Life
     p.vision__list-item__text {{$t('vision.life')}}
