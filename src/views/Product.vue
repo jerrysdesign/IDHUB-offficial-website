@@ -21,8 +21,8 @@ div(v-bind:class='pageName')
         .section__header
           h2 {{ $t('flow.title') }}
       .row
+        ol.optration-flow-nav
         swiper(:options='swiperOption')
-          ol.optration-flow-nav
           swiper-slide
             .icon
               img(src='@/assets/icon--optration-success.svg')
