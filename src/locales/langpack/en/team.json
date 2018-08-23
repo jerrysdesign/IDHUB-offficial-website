@@ -39,12 +39,6 @@
       "exps": [""]
     },
     {
-      "name": "Jamie Lin",
-      "avatar": "jamie",
-      "job": "Core Developer",
-      "exps": ["The Degree of Master of Science of National Chengchi University"]
-    },
-    {
       "name": "Zeqian Yao",
       "avatar": "zaakin",
       "job": "Developer",
@@ -78,6 +72,12 @@
       "name": "Leo Cao",
       "avatar": "leo",
       "job": "Marketing Manager",
+      "exps": [""]
+    },
+    {
+      "name": "JJ Hung",
+      "avatar": "jj",
+      "job": "Product Designer",
       "exps": [""]
     }
   ]

@@ -39,12 +39,6 @@
       "exps": [""]
     },
     {
-      "name": "林展民",
-      "avatar": "jamie",
-      "job": "IDHub 核心工程師",
-      "exps": ["台灣政治大學理學碩士"]
-    },
-    {
       "name": "姚澤乾",
       "avatar": "zaakin",
       "job": "IDHub 研發工程師",
@@ -78,6 +72,12 @@
       "name": "曹磊",
       "avatar": "leo",
       "job": "IDHub 市場經理",
+      "exps": [""]
+    },
+    {
+      "name": "洪緯禎",
+      "avatar": "jj",
+      "job": "產品設計師",
       "exps": [""]
     }
   ]
